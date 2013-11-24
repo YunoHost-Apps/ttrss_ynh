@@ -24,9 +24,17 @@ define('SELF_URL_PATH', 'yunopath');
 // You need to set this option correctly otherwise several features
 // including PUSH, bookmarklets and browser integration will not work properly.
 
+define('FEED_CRYPT_KEY', '');
+// Key used for encryption of passwords for password-protected feeds
+// in the database. A string of 24 random characters. If left blank, encryption
+// is not used. Requires mcrypt functions.
+// Warning: changing this key will make your stored feed passwords impossible
+// to decrypt.
+
 define('SINGLE_USER_MODE', false);
 // Operate in single user mode, disables all functionality related to
-// multiple users.
+// multiple users and authentication. Enabling this assumes you have
+// your tt-rss directory protected by other means (e.g. http auth).
 
 define('SIMPLE_UPDATE_MODE', false);
 // Enables fallback update mode where tt-rss tries to update feeds in
@@ -42,7 +50,11 @@ define('SIMPLE_UPDATE_MODE', false);
 // *****************************
 
 define('PHP_EXECUTABLE', '/usr/bin/php');
-// Path to PHP executable, used for various command-line tt-rss programs
+// Path to PHP *COMMAND LINE* executable, used for various command-line tt-rss 
+// programs and update daemon. Do not try to use CGI binary here, it won't work. 
+// If you see HTTP headers being displayed while running tt-rss scripts, 
+// then most probably you are using the CGI binary. If you are unsure what to 
+// put in here, ask your hosting provider.
 
 define('LOCK_DIRECTORY', 'lock');
 // Directory for lockfiles, must be writable to the user you run
@@ -100,16 +112,20 @@ define('SPHINX_ENABLED', false);
 // Enable fulltext search using Sphinx (http://www.sphinxsearch.com)
 // Please see http://tt-rss.org/wiki/SphinxSearch for more information.
 
-define('SPHINX_INDEX', 'ttrss');
+define('SPHINX_SERVER', 'localhost:9312');
+// Hostname:port combination for the Sphinx server.
+
+define('SPHINX_INDEX', 'ttrss, delta');
 // Index name in Sphinx configuration. You can specify multiple indexes
 // as a comma-separated string.
+// Example configuration files are available on tt-rss wiki.
 
 // ***********************************
 // *** Self-registrations by users ***
 // ***********************************
 
 define('ENABLE_REGISTRATION', false);
-// Allow users to register themselves. Please be vary that allowing
+// Allow users to register themselves. Please be aware that allowing
 // random people to access your tt-rss installation is a security risk
 // and potentially might lead to data loss or server exploit. Disabled
 // by default.
@@ -125,13 +141,9 @@ define('REG_MAX_USERS', 10);
 // *** Cookies and login sessions ***
 // **********************************
 
-define('SESSION_COOKIE_LIFETIME', 0);
+define('SESSION_COOKIE_LIFETIME', 86400);
 // Default lifetime of a session (e.g. login) cookie. In seconds, 
 // 0 means cookie will be deleted when browser closes.
-
-define('SESSION_EXPIRE_TIME', 86400);
-// Hard expiration limit for sessions. Should be
-// greater or equal to SESSION_COOKIE_LIFETIME
 
 define('SESSION_CHECK_ADDRESS', 1);
 // Check client IP address when validating session:
@@ -152,13 +164,18 @@ define('SMTP_FROM_ADDRESS', 'noreply@your.domain.dom');
 define('DIGEST_SUBJECT', '[tt-rss] New headlines for last 24 hours');
 // Subject line for email digests
 
-define('SMTP_HOST', '');
-// SMTP Host to send outgoing mail. Blank - use system MTA.
+define('SMTP_SERVER', '');
+// Hostname:port combination to send outgoing mail (i.e. localhost:25). 
+// Blank - use system MTA.
 
 define('SMTP_LOGIN', '');
 define('SMTP_PASSWORD', '');
 // These two options enable SMTP authentication when sending
-// outgoing mail. Only used with SMTP_HOST
+// outgoing mail. Only used with SMTP_SERVER.
+
+define('SMTP_SECURE', '');
+// Used to select a secure SMTP connection. Allowed values: ssl, tls,
+// or empty.
 
 // ***************************************
 // *** Other settings (less important) ***
@@ -174,17 +191,24 @@ define('ENABLE_GZIP_OUTPUT', false);
 // if you experience weird errors and tt-rss failing to start, blank pages
 // after login, or content encoding errors, disable it.
 
-define('PLUGINS', 'auth_remote, auth_internal, note');
+define('PLUGINS', 'auth_internal, note, updater');
 // Comma-separated list of plugins to load automatically for all users.
 // System plugins have to be specified here. Please enable at least one
 // authentication plugin here (auth_*).
 // Users may enable other user plugins from Preferences/Plugins but may not
 // disable plugins specified in this list.
+// Disabling auth_internal in this list would automatically disable
+// reset password link on the login form.
 
-define('CONFIG_VERSION', 26);
+define('LOG_DESTINATION', 'sql');
+// Log destination to use. Possible values: sql (uses internal logging
+w// you can read in Preferences -> System), syslog - logs to system log.
+  // Setting this to blank uses PHP logging (usually to http server 
+  // error.log).
+
+  define('CONFIG_VERSION', 26);
 // Expected config version. Please update this option in config.php
 // if necessary (after migrating all new options from this file).
 
 // vim:ft=php
 ?>
-
