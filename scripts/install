@@ -38,7 +38,7 @@ sudo mv /tmp/cronttrss /etc/cron.d/ttrss
 sudo mkdir $final_path/cache/{export,images,upload,js}
 sudo mkdir $final_path/{feed-icons,lock}
 
-sudo chmod -R 777 $final_path/cache/images && chmod -R 777 $final_path/cache/upload && chmod -R 777 $final_path/cache/export && chmod -R 777 $final_path/cache/js && chmod -R 777 feed-icons && chmod -R 777 lock
+sudo chmod -R 777 $final_path/cache/images && sudo chmod -R 777 $final_path/cache/upload && sudo chmod -R 777 $final_path/cache/export && sudo chmod -R 777 $final_path/cache/js && sudo chmod -R 777 feed-icons && sudo chmod -R 777 lock
 
 
 # Set permissions to ttrss directory
