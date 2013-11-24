@@ -202,11 +202,11 @@ define('PLUGINS', 'auth_internal, note, updater');
 
 define('LOG_DESTINATION', 'sql');
 // Log destination to use. Possible values: sql (uses internal logging
-w// you can read in Preferences -> System), syslog - logs to system log.
-  // Setting this to blank uses PHP logging (usually to http server 
-  // error.log).
+// you can read in Preferences -> System), syslog - logs to system log.
+// Setting this to blank uses PHP logging (usually to http server 
+// error.log).
 
-  define('CONFIG_VERSION', 26);
+define('CONFIG_VERSION', 26);
 // Expected config version. Please update this option in config.php
 // if necessary (after migrating all new options from this file).
 
