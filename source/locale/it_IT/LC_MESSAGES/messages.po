@@ -1,0 +1,4150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# gothfox <cthulhoo@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiny Tiny RSS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-02 13:07+0400\n"
+"PO-Revision-Date: 2012-02-14 08:31+0000\n"
+"Last-Translator: gothfox <cthulhoo@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: backend.php:73
+msgid "Use default"
+msgstr "Utilizza predefiniti"
+
+#: backend.php:74
+msgid "Never purge"
+msgstr "Non pulire mai"
+
+#: backend.php:75
+msgid "1 week old"
+msgstr "Vecchi di 1 settimana"
+
+#: backend.php:76
+msgid "2 weeks old"
+msgstr "Vecchi di 2 settimane"
+
+#: backend.php:77
+msgid "1 month old"
+msgstr "Vecchi di 1 mese"
+
+#: backend.php:78
+msgid "2 months old"
+msgstr "Vecchi di 2 mesi"
+
+#: backend.php:79
+msgid "3 months old"
+msgstr "Vecchi di 3 mesi"
+
+#: backend.php:82
+msgid "Default interval"
+msgstr "Intervallo predefinito"
+
+#: backend.php:83
+#: backend.php:93
+msgid "Disable updates"
+msgstr "Disabilitare aggiornamenti"
+
+#: backend.php:84
+#: backend.php:94
+msgid "Each 15 minutes"
+msgstr "Ogni 15 minuti"
+
+#: backend.php:85
+#: backend.php:95
+msgid "Each 30 minutes"
+msgstr "Ogni 30 minuti"
+
+#: backend.php:86
+#: backend.php:96
+msgid "Hourly"
+msgstr "A ogni ora"
+
+#: backend.php:87
+#: backend.php:97
+msgid "Each 4 hours"
+msgstr "Ogni 4 ore"
+
+#: backend.php:88
+#: backend.php:98
+msgid "Each 12 hours"
+msgstr "Ogni 12 ore"
+
+#: backend.php:89
+#: backend.php:99
+msgid "Daily"
+msgstr "Giornalmente"
+
+#: backend.php:90
+#: backend.php:100
+msgid "Weekly"
+msgstr "Settimanalmente"
+
+#: backend.php:103
+#: classes/pref/users.php:119
+#: classes/pref/system.php:51
+msgid "User"
+msgstr "Utente"
+
+#: backend.php:104
+msgid "Power User"
+msgstr "Utente con più autorizzazioni"
+
+#: backend.php:105
+msgid "Administrator"
+msgstr "Amministratore"
+
+#: errors.php:9
+msgid "This program requires XmlHttpRequest to function properly. Your browser doesn't seem to support it."
+msgstr "Questo programma richiede XmlHttpRequest per funzionare correttamente. Il browser sembra non supportarla."
+
+#: errors.php:12
+msgid "This program requires cookies to function properly. Your browser doesn't seem to support them."
+msgstr "Questo programma richiede i cookie per funzionare correttamente. Il browser sembra non supportarli."
+
+#: errors.php:15
+#, fuzzy
+msgid "Backend sanity check failed."
+msgstr "Controllo sul backend fallito"
+
+#: errors.php:17
+msgid "Frontend sanity check failed."
+msgstr "Controllo sul frontend fallito."
+
+#: errors.php:19
+msgid "Incorrect database schema version. &lt;a href='db-updater.php'&gt;Please update&lt;/a&gt;."
+msgstr "Versione dello schema del database non corretta. &lt;a href='db-updater.php'&gt;Aggiornarla&lt;/a&gt;."
+
+#: errors.php:21
+msgid "Request not authorized."
+msgstr "Richiesta non autorizzata."
+
+#: errors.php:23
+msgid "No operation to perform."
+msgstr "Nessuna operazione da eseguire."
+
+#: errors.php:25
+msgid "Could not display feed: query failed. Please check label match syntax or local configuration."
+msgstr "Impossibile visualizzare il notiziario. Controllare che l&apos;etichetta corrisponda alla sintassi o la configurazione locale."
+
+#: errors.php:27
+msgid "Denied. Your access level is insufficient to access this page."
+msgstr "Negato. Il livello di accesso non è sufficiente per accedere a questa pagina."
+
+#: errors.php:29
+msgid "Configuration check failed"
+msgstr "Controllo della configurazione fallito"
+
+#: errors.php:31
+#, fuzzy
+msgid "Your version of MySQL is not currently supported. Please see official site for more information."
+msgstr ""
+"La versione di MySQL non è attualmente supportata. Vedere \n"
+"\t\til sito ufficiale per maggiori informazioni."
+
+#: errors.php:35
+msgid "SQL escaping test failed, check your database and PHP configuration"
+msgstr "Test di sanitizzazione dell&apos;SQL fallito; controllare il database e la configurazione del PHP"
+
+#: index.php:129
+#: index.php:146
+#: index.php:268
+#: prefs.php:98
+#: classes/backend.php:5
+#: classes/pref/labels.php:296
+#: classes/pref/filters.php:683
+#: classes/pref/feeds.php:1361
+#: js/feedlist.js:126
+#: js/feedlist.js:450
+#: js/functions.js:446
+#: js/functions.js:784
+#: js/functions.js:1194
+#: js/functions.js:1330
+#: js/functions.js:1642
+#: js/prefs.js:653
+#: js/prefs.js:854
+#: js/prefs.js:1441
+#: js/prefs.js:1494
+#: js/prefs.js:1534
+#: js/prefs.js:1551
+#: js/prefs.js:1567
+#: js/prefs.js:1587
+#: js/prefs.js:1760
+#: js/prefs.js:1776
+#: js/prefs.js:1794
+#: js/tt-rss.js:510
+#: js/tt-rss.js:527
+#: js/viewfeed.js:855
+#: js/viewfeed.js:1310
+#: plugins/import_export/import_export.js:17
+#: plugins/updater/updater.js:17
+msgid "Loading, please wait..."
+msgstr "Caricamento, attendere prego..."
+
+#: index.php:160
+msgid "Collapse feedlist"
+msgstr "Contrai elenco notiziari"
+
+#: index.php:163
+msgid "Show articles"
+msgstr "Mostra articoli"
+
+#: index.php:166
+msgid "Adaptive"
+msgstr "Adattivo"
+
+#: index.php:167
+msgid "All Articles"
+msgstr "Tutti gli articoli"
+
+#: index.php:168
+#: include/functions.php:2064
+#: classes/feeds.php:101
+msgid "Starred"
+msgstr "Con stella"
+
+#: index.php:169
+#: include/functions.php:2065
+#: classes/feeds.php:102
+msgid "Published"
+msgstr "Pubblicati"
+
+#: index.php:170
+#: classes/feeds.php:88
+#: classes/feeds.php:100
+msgid "Unread"
+msgstr "Non letti"
+
+#: index.php:171
+#, fuzzy
+msgid "Unread First"
+msgstr "Non letti"
+
+#: index.php:172
+msgid "With Note"
+msgstr ""
+
+#: index.php:173
+msgid "Ignore Scoring"
+msgstr "Ignora punteggio"
+
+#: index.php:176
+msgid "Sort articles"
+msgstr "Ordina articoli"
+
+#: index.php:179
+msgid "Default"
+msgstr "Predefinito"
+
+#: index.php:180
+msgid "Newest first"
+msgstr ""
+
+#: index.php:181
+msgid "Oldest first"
+msgstr ""
+
+#: index.php:182
+msgid "Title"
+msgstr "Titolo"
+
+#: index.php:186
+#: index.php:234
+#: include/functions.php:2054
+#: classes/feeds.php:106
+#: classes/feeds.php:433
+#: js/FeedTree.js:128
+#: js/FeedTree.js:156
+msgid "Mark as read"
+msgstr "Segna come letto"
+
+#: index.php:189
+msgid "Older than one day"
+msgstr ""
+
+#: index.php:192
+msgid "Older than one week"
+msgstr ""
+
+#: index.php:195
+msgid "Older than two weeks"
+msgstr ""
+
+#: index.php:211
+msgid "Communication problem with server."
+msgstr ""
+
+#: index.php:219
+msgid "New version of Tiny Tiny RSS is available!"
+msgstr "È disponibile la nuova versione di Tiny Tiny RSS."
+
+#: index.php:224
+msgid "Actions..."
+msgstr "Azioni..."
+
+#: index.php:226
+#, fuzzy
+msgid "Preferences..."
+msgstr "Preferenze"
+
+#: index.php:227
+msgid "Search..."
+msgstr "Cerca..."
+
+#: index.php:228
+msgid "Feed actions:"
+msgstr "Azioni notiziari:"
+
+#: index.php:229
+#: classes/handler/public.php:594
+msgid "Subscribe to feed..."
+msgstr "Sottoscrivi il notiziario..."
+
+#: index.php:230
+msgid "Edit this feed..."
+msgstr "Modifica questo notiziario..."
+
+#: index.php:231
+msgid "Rescore feed"
+msgstr "Cambia punteggio notiziario"
+
+#: index.php:232
+#: classes/pref/feeds.php:756
+#: classes/pref/feeds.php:1316
+#: js/PrefFeedTree.js:74
+msgid "Unsubscribe"
+msgstr "Annulla sottoscrizione"
+
+#: index.php:233
+msgid "All feeds:"
+msgstr "Tutti i notiziari:"
+
+#: index.php:235
+msgid "(Un)hide read feeds"
+msgstr "Visualizza/Nascondi notiziari letti"
+
+#: index.php:236
+msgid "Other actions:"
+msgstr "Altre azioni:"
+
+#: index.php:237
+#: include/functions.php:2040
+#, fuzzy
+msgid "Toggle widescreen mode"
+msgstr "Inverti con stella"
+
+#: index.php:238
+msgid "Select by tags..."
+msgstr ""
+
+#: index.php:239
+msgid "Create label..."
+msgstr "Crea etichetta..."
+
+#: index.php:240
+msgid "Create filter..."
+msgstr "Crea filtro..."
+
+#: index.php:241
+msgid "Keyboard shortcuts help"
+msgstr "Aiuto scorciatoie da tastiera"
+
+#: index.php:250
+msgid "Logout"
+msgstr "Esci"
+
+#: prefs.php:33
+#: prefs.php:116
+#: include/functions.php:2067
+#: classes/pref/prefs.php:440
+msgid "Preferences"
+msgstr "Preferenze"
+
+#: prefs.php:107
+msgid "Keyboard shortcuts"
+msgstr "Scorciatoie da tastiera"
+
+#: prefs.php:108
+msgid "Exit preferences"
+msgstr "Esci dalle preferenze"
+
+#: prefs.php:119
+#: classes/pref/feeds.php:109
+#: classes/pref/feeds.php:1242
+#: classes/pref/feeds.php:1305
+msgid "Feeds"
+msgstr "Notiziari"
+
+#: prefs.php:122
+#: classes/pref/filters.php:158
+msgid "Filters"
+msgstr "Filtri"
+
+#: prefs.php:125
+#: include/functions.php:1226
+#: include/functions.php:1889
+#: classes/pref/labels.php:90
+msgid "Labels"
+msgstr "Etichette"
+
+#: prefs.php:129
+msgid "Users"
+msgstr "Utenti"
+
+#: prefs.php:132
+msgid "System"
+msgstr ""
+
+#: register.php:186
+#: include/login_form.php:238
+msgid "Create new account"
+msgstr "Crea un nuovo utente"
+
+#: register.php:192
+msgid "New user registrations are administratively disabled."
+msgstr "La registrazione di nuovi utenti è disabilitata dall&apos;amministratore."
+
+#: register.php:196
+#: register.php:241
+#: register.php:254
+#: register.php:269
+#: register.php:288
+#: register.php:336
+#: register.php:346
+#: register.php:358
+#: classes/handler/public.php:664
+#: classes/handler/public.php:755
+#: classes/handler/public.php:839
+#: classes/handler/public.php:916
+#: classes/handler/public.php:930
+#: classes/handler/public.php:937
+#: classes/handler/public.php:962
+msgid "Return to Tiny Tiny RSS"
+msgstr "Ritorna a Tiny Tiny RSS"
+
+#: register.php:217
+msgid "Your temporary password will be sent to the specified email. Accounts, which were not logged in once, are erased automatically 24 hours after temporary password is sent."
+msgstr "La password temporanea verrà inviata all'email speficiata. Utenti, che non eseguono l'accesso almeno una volta, vengono cancellati automaticamente 24 ore dopo che la password temporanea è stata inviata."
+
+#: register.php:223
+msgid "Desired login:"
+msgstr "Accesso desiderato:"
+
+#: register.php:226
+msgid "Check availability"
+msgstr "Controlla disponibilità"
+
+#: register.php:228
+#: classes/handler/public.php:797
+msgid "Email:"
+msgstr "Email:"
+
+#: register.php:231
+#: classes/handler/public.php:802
+msgid "How much is two plus two:"
+msgstr "Quanto fa due più due:"
+
+#: register.php:234
+msgid "Submit registration"
+msgstr "Invia registrazione"
+
+#: register.php:252
+msgid "Your registration information is incomplete."
+msgstr "Le informazioni di registrazione sono incomplete."
+
+#: register.php:267
+msgid "Sorry, this username is already taken."
+msgstr "Il nome utente esiste già."
+
+#: register.php:286
+msgid "Registration failed."
+msgstr "Registrazione fallita."
+
+#: register.php:333
+msgid "Account created successfully."
+msgstr "Utente creato con successo."
+
+#: register.php:355
+msgid "New user registrations are currently closed."
+msgstr "La registrazione di nuovi utenti è attualmente chiusa."
+
+#: update.php:55
+#, fuzzy
+msgid "Tiny Tiny RSS data update script."
+msgstr "Il database di Tiny Tiny RSS è aggiornato."
+
+#: include/digest.php:109
+#: include/functions.php:1235
+#: include/functions.php:1790
+#: include/functions.php:1875
+#: include/functions.php:1897
+#: classes/opml.php:421
+#: classes/pref/feeds.php:225
+msgid "Uncategorized"
+msgstr "Senza categoria"
+
+#: include/feedbrowser.php:83
+#, fuzzy, php-format
+msgid "%d archived article"
+msgid_plural "%d archived articles"
+msgstr[0] "%d articoli archiviati"
+msgstr[1] "%d articoli archiviati"
+
+#: include/feedbrowser.php:107
+msgid "No feeds found."
+msgstr "Nessun notiziario trovato."
+
+#: include/functions.php:1224
+#: include/functions.php:1887
+msgid "Special"
+msgstr "Speciale"
+
+#: include/functions.php:1738
+#: classes/feeds.php:1116
+#: classes/pref/filters.php:429
+msgid "All feeds"
+msgstr "Tutti i notiziari"
+
+#: include/functions.php:1942
+msgid "Starred articles"
+msgstr "Articoli con stella"
+
+#: include/functions.php:1944
+msgid "Published articles"
+msgstr "Articoli pubblicati"
+
+#: include/functions.php:1946
+msgid "Fresh articles"
+msgstr "Articoli nuovi"
+
+#: include/functions.php:1948
+#: include/functions.php:2062
+msgid "All articles"
+msgstr "Tutti gli articoli"
+
+#: include/functions.php:1950
+msgid "Archived articles"
+msgstr "Articoli archiviati"
+
+#: include/functions.php:1952
+msgid "Recently read"
+msgstr ""
+
+#: include/functions.php:2014
+msgid "Navigation"
+msgstr "Navigazione"
+
+#: include/functions.php:2015
+#, fuzzy
+msgid "Open next feed"
+msgstr "Su lettura passare al prossimo notiziario"
+
+#: include/functions.php:2016
+msgid "Open previous feed"
+msgstr ""
+
+#: include/functions.php:2017
+#, fuzzy
+msgid "Open next article"
+msgstr "Apri articolo di origine"
+
+#: include/functions.php:2018
+#, fuzzy
+msgid "Open previous article"
+msgstr "Apri articolo di origine"
+
+#: include/functions.php:2019
+msgid "Open next article (don't scroll long articles)"
+msgstr ""
+
+#: include/functions.php:2020
+msgid "Open previous article (don't scroll long articles)"
+msgstr ""
+
+#: include/functions.php:2021
+msgid "Move to next article (don't expand or mark read)"
+msgstr ""
+
+#: include/functions.php:2022
+msgid "Move to previous article (don't expand or mark read)"
+msgstr ""
+
+#: include/functions.php:2023
+msgid "Show search dialog"
+msgstr "Mostra il dialogo di ricerca"
+
+#: include/functions.php:2024
+#, fuzzy
+msgid "Article"
+msgstr "Tutti gli articoli"
+
+#: include/functions.php:2025
+#: js/viewfeed.js:1973
+msgid "Toggle starred"
+msgstr "Inverti con stella"
+
+#: include/functions.php:2026
+#: js/viewfeed.js:1984
+msgid "Toggle published"
+msgstr "Inverti pubblicati"
+
+#: include/functions.php:2027
+#: js/viewfeed.js:1962
+msgid "Toggle unread"
+msgstr "Inverti non letti"
+
+#: include/functions.php:2028
+msgid "Edit tags"
+msgstr "Modifica etichette"
+
+#: include/functions.php:2029
+#, fuzzy
+msgid "Dismiss selected"
+msgstr "Rimuovi gli articoli selezionati"
+
+#: include/functions.php:2030
+#, fuzzy
+msgid "Dismiss read"
+msgstr "Rimuovi articoli letti"
+
+#: include/functions.php:2031
+#, fuzzy
+msgid "Open in new window"
+msgstr "Aprire gli articoli in una nuova finestra"
+
+#: include/functions.php:2032
+#: js/viewfeed.js:2003
+msgid "Mark below as read"
+msgstr ""
+
+#: include/functions.php:2033
+#: js/viewfeed.js:1997
+msgid "Mark above as read"
+msgstr ""
+
+#: include/functions.php:2034
+#, fuzzy
+msgid "Scroll down"
+msgstr "Fatto tutto."
+
+#: include/functions.php:2035
+msgid "Scroll up"
+msgstr ""
+
+#: include/functions.php:2036
+#, fuzzy
+msgid "Select article under cursor"
+msgstr "Seleziona l&apos;articolo sotto il cursore del mouse"
+
+#: include/functions.php:2037
+msgid "Email article"
+msgstr ""
+
+#: include/functions.php:2038
+#, fuzzy
+msgid "Close/collapse article"
+msgstr "Cambio punteggio degli articoli"
+
+#: include/functions.php:2039
+#, fuzzy
+msgid "Toggle article expansion (combined mode)"
+msgstr "Inverti pubblicati"
+
+#: include/functions.php:2041
+#: plugins/embed_original/init.php:31
+#, fuzzy
+msgid "Toggle embed original"
+msgstr "Inverti pubblicati"
+
+#: include/functions.php:2042
+#, fuzzy
+msgid "Article selection"
+msgstr "Azioni sull&apos;articolo attivo"
+
+#: include/functions.php:2043
+msgid "Select all articles"
+msgstr ""
+
+#: include/functions.php:2044
+#, fuzzy
+msgid "Select unread"
+msgstr "Inverti non letti"
+
+#: include/functions.php:2045
+#, fuzzy
+msgid "Select starred"
+msgstr "Imposta con stella"
+
+#: include/functions.php:2046
+#, fuzzy
+msgid "Select published"
+msgstr "Articoli pubblicati"
+
+#: include/functions.php:2047
+#, fuzzy
+msgid "Invert selection"
+msgstr "Selezione:"
+
+#: include/functions.php:2048
+msgid "Deselect everything"
+msgstr ""
+
+#: include/functions.php:2049
+#: classes/pref/feeds.php:549
+#: classes/pref/feeds.php:793
+msgid "Feed"
+msgstr "Notiziario"
+
+#: include/functions.php:2050
+#, fuzzy
+msgid "Refresh current feed"
+msgstr "Aggiorna notiziario attivo"
+
+#: include/functions.php:2051
+#, fuzzy
+msgid "Un/hide read feeds"
+msgstr "Visualizza/Nascondi notiziari letti"
+
+#: include/functions.php:2052
+#: classes/pref/feeds.php:1308
+msgid "Subscribe to feed"
+msgstr "Sottoscrivi il notiziario"
+
+#: include/functions.php:2053
+#: js/FeedTree.js:135
+#: js/PrefFeedTree.js:68
+msgid "Edit feed"
+msgstr "Modifica notiziario"
+
+#: include/functions.php:2055
+#, fuzzy
+msgid "Reverse headlines"
+msgstr "Invertire l&apos;ordine dei sommari"
+
+#: include/functions.php:2056
+#, fuzzy
+msgid "Debug feed update"
+msgstr "Disabilitare aggiornamenti"
+
+#: include/functions.php:2057
+#: js/FeedTree.js:178
+msgid "Mark all feeds as read"
+msgstr "Segna tutti i notiziari come letti"
+
+#: include/functions.php:2058
+#, fuzzy
+msgid "Un/collapse current category"
+msgstr "Mettere nella categoria:"
+
+#: include/functions.php:2059
+#, fuzzy
+msgid "Toggle combined mode"
+msgstr "Inverti pubblicati"
+
+#: include/functions.php:2060
+#, fuzzy
+msgid "Toggle auto expand in combined mode"
+msgstr "Inverti pubblicati"
+
+#: include/functions.php:2061
+#, fuzzy
+msgid "Go to"
+msgstr "Vai a..."
+
+#: include/functions.php:2063
+msgid "Fresh"
+msgstr ""
+
+#: include/functions.php:2066
+#: js/tt-rss.js:460
+#: js/tt-rss.js:649
+msgid "Tag cloud"
+msgstr "Nuvola etichette"
+
+#: include/functions.php:2068
+#, fuzzy
+msgid "Other"
+msgstr "Altri notiziari"
+
+#: include/functions.php:2069
+#: classes/pref/labels.php:281
+msgid "Create label"
+msgstr "Crea etichetta"
+
+#: include/functions.php:2070
+#: classes/pref/filters.php:657
+msgid "Create filter"
+msgstr "Crea filtro"
+
+#: include/functions.php:2071
+#, fuzzy
+msgid "Un/collapse sidebar"
+msgstr "Contrai la barra laterale"
+
+#: include/functions.php:2072
+#, fuzzy
+msgid "Show help dialog"
+msgstr "Mostra il dialogo di ricerca"
+
+#: include/functions.php:2617
+#, php-format
+msgid "Search results: %s"
+msgstr ""
+
+#: include/functions.php:3224
+#: classes/feeds.php:706
+#, fuzzy
+msgid "comment"
+msgid_plural "comments"
+msgstr[0] "Commenti?"
+msgstr[1] "Commenti?"
+
+#: include/functions.php:3228
+#: classes/feeds.php:710
+#, fuzzy
+msgid "comments"
+msgstr "Commenti?"
+
+#: include/functions.php:3263
+msgid " - "
+msgstr " - "
+
+#: include/functions.php:3296
+#: include/functions.php:3544
+#: classes/article.php:281
+msgid "no tags"
+msgstr "nessuna etichetta"
+
+#: include/functions.php:3306
+#: classes/feeds.php:692
+msgid "Edit tags for this article"
+msgstr "Modifica le etichette per questo articolo"
+
+#: include/functions.php:3338
+#: classes/feeds.php:644
+msgid "Originally from:"
+msgstr "Originariamente da:"
+
+#: include/functions.php:3351
+#: classes/feeds.php:657
+#: classes/pref/feeds.php:568
+msgid "Feed URL"
+msgstr "URL del notiziario"
+
+#: include/functions.php:3385
+#: classes/dlg.php:37
+#: classes/dlg.php:60
+#: classes/dlg.php:93
+#: classes/dlg.php:159
+#: classes/dlg.php:190
+#: classes/dlg.php:217
+#: classes/dlg.php:250
+#: classes/dlg.php:262
+#: classes/backend.php:105
+#: classes/pref/users.php:95
+#: classes/pref/filters.php:149
+#: classes/pref/prefs.php:1100
+#: classes/pref/feeds.php:1607
+#: classes/pref/feeds.php:1675
+#: plugins/import_export/init.php:407
+#: plugins/import_export/init.php:452
+#: plugins/googlereaderimport/init.php:194
+#: plugins/share/init.php:123
+#: plugins/updater/init.php:370
+msgid "Close this window"
+msgstr "Chiudi questa finestra"
+
+#: include/functions.php:3581
+msgid "(edit note)"
+msgstr "(modifica note)"
+
+#: include/functions.php:3817
+msgid "unknown type"
+msgstr "tipo sconosciuto"
+
+#: include/functions.php:3877
+#, fuzzy
+msgid "Attachments"
+msgstr "Allegati:"
+
+#: include/functions.php:4357
+#, php-format
+msgid "LibXML error %s at line %d (column %d): %s"
+msgstr ""
+
+#: include/login_form.php:183
+#: classes/handler/public.php:506
+#: classes/handler/public.php:792
+msgid "Login:"
+msgstr "Accesso:"
+
+#: include/login_form.php:193
+#: classes/handler/public.php:509
+msgid "Password:"
+msgstr "Password:"
+
+#: include/login_form.php:199
+#, fuzzy
+msgid "I forgot my password"
+msgstr "Nome utente o password sbagliati"
+
+#: include/login_form.php:205
+msgid "Profile:"
+msgstr "Profilo:"
+
+#: include/login_form.php:209
+#: classes/handler/public.php:258
+#: classes/rpc.php:63
+#: classes/pref/prefs.php:1038
+msgid "Default profile"
+msgstr "Profilo predefinito"
+
+#: include/login_form.php:217
+msgid "Use less traffic"
+msgstr "Utilizzare minor traffico"
+
+#: include/login_form.php:221
+msgid "Does not display images in articles, reduces automatic refreshes."
+msgstr ""
+
+#: include/login_form.php:229
+msgid "Remember me"
+msgstr ""
+
+#: include/login_form.php:235
+#: classes/handler/public.php:514
+msgid "Log in"
+msgstr "Accedi"
+
+#: include/sessions.php:61
+msgid "Session failed to validate (incorrect IP)"
+msgstr "La validazione della sessione è fallita (IP non corretto)"
+
+#: include/sessions.php:67
+#, fuzzy
+msgid "Session failed to validate (schema version changed)"
+msgstr "La validazione della sessione è fallita (IP non corretto)"
+
+#: include/sessions.php:73
+#, fuzzy
+msgid "Session failed to validate (user agent changed)"
+msgstr "La validazione della sessione è fallita (IP non corretto)"
+
+#: include/sessions.php:85
+#, fuzzy
+msgid "Session failed to validate (user not found)"
+msgstr "La validazione della sessione è fallita (IP non corretto)"
+
+#: include/sessions.php:94
+#, fuzzy
+msgid "Session failed to validate (password changed)"
+msgstr "La validazione della sessione è fallita (IP non corretto)"
+
+#: classes/article.php:25
+msgid "Article not found."
+msgstr "Articolo non trovato."
+
+#: classes/article.php:179
+msgid "Tags for this article (separated by commas):"
+msgstr "Etichette per questo articolo (separate da virgole):"
+
+#: classes/article.php:204
+#: classes/pref/users.php:168
+#: classes/pref/labels.php:79
+#: classes/pref/filters.php:407
+#: classes/pref/prefs.php:984
+#: classes/pref/feeds.php:772
+#: classes/pref/feeds.php:899
+#: plugins/nsfw/init.php:85
+#: plugins/note/init.php:51
+#: plugins/instances/init.php:245
+msgid "Save"
+msgstr "Salva"
+
+#: classes/article.php:206
+#: classes/handler/public.php:483
+#: classes/handler/public.php:517
+#: classes/feeds.php:1043
+#: classes/feeds.php:1095
+#: classes/feeds.php:1155
+#: classes/pref/users.php:170
+#: classes/pref/labels.php:81
+#: classes/pref/filters.php:410
+#: classes/pref/filters.php:806
+#: classes/pref/filters.php:882
+#: classes/pref/filters.php:949
+#: classes/pref/prefs.php:986
+#: classes/pref/feeds.php:773
+#: classes/pref/feeds.php:902
+#: classes/pref/feeds.php:1815
+#: plugins/mail/init.php:129
+#: plugins/note/init.php:53
+#: plugins/instances/init.php:248
+#: plugins/instances/init.php:436
+msgid "Cancel"
+msgstr "Annulla"
+
+#: classes/handler/public.php:447
+#: plugins/bookmarklets/init.php:40
+#, fuzzy
+msgid "Share with Tiny Tiny RSS"
+msgstr "Sottoscrive in Tiny Tiny RSS"
+
+#: classes/handler/public.php:455
+#, fuzzy
+msgid "Title:"
+msgstr "Titolo"
+
+#: classes/handler/public.php:457
+#: classes/pref/feeds.php:566
+#: plugins/instances/init.php:212
+#: plugins/instances/init.php:401
+msgid "URL:"
+msgstr "URL:"
+
+#: classes/handler/public.php:459
+#, fuzzy
+msgid "Content:"
+msgstr "Contenuto"
+
+#: classes/handler/public.php:461
+#, fuzzy
+msgid "Labels:"
+msgstr "Etichette"
+
+#: classes/handler/public.php:480
+msgid "Shared article will appear in the Published feed."
+msgstr ""
+
+#: classes/handler/public.php:482
+msgid "Share"
+msgstr ""
+
+#: classes/handler/public.php:504
+#, fuzzy
+msgid "Not logged in"
+msgstr "Ultimo accesso"
+
+#: classes/handler/public.php:563
+msgid "Incorrect username or password"
+msgstr "Nome utente o password sbagliati"
+
+#: classes/handler/public.php:600
+#: classes/handler/public.php:698
+#, php-format
+msgid "Already subscribed to <b>%s</b>."
+msgstr "Si ha già una sottoscrizione a <b>%s</b>."
+
+#: classes/handler/public.php:603
+#: classes/handler/public.php:689
+#, php-format
+msgid "Subscribed to <b>%s</b>."
+msgstr "Sottoscrizione avvenuta a <b>%s</b>."
+
+#: classes/handler/public.php:606
+#: classes/handler/public.php:692
+#, php-format
+msgid "Could not subscribe to <b>%s</b>."
+msgstr "Impossibile sottoscrivere <b>%s</b>."
+
+#: classes/handler/public.php:609
+#: classes/handler/public.php:695
+#, fuzzy, php-format
+msgid "No feeds found in <b>%s</b>."
+msgstr "Nessun notiziario trovato."
+
+#: classes/handler/public.php:612
+#: classes/handler/public.php:701
+#, fuzzy
+msgid "Multiple feed URLs found."
+msgstr "Nessun notiziario trovato."
+
+#: classes/handler/public.php:616
+#: classes/handler/public.php:708
+#, php-format
+msgid "Could not subscribe to <b>%s</b>.<br>Can't download the Feed URL."
+msgstr "Impossibile sottoscrivere <b>%s</b>.<br>Impossibile scaricare l'URL del notiziario."
+
+#: classes/handler/public.php:634
+#: classes/handler/public.php:726
+msgid "Subscribe to selected feed"
+msgstr "Sottoscrivi il notiziario selezionato"
+
+#: classes/handler/public.php:659
+#: classes/handler/public.php:750
+msgid "Edit subscription options"
+msgstr "Modifica opzioni di sottoscrizione"
+
+#: classes/handler/public.php:779
+#, fuzzy
+msgid "Password recovery"
+msgstr "Password"
+
+#: classes/handler/public.php:785
+msgid "You will need to provide valid account name and email. New password will be sent on your email address."
+msgstr ""
+
+#: classes/handler/public.php:807
+#: classes/pref/users.php:352
+msgid "Reset password"
+msgstr "Reimposta password"
+
+#: classes/handler/public.php:817
+msgid "Some of the required form parameters are missing or incorrect."
+msgstr ""
+
+#: classes/handler/public.php:821
+#: classes/handler/public.php:847
+#, fuzzy
+msgid "Go back"
+msgstr "Sposta indietro"
+
+#: classes/handler/public.php:843
+msgid "Sorry, login and email combination not found."
+msgstr ""
+
+#: classes/handler/public.php:865
+msgid "Your access level is insufficient to run this script."
+msgstr "Il livello di accesso non è sufficiente per eseguire questo script."
+
+#: classes/handler/public.php:889
+msgid "Database Updater"
+msgstr "Aggiornatore database"
+
+#: classes/handler/public.php:954
+msgid "Perform updates"
+msgstr "Effettuare gli aggiornamenti"
+
+#: classes/dlg.php:16
+msgid "If you have imported labels and/or filters, you might need to reload preferences to see your new data."
+msgstr ""
+
+#: classes/dlg.php:48
+msgid "Your Public OPML URL is:"
+msgstr "L'URL OPML pubblico è:"
+
+#: classes/dlg.php:57
+#: classes/dlg.php:214
+#: plugins/share/init.php:120
+msgid "Generate new URL"
+msgstr "Genera nuovo URL"
+
+#: classes/dlg.php:71
+msgid "Update daemon is enabled in configuration, but daemon process is not running, which prevents all feeds from updating. Please start the daemon process or contact instance owner."
+msgstr "Il demone per l&apos;aggiornamento è abilitato nella configurazione, ma il processo del demone non è in esecuzione. Questo impedisce l&apos;aggiornameto di tutti i notiziari. Avviare il processo del demone o contattare il proprietario dell&apos;istanza."
+
+#: classes/dlg.php:75
+#: classes/dlg.php:84
+msgid "Last update:"
+msgstr "Ultimo aggiornamento:"
+
+#: classes/dlg.php:80
+msgid "Update daemon is taking too long to perform a feed update. This could indicate a problem like crash or a hang. Please check the daemon process or contact instance owner."
+msgstr "Il demone di aggiornamento sta impiegando troppo tempo a eseguire l&apos;aggiornamento del notiziario. Questo potrebbe indicare un problema come un crash o uno stallo. Controllare il processo del demone o contattare il proprietario dell&apos;istanza."
+
+#: classes/dlg.php:166
+msgid "Match:"
+msgstr ""
+
+#: classes/dlg.php:168
+msgid "Any"
+msgstr ""
+
+#: classes/dlg.php:171
+#, fuzzy
+msgid "All tags."
+msgstr "nessuna etichetta"
+
+#: classes/dlg.php:173
+msgid "Which Tags?"
+msgstr ""
+
+#: classes/dlg.php:186
+msgid "Display entries"
+msgstr ""
+
+#: classes/dlg.php:205
+msgid "You can view this feed as RSS using the following URL:"
+msgstr "È possibile vedere questo notiziario come RSS utilizzando il seguente URL:"
+
+#: classes/dlg.php:233
+#: plugins/updater/init.php:333
+#, php-format
+msgid "New version of Tiny Tiny RSS is available (%s)."
+msgstr "È disponibile una nuova versione di Tiny Tiny RSS (%s)."
+
+#: classes/dlg.php:241
+msgid "You can update using built-in updater in the Preferences or by using update.php"
+msgstr ""
+
+#: classes/dlg.php:245
+#: plugins/updater/init.php:337
+msgid "See the release notes"
+msgstr ""
+
+#: classes/dlg.php:247
+msgid "Download"
+msgstr "Scarica"
+
+#: classes/dlg.php:255
+msgid "Error receiving version information or no new version available."
+msgstr ""
+
+#: classes/feeds.php:58
+#, fuzzy, php-format
+msgid "Last updated: %s"
+msgstr "Ultimo aggiornamento:"
+
+#: classes/feeds.php:78
+msgid "View as RSS feed"
+msgstr "Visualizza come RSS del notiziario"
+
+#: classes/feeds.php:79
+#: classes/feeds.php:131
+#: classes/pref/feeds.php:1467
+msgid "View as RSS"
+msgstr "Visualizza come RSS"
+
+#: classes/feeds.php:86
+msgid "Select:"
+msgstr "Seleziona:"
+
+#: classes/feeds.php:87
+#: classes/pref/users.php:337
+#: classes/pref/labels.php:275
+#: classes/pref/filters.php:284
+#: classes/pref/filters.php:332
+#: classes/pref/filters.php:651
+#: classes/pref/filters.php:739
+#: classes/pref/filters.php:766
+#: classes/pref/prefs.php:998
+#: classes/pref/feeds.php:1299
+#: classes/pref/feeds.php:1556
+#: classes/pref/feeds.php:1622
+#: plugins/instances/init.php:287
+msgid "All"
+msgstr "Tutti"
+
+#: classes/feeds.php:89
+msgid "Invert"
+msgstr "Inverti"
+
+#: classes/feeds.php:90
+#: classes/pref/users.php:339
+#: classes/pref/labels.php:277
+#: classes/pref/filters.php:286
+#: classes/pref/filters.php:334
+#: classes/pref/filters.php:653
+#: classes/pref/filters.php:741
+#: classes/pref/filters.php:768
+#: classes/pref/prefs.php:1000
+#: classes/pref/feeds.php:1301
+#: classes/pref/feeds.php:1558
+#: classes/pref/feeds.php:1624
+#: plugins/instances/init.php:289
+msgid "None"
+msgstr "Nessuno"
+
+#: classes/feeds.php:96
+#, fuzzy
+msgid "More..."
+msgstr "%d altri..."
+
+#: classes/feeds.php:98
+msgid "Selection toggle:"
+msgstr "Inverti selezione:"
+
+#: classes/feeds.php:104
+msgid "Selection:"
+msgstr "Selezione:"
+
+#: classes/feeds.php:107
+#, fuzzy
+msgid "Set score"
+msgstr "Punteggio"
+
+#: classes/feeds.php:110
+msgid "Archive"
+msgstr "Archivio"
+
+#: classes/feeds.php:112
+msgid "Move back"
+msgstr "Sposta indietro"
+
+#: classes/feeds.php:113
+#: classes/pref/filters.php:293
+#: classes/pref/filters.php:341
+#: classes/pref/filters.php:748
+#: classes/pref/filters.php:775
+msgid "Delete"
+msgstr "Elimina"
+
+#: classes/feeds.php:118
+#: classes/feeds.php:123
+#: plugins/mailto/init.php:25
+#: plugins/mail/init.php:26
+msgid "Forward by email"
+msgstr "Inoltra per email"
+
+#: classes/feeds.php:127
+msgid "Feed:"
+msgstr "Notiziario:"
+
+#: classes/feeds.php:200
+#: classes/feeds.php:843
+msgid "Feed not found."
+msgstr "Notiziario non trovato."
+
+#: classes/feeds.php:257
+#, fuzzy
+msgid "Never"
+msgstr "Non pulire mai"
+
+#: classes/feeds.php:374
+#, fuzzy, php-format
+msgid "Imported at %s"
+msgstr "Importa"
+
+#: classes/feeds.php:527
+msgid "mark as read"
+msgstr "segna come letto"
+
+#: classes/feeds.php:584
+#, fuzzy
+msgid "Collapse article"
+msgstr "Tutti gli articoli"
+
+#: classes/feeds.php:744
+msgid "No unread articles found to display."
+msgstr "Nessun articolo non letto trovato da visualizzare."
+
+#: classes/feeds.php:747
+msgid "No updated articles found to display."
+msgstr "Nessun articolo non aggiornato trovato da visualizzare."
+
+#: classes/feeds.php:750
+msgid "No starred articles found to display."
+msgstr "Nessun articolo con stella trovato da visualizzare."
+
+#: classes/feeds.php:754
+#, fuzzy
+msgid "No articles found to display. You can assign articles to labels manually from article header context menu (applies to all selected articles) or use a filter."
+msgstr "Nessun articolo trovato da visualizzare. Si possono assegnare manualmente gli articoli alle etichette (vedere il menù «Azioni» sopra) o utilizzare un filtro."
+
+#: classes/feeds.php:756
+msgid "No articles found to display."
+msgstr "Nessun articolo trovato da visualizzare."
+
+#: classes/feeds.php:771
+#: classes/feeds.php:938
+#, php-format
+msgid "Feeds last updated at %s"
+msgstr "Ultimo aggiornamento notiziari alle %s"
+
+#: classes/feeds.php:781
+#: classes/feeds.php:948
+msgid "Some feeds have update errors (click for details)"
+msgstr "Qualche notiziario ha degli errori di aggiornamento (fare clic per dettagli)"
+
+#: classes/feeds.php:928
+msgid "No feed selected."
+msgstr "Nessun notiziario selezionato."
+
+#: classes/feeds.php:981
+#: classes/feeds.php:989
+#, fuzzy
+msgid "Feed or site URL"
+msgstr "URL del notiziario"
+
+#: classes/feeds.php:995
+#: classes/pref/feeds.php:589
+#: classes/pref/feeds.php:800
+#: classes/pref/feeds.php:1779
+msgid "Place in category:"
+msgstr "Mettere nella categoria:"
+
+#: classes/feeds.php:1003
+msgid "Available feeds"
+msgstr "Notiziari disponibili"
+
+#: classes/feeds.php:1015
+#: classes/pref/users.php:133
+#: classes/pref/feeds.php:619
+#: classes/pref/feeds.php:836
+msgid "Authentication"
+msgstr "Autenticazione"
+
+#: classes/feeds.php:1019
+#: classes/pref/users.php:397
+#: classes/pref/feeds.php:625
+#: classes/pref/feeds.php:840
+#: classes/pref/feeds.php:1793
+msgid "Login"
+msgstr "Accesso"
+
+#: classes/feeds.php:1022
+#: classes/pref/prefs.php:260
+#: classes/pref/feeds.php:638
+#: classes/pref/feeds.php:846
+#: classes/pref/feeds.php:1796
+msgid "Password"
+msgstr "Password"
+
+#: classes/feeds.php:1032
+msgid "This feed requires authentication."
+msgstr "Questo notiziario richiede l&apos;autenticazione"
+
+#: classes/feeds.php:1037
+#: classes/feeds.php:1093
+#: classes/pref/feeds.php:1814
+msgid "Subscribe"
+msgstr "Sottoscrivi"
+
+#: classes/feeds.php:1040
+msgid "More feeds"
+msgstr "Altri notiziari"
+
+#: classes/feeds.php:1063
+#: classes/feeds.php:1154
+#: classes/pref/users.php:324
+#: classes/pref/filters.php:644
+#: classes/pref/feeds.php:1292
+#: js/tt-rss.js:174
+msgid "Search"
+msgstr "Cerca"
+
+#: classes/feeds.php:1067
+msgid "Popular feeds"
+msgstr "Notiziari popolari"
+
+#: classes/feeds.php:1068
+msgid "Feed archive"
+msgstr "Archivio notiziari"
+
+#: classes/feeds.php:1071
+msgid "limit:"
+msgstr "limite:"
+
+#: classes/feeds.php:1094
+#: classes/pref/users.php:350
+#: classes/pref/labels.php:284
+#: classes/pref/filters.php:400
+#: classes/pref/filters.php:670
+#: classes/pref/feeds.php:743
+#: plugins/instances/init.php:294
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: classes/feeds.php:1105
+msgid "Look for"
+msgstr "Cerca"
+
+#: classes/feeds.php:1113
+msgid "Limit search to:"
+msgstr "Limitare la ricerca a:"
+
+#: classes/feeds.php:1129
+msgid "This feed"
+msgstr "Questo notiziario"
+
+#: classes/backend.php:33
+msgid "Other interface tips are available in the Tiny Tiny RSS wiki."
+msgstr "Nel wiki di Tiny Tiny RSS sono disponibili altri suggerimenti per l'interfaccia."
+
+#: classes/backend.php:38
+msgid "Keyboard Shortcuts"
+msgstr "Scorciatoie da tastiera"
+
+#: classes/backend.php:61
+msgid "Shift"
+msgstr ""
+
+#: classes/backend.php:64
+msgid "Ctrl"
+msgstr ""
+
+#: classes/backend.php:99
+msgid "Help topic not found."
+msgstr "Argomento dell&apos;aiuto non trovato."
+
+#: classes/opml.php:28
+#: classes/opml.php:33
+msgid "OPML Utility"
+msgstr "Utilità OPML"
+
+#: classes/opml.php:37
+msgid "Importing OPML..."
+msgstr "Importazione OPML..."
+
+#: classes/opml.php:41
+msgid "Return to preferences"
+msgstr "Ritorna alle preferenze"
+
+#: classes/opml.php:271
+#, php-format
+msgid "Adding feed: %s"
+msgstr ""
+
+#: classes/opml.php:282
+#, fuzzy, php-format
+msgid "Duplicate feed: %s"
+msgstr "Aggiorna notiziario"
+
+#: classes/opml.php:296
+#, php-format
+msgid "Adding label %s"
+msgstr ""
+
+#: classes/opml.php:299
+#, php-format
+msgid "Duplicate label: %s"
+msgstr ""
+
+#: classes/opml.php:311
+#, php-format
+msgid "Setting preference key %s to %s"
+msgstr "Impostazione della voce delle preferenze %s a %s"
+
+#: classes/opml.php:343
+#, fuzzy
+msgid "Adding filter..."
+msgstr "Crea filtro..."
+
+#: classes/opml.php:421
+#, fuzzy, php-format
+msgid "Processing category: %s"
+msgstr "Mettere nella categoria:"
+
+#: classes/opml.php:470
+#: plugins/import_export/init.php:420
+#: plugins/googlereaderimport/init.php:66
+#, php-format
+msgid "Upload failed with error code %d"
+msgstr ""
+
+#: classes/opml.php:484
+#: plugins/import_export/init.php:434
+#: plugins/googlereaderimport/init.php:80
+#, fuzzy
+msgid "Unable to move uploaded file."
+msgstr "Errore: impossibile caricare l'articolo."
+
+#: classes/opml.php:488
+#: plugins/import_export/init.php:438
+#: plugins/googlereaderimport/init.php:84
+msgid "Error: please upload OPML file."
+msgstr "Errore: caricare il file OPML."
+
+#: classes/opml.php:497
+#, fuzzy
+msgid "Error: unable to find moved OPML file."
+msgstr "Errore: impossibile caricare l'articolo."
+
+#: classes/opml.php:504
+#: plugins/googlereaderimport/init.php:187
+msgid "Error while parsing document."
+msgstr "Errore durante l&apos;analisi del documento."
+
+#: classes/pref/users.php:6
+#: classes/pref/system.php:8
+#: plugins/instances/init.php:154
+msgid "Your access level is insufficient to open this tab."
+msgstr "Il livello di accesso non è sufficiente per aprire questa scheda."
+
+#: classes/pref/users.php:34
+msgid "User not found"
+msgstr "Utente non trovato"
+
+#: classes/pref/users.php:53
+#: classes/pref/users.php:399
+msgid "Registered"
+msgstr "Registrato"
+
+#: classes/pref/users.php:54
+msgid "Last logged in"
+msgstr "Ultimo accesso"
+
+#: classes/pref/users.php:61
+msgid "Subscribed feeds count"
+msgstr "Numero notiziari sottoscritti"
+
+#: classes/pref/users.php:65
+msgid "Subscribed feeds"
+msgstr "Sottoscrivi notiziari"
+
+#: classes/pref/users.php:136
+msgid "Access level: "
+msgstr "Livello di accesso: "
+
+#: classes/pref/users.php:154
+#: classes/pref/feeds.php:646
+#: classes/pref/feeds.php:852
+msgid "Options"
+msgstr "Opzioni"
+
+#: classes/pref/users.php:232
+#, php-format
+msgid "Added user <b>%s</b> with password <b>%s</b>"
+msgstr "Aggiunto l&apos;utente <b>%s</b> con password <b>%s</b>"
+
+#: classes/pref/users.php:239
+#, php-format
+msgid "Could not create user <b>%s</b>"
+msgstr "Impossibile creare l&apos;utente <b>%s<b>"
+
+#: classes/pref/users.php:243
+#, php-format
+msgid "User <b>%s</b> already exists."
+msgstr "L&apos;utente <b>%s</b> esiste già."
+
+#: classes/pref/users.php:265
+#, fuzzy, php-format
+msgid "Changed password of user <b>%s</b> to <b>%s</b>"
+msgstr "Aggiunto l&apos;utente <b>%s</b> con password <b>%s</b>"
+
+#: classes/pref/users.php:267
+#, fuzzy, php-format
+msgid "Sending new password of user <b>%s</b> to <b>%s</b>"
+msgstr "Aggiunto l&apos;utente <b>%s</b> con password <b>%s</b>"
+
+#: classes/pref/users.php:291
+msgid "[tt-rss] Password change notification"
+msgstr "[tt-rss] Notifica di cambio password"
+
+#: classes/pref/users.php:334
+#: classes/pref/labels.php:272
+#: classes/pref/filters.php:281
+#: classes/pref/filters.php:329
+#: classes/pref/filters.php:648
+#: classes/pref/filters.php:736
+#: classes/pref/filters.php:763
+#: classes/pref/prefs.php:995
+#: classes/pref/feeds.php:1296
+#: classes/pref/feeds.php:1553
+#: classes/pref/feeds.php:1619
+#: plugins/instances/init.php:284
+msgid "Select"
+msgstr "Seleziona"
+
+#: classes/pref/users.php:342
+msgid "Create user"
+msgstr "Crea utente"
+
+#: classes/pref/users.php:346
+msgid "Details"
+msgstr "Dettagli"
+
+#: classes/pref/users.php:348
+#: classes/pref/filters.php:663
+#: plugins/instances/init.php:293
+msgid "Edit"
+msgstr "Modifica"
+
+#: classes/pref/users.php:398
+msgid "Access Level"
+msgstr "Livello di accesso"
+
+#: classes/pref/users.php:400
+msgid "Last login"
+msgstr "Ultimo accesso"
+
+#: classes/pref/users.php:419
+#: plugins/instances/init.php:334
+msgid "Click to edit"
+msgstr "Fare clic per modificare"
+
+#: classes/pref/users.php:439
+msgid "No users defined."
+msgstr "Nessun utente definito."
+
+#: classes/pref/users.php:441
+msgid "No matching users found."
+msgstr "Nessun utente corrispondente trovato."
+
+#: classes/pref/labels.php:22
+#: classes/pref/filters.php:270
+#: classes/pref/filters.php:727
+msgid "Caption"
+msgstr "Intestazione"
+
+#: classes/pref/labels.php:37
+msgid "Colors"
+msgstr "Colori"
+
+#: classes/pref/labels.php:42
+msgid "Foreground:"
+msgstr "Primo piano:"
+
+#: classes/pref/labels.php:42
+msgid "Background:"
+msgstr "Sfondo:"
+
+#: classes/pref/labels.php:232
+#, php-format
+msgid "Created label <b>%s</b>"
+msgstr "Etichetta <b>%s</b> creata"
+
+#: classes/pref/labels.php:287
+msgid "Clear colors"
+msgstr "Pulisci colori"
+
+#: classes/pref/filters.php:94
+msgid "Articles matching this filter:"
+msgstr "Articoli che corrispondono a questo filtro:"
+
+#: classes/pref/filters.php:135
+#, fuzzy
+msgid "No recent articles matching this filter have been found."
+msgstr "Nessun articolo trovato che corrisponde a questo filtro."
+
+#: classes/pref/filters.php:139
+msgid "Complex expressions might not give results while testing due to issues with database server regexp implementation."
+msgstr ""
+
+#: classes/pref/filters.php:276
+#: classes/pref/filters.php:731
+#: classes/pref/filters.php:846
+msgid "Match"
+msgstr "Corrisponde"
+
+#: classes/pref/filters.php:290
+#: classes/pref/filters.php:338
+#: classes/pref/filters.php:745
+#: classes/pref/filters.php:772
+msgid "Add"
+msgstr ""
+
+#: classes/pref/filters.php:324
+#: classes/pref/filters.php:758
+#, fuzzy
+msgid "Apply actions"
+msgstr "Azioni notiziari"
+
+#: classes/pref/filters.php:374
+#: classes/pref/filters.php:787
+msgid "Enabled"
+msgstr "Abilitato"
+
+#: classes/pref/filters.php:383
+#: classes/pref/filters.php:790
+msgid "Match any rule"
+msgstr ""
+
+#: classes/pref/filters.php:392
+#: classes/pref/filters.php:793
+#, fuzzy
+msgid "Inverse matching"
+msgstr "Corrispondenza inversa"
+
+#: classes/pref/filters.php:404
+#: classes/pref/filters.php:800
+msgid "Test"
+msgstr "Prova"
+
+#: classes/pref/filters.php:437
+#, fuzzy
+msgid "(inverse)"
+msgstr "Inverso"
+
+#: classes/pref/filters.php:436
+#, php-format
+msgid "%s on %s in %s %s"
+msgstr ""
+
+#: classes/pref/filters.php:660
+msgid "Combine"
+msgstr ""
+
+#: classes/pref/filters.php:666
+#: classes/pref/feeds.php:1312
+#: classes/pref/feeds.php:1326
+msgid "Reset sort order"
+msgstr "Reimposta ordinamento"
+
+#: classes/pref/filters.php:674
+#: classes/pref/feeds.php:1348
+msgid "Rescore articles"
+msgstr "Cambio punteggio degli articoli"
+
+#: classes/pref/filters.php:803
+msgid "Create"
+msgstr "Crea"
+
+#: classes/pref/filters.php:858
+msgid "Inverse regular expression matching"
+msgstr ""
+
+#: classes/pref/filters.php:860
+msgid "on field"
+msgstr "al campo"
+
+#: classes/pref/filters.php:866
+#: js/PrefFilterTree.js:53
+msgid "in"
+msgstr "in"
+
+#: classes/pref/filters.php:879
+#, fuzzy
+msgid "Save rule"
+msgstr "Salva"
+
+#: classes/pref/filters.php:879
+#: js/functions.js:1013
+msgid "Add rule"
+msgstr ""
+
+#: classes/pref/filters.php:902
+msgid "Perform Action"
+msgstr "Esegui azione"
+
+#: classes/pref/filters.php:928
+msgid "with parameters:"
+msgstr "con parametri:"
+
+#: classes/pref/filters.php:946
+#, fuzzy
+msgid "Save action"
+msgstr "Riquadro azioni"
+
+#: classes/pref/filters.php:946
+#: js/functions.js:1039
+#, fuzzy
+msgid "Add action"
+msgstr "Azioni notiziari"
+
+#: classes/pref/filters.php:969
+#, fuzzy
+msgid "[No caption]"
+msgstr "Intestazione"
+
+#: classes/pref/filters.php:971
+#, php-format
+msgid "%s (%d rule)"
+msgid_plural "%s (%d rules)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: classes/pref/filters.php:986
+#, fuzzy, php-format
+msgid "%s (+%d action)"
+msgid_plural "%s (+%d actions)"
+msgstr[0] "Azioni notiziari"
+msgstr[1] "Azioni notiziari"
+
+#: classes/pref/prefs.php:18
+msgid "General"
+msgstr ""
+
+#: classes/pref/prefs.php:19
+msgid "Interface"
+msgstr ""
+
+#: classes/pref/prefs.php:20
+msgid "Advanced"
+msgstr ""
+
+#: classes/pref/prefs.php:21
+msgid "Digest"
+msgstr ""
+
+#: classes/pref/prefs.php:25
+#, fuzzy
+msgid "Allow duplicate articles"
+msgstr "Permettere articoli duplicati"
+
+#: classes/pref/prefs.php:26
+msgid "Assign articles to labels automatically"
+msgstr ""
+
+#: classes/pref/prefs.php:27
+msgid "Blacklisted tags"
+msgstr "Etichette in lista nera"
+
+#: classes/pref/prefs.php:27
+#, fuzzy
+msgid "When auto-detecting tags in articles these tags will not be applied (comma-separated list)."
+msgstr "Quando è attiva l&apos;individuazioni automatica delle etichette negli articoli, queste etichette non saranno applicate (elenco separato da virgola)."
+
+#: classes/pref/prefs.php:28
+msgid "Automatically mark articles as read"
+msgstr "Segnare automaticamente gli articoli come letti"
+
+#: classes/pref/prefs.php:28
+#, fuzzy
+msgid "This option enables marking articles as read automatically while you scroll article list."
+msgstr "Questa opzione abilita la segnatura automatica degli articoli come letti quando si scorre l'elenco articoli."
+
+#: classes/pref/prefs.php:29
+msgid "Automatically expand articles in combined mode"
+msgstr "Espandere automaticamente gli articoli nella modalità combinata"
+
+#: classes/pref/prefs.php:30
+msgid "Combined feed display"
+msgstr "Visualizzazione combinata di notiziari"
+
+#: classes/pref/prefs.php:30
+msgid "Display expanded list of feed articles, instead of separate displays for headlines and article content"
+msgstr "Visualizza un elenco espanso di articoli di notiziario, invece di visualizzazioni separate per sommario e contenuto dell'articolo"
+
+#: classes/pref/prefs.php:31
+msgid "Confirm marking feed as read"
+msgstr "Richiedere conferma segnatura del notiziario come letto"
+
+#: classes/pref/prefs.php:32
+msgid "Amount of articles to display at once"
+msgstr "Numero di articoli da visualizzare alla volta"
+
+#: classes/pref/prefs.php:33
+#, fuzzy
+msgid "Default feed update interval"
+msgstr "Intervallo predefinito"
+
+#: classes/pref/prefs.php:33
+msgid "Shortest interval at which a feed will be checked for updates regardless of update method"
+msgstr ""
+
+#: classes/pref/prefs.php:34
+msgid "Mark articles in e-mail digest as read"
+msgstr "Segna gli articoli del riassunto email come letti"
+
+#: classes/pref/prefs.php:35
+#, fuzzy
+msgid "Enable e-mail digest"
+msgstr "Abilitare email riassunto"
+
+#: classes/pref/prefs.php:35
+msgid "This option enables sending daily digest of new (and unread) headlines on your configured e-mail address"
+msgstr "Questa opzione abilita l&apos;invio del un riassunto giornaliero dei sommari nuovi (e non letti) all&apos;indirizzo email configurato"
+
+#: classes/pref/prefs.php:36
+msgid "Try to send digests around specified time"
+msgstr ""
+
+#: classes/pref/prefs.php:36
+#, fuzzy
+msgid "Uses UTC timezone"
+msgstr "Fuso orario dell'utente"
+
+#: classes/pref/prefs.php:37
+msgid "Enable API access"
+msgstr ""
+
+#: classes/pref/prefs.php:37
+msgid "Allows external clients to access this account through the API"
+msgstr ""
+
+#: classes/pref/prefs.php:38
+msgid "Enable feed categories"
+msgstr "Abilitare le categorie dei notiziari"
+
+#: classes/pref/prefs.php:39
+msgid "Sort feeds by unread articles count"
+msgstr "Ordinare i notiziari per numero di articoli non letti"
+
+#: classes/pref/prefs.php:40
+msgid "Maximum age of fresh articles (in hours)"
+msgstr "Età massima degli articoli nuovi (in ore)"
+
+#: classes/pref/prefs.php:41
+#, fuzzy
+msgid "Hide feeds with no unread articles"
+msgstr "Nascondere i notiziari senza messaggi non letti"
+
+#: classes/pref/prefs.php:42
+#, fuzzy
+msgid "Show special feeds when hiding read feeds"
+msgstr "Mostrare i notiziari speciali quando vengono nascosti i notiziari letti"
+
+#: classes/pref/prefs.php:43
+msgid "Long date format"
+msgstr "Formato data lunga"
+
+#: classes/pref/prefs.php:43
+msgid "The syntax used is identical to the PHP <a href='http://php.net/manual/function.date.php'>date()</a> function."
+msgstr ""
+
+#: classes/pref/prefs.php:44
+msgid "On catchup show next feed"
+msgstr "Su lettura passare al prossimo notiziario"
+
+#: classes/pref/prefs.php:44
+msgid "Automatically open next feed with unread articles after marking one as read"
+msgstr ""
+
+#: classes/pref/prefs.php:45
+#, fuzzy
+msgid "Purge articles after this number of days (0 - disables)"
+msgstr "Eliminare le notizie vecchie dopo questo numero di giorni (0 - disabilitato)"
+
+#: classes/pref/prefs.php:46
+msgid "Purge unread articles"
+msgstr "Eliminare articoli non letti"
+
+#: classes/pref/prefs.php:47
+msgid "Reverse headline order (oldest first)"
+msgstr "Invertire l&apos;ordine del sommario (prima i più vecchi)"
+
+#: classes/pref/prefs.php:48
+msgid "Short date format"
+msgstr "Formato data corta"
+
+#: classes/pref/prefs.php:49
+msgid "Show content preview in headlines list"
+msgstr "Mostrare l&apos;anteprima del contenuto nell&apos;elenco del sommario"
+
+#: classes/pref/prefs.php:50
+msgid "Sort headlines by feed date"
+msgstr "Ordinare i sommari per data del notiziario"
+
+#: classes/pref/prefs.php:50
+msgid "Use feed-specified date to sort headlines instead of local import date."
+msgstr "Utilizzare per l'ordinamento dei sommari la data specificata dal notiziario invece della data di importazione in locale."
+
+#: classes/pref/prefs.php:51
+msgid "Login with an SSL certificate"
+msgstr "Accesso con un certificato SSL"
+
+#: classes/pref/prefs.php:51
+msgid "Click to register your SSL client certificate with tt-rss"
+msgstr "Fare clic per registrare il certificato SSL client su tt-rss"
+
+#: classes/pref/prefs.php:52
+#, fuzzy
+msgid "Do not embed images in articles"
+msgstr "Non mostrare le immagini negli articoli"
+
+#: classes/pref/prefs.php:53
+msgid "Strip unsafe tags from articles"
+msgstr "Togliere le etichette non buone dagli articoli"
+
+#: classes/pref/prefs.php:53
+msgid "Strip all but most common HTML tags when reading articles."
+msgstr "Toglie tutte le etichette HTML più comuni durante la lettura degli articoli."
+
+#: classes/pref/prefs.php:54
+#: js/prefs.js:1687
+msgid "Customize stylesheet"
+msgstr "Personalizza il foglio di stile"
+
+#: classes/pref/prefs.php:54
+msgid "Customize CSS stylesheet to your liking"
+msgstr "Personalizza a piacimento il foglio di stile CSS"
+
+#: classes/pref/prefs.php:55
+#, fuzzy
+msgid "Time zone"
+msgstr "Fuso orario dell'utente"
+
+#: classes/pref/prefs.php:56
+msgid "Group headlines in virtual feeds"
+msgstr "Raggruppare i sommari in notiziari virtuali"
+
+#: classes/pref/prefs.php:56
+msgid "Special feeds, labels, and categories are grouped by originating feeds"
+msgstr ""
+
+#: classes/pref/prefs.php:57
+#, fuzzy
+msgid "Language"
+msgstr "Lingua:"
+
+#: classes/pref/prefs.php:58
+msgid "Theme"
+msgstr ""
+
+#: classes/pref/prefs.php:58
+msgid "Select one of the available CSS themes"
+msgstr ""
+
+#: classes/pref/prefs.php:69
+msgid "Old password cannot be blank."
+msgstr "La vecchia password non può essere vuota."
+
+#: classes/pref/prefs.php:74
+msgid "New password cannot be blank."
+msgstr "La nuova password non può essere vuota."
+
+#: classes/pref/prefs.php:79
+msgid "Entered passwords do not match."
+msgstr "Le password inserite non corrispondono."
+
+#: classes/pref/prefs.php:88
+msgid "Function not supported by authentication module."
+msgstr ""
+
+#: classes/pref/prefs.php:127
+msgid "The configuration was saved."
+msgstr "La configurazione è stata salvata."
+
+#: classes/pref/prefs.php:142
+#, php-format
+msgid "Unknown option: %s"
+msgstr "Opzione sconosciuta: %s"
+
+#: classes/pref/prefs.php:156
+msgid "Your personal data has been saved."
+msgstr "I dati personali sono stati salvati."
+
+#: classes/pref/prefs.php:176
+msgid "Your preferences are now set to default values."
+msgstr ""
+
+#: classes/pref/prefs.php:198
+#, fuzzy
+msgid "Personal data / Authentication"
+msgstr "Autenticazione"
+
+#: classes/pref/prefs.php:218
+msgid "Personal data"
+msgstr ""
+
+#: classes/pref/prefs.php:228
+msgid "Full name"
+msgstr "Nome completo"
+
+#: classes/pref/prefs.php:232
+msgid "E-mail"
+msgstr "Email"
+
+#: classes/pref/prefs.php:238
+msgid "Access level"
+msgstr "Livello di accesso"
+
+#: classes/pref/prefs.php:248
+msgid "Save data"
+msgstr "Salva dati"
+
+#: classes/pref/prefs.php:267
+msgid "Your password is at default value, please change it."
+msgstr "La password è impostata al valore predefinito: cambiarla."
+
+#: classes/pref/prefs.php:294
+msgid "Changing your current password will disable OTP."
+msgstr ""
+
+#: classes/pref/prefs.php:299
+msgid "Old password"
+msgstr "Vecchia password"
+
+#: classes/pref/prefs.php:302
+msgid "New password"
+msgstr "Nuova password"
+
+#: classes/pref/prefs.php:307
+msgid "Confirm password"
+msgstr "Conferma password"
+
+#: classes/pref/prefs.php:317
+msgid "Change password"
+msgstr "Cambia password"
+
+#: classes/pref/prefs.php:323
+msgid "One time passwords / Authenticator"
+msgstr ""
+
+#: classes/pref/prefs.php:327
+msgid "One time passwords are currently enabled. Enter your current password below to disable."
+msgstr ""
+
+#: classes/pref/prefs.php:352
+#: classes/pref/prefs.php:403
+#, fuzzy
+msgid "Enter your password"
+msgstr "Nome utente o password sbagliati"
+
+#: classes/pref/prefs.php:363
+#, fuzzy
+msgid "Disable OTP"
+msgstr "Disabilitare aggiornamenti"
+
+#: classes/pref/prefs.php:369
+msgid "You will need a compatible Authenticator to use this. Changing your password would automatically disable OTP."
+msgstr ""
+
+#: classes/pref/prefs.php:371
+msgid "Scan the following code by the Authenticator application:"
+msgstr ""
+
+#: classes/pref/prefs.php:408
+#, fuzzy
+msgid "Enter the generated one time password"
+msgstr "Inserire il titolo della categoria:"
+
+#: classes/pref/prefs.php:422
+#, fuzzy
+msgid "Enable OTP"
+msgstr "Abilitato"
+
+#: classes/pref/prefs.php:428
+msgid "PHP GD functions are required for OTP support."
+msgstr ""
+
+#: classes/pref/prefs.php:471
+msgid "Some preferences are only available in default profile."
+msgstr ""
+
+#: classes/pref/prefs.php:569
+msgid "Customize"
+msgstr "Personalizza"
+
+#: classes/pref/prefs.php:629
+msgid "Register"
+msgstr "Registro"
+
+#: classes/pref/prefs.php:633
+msgid "Clear"
+msgstr "Pulisci"
+
+#: classes/pref/prefs.php:639
+#, php-format
+msgid "Current server time: %s (UTC)"
+msgstr ""
+
+#: classes/pref/prefs.php:671
+msgid "Save configuration"
+msgstr "Salva configurazione"
+
+#: classes/pref/prefs.php:675
+#, fuzzy
+msgid "Save and exit preferences"
+msgstr "Esci dalle preferenze"
+
+#: classes/pref/prefs.php:680
+msgid "Manage profiles"
+msgstr "Gestisci profili"
+
+#: classes/pref/prefs.php:683
+msgid "Reset to defaults"
+msgstr "Reimposta ai valori predefiniti"
+
+#: classes/pref/prefs.php:706
+msgid "Plugins"
+msgstr ""
+
+#: classes/pref/prefs.php:708
+msgid "You will need to reload Tiny Tiny RSS for plugin changes to take effect."
+msgstr ""
+
+#: classes/pref/prefs.php:710
+msgid "Download more plugins at tt-rss.org <a class=\"visibleLink\" target=\"_blank\" href=\"http://tt-rss.org/forum/viewforum.php?f=22\">forums</a> or <a target=\"_blank\" class=\"visibleLink\" href=\"http://tt-rss.org/wiki/Plugins\">wiki</a>."
+msgstr ""
+
+#: classes/pref/prefs.php:736
+msgid "System plugins"
+msgstr ""
+
+#: classes/pref/prefs.php:740
+#: classes/pref/prefs.php:796
+msgid "Plugin"
+msgstr ""
+
+#: classes/pref/prefs.php:741
+#: classes/pref/prefs.php:797
+msgid "Description"
+msgstr ""
+
+#: classes/pref/prefs.php:742
+#: classes/pref/prefs.php:798
+msgid "Version"
+msgstr ""
+
+#: classes/pref/prefs.php:743
+#: classes/pref/prefs.php:799
+msgid "Author"
+msgstr ""
+
+#: classes/pref/prefs.php:774
+#: classes/pref/prefs.php:833
+msgid "more info"
+msgstr ""
+
+#: classes/pref/prefs.php:783
+#: classes/pref/prefs.php:842
+#, fuzzy
+msgid "Clear data"
+msgstr "Pulisci i dati del notiziario"
+
+#: classes/pref/prefs.php:792
+msgid "User plugins"
+msgstr ""
+
+#: classes/pref/prefs.php:857
+#, fuzzy
+msgid "Enable selected plugins"
+msgstr "Abilitare le categorie dei notiziari"
+
+#: classes/pref/prefs.php:924
+#, fuzzy
+msgid "Incorrect one time password"
+msgstr "Nome utente o password sbagliati"
+
+#: classes/pref/prefs.php:927
+#: classes/pref/prefs.php:944
+#, fuzzy
+msgid "Incorrect password"
+msgstr "Nome utente o password sbagliati"
+
+#: classes/pref/prefs.php:969
+#, php-format
+msgid "You can override colors, fonts and layout of your currently selected theme with custom CSS declarations here. <a target=\"_blank\" class=\"visibleLink\" href=\"%s\">This file</a> can be used as a baseline."
+msgstr "Si possono cambiare i colori, i caratteri e la disposizione del tema correntemente selezionato attraverso le dichiarazioni CSS personalizzate. <a target=\"_blank\" class=\"visibleLink\" href=\"%s\">Questo file</a> può essere utilizzato come base."
+
+#: classes/pref/prefs.php:1009
+msgid "Create profile"
+msgstr "Crea profilo"
+
+#: classes/pref/prefs.php:1032
+#: classes/pref/prefs.php:1060
+msgid "(active)"
+msgstr "(attivo)"
+
+#: classes/pref/prefs.php:1094
+msgid "Remove selected profiles"
+msgstr "Rimuovi i profili selezionati"
+
+#: classes/pref/prefs.php:1096
+msgid "Activate profile"
+msgstr "Attiva profilo"
+
+#: classes/pref/feeds.php:13
+msgid "Check to enable field"
+msgstr "Spuntare per abilitare il campo"
+
+#: classes/pref/feeds.php:62
+#: classes/pref/feeds.php:211
+#: classes/pref/feeds.php:255
+#: classes/pref/feeds.php:261
+#: classes/pref/feeds.php:287
+#, fuzzy, php-format
+msgid "(%d feed)"
+msgid_plural "(%d feeds)"
+msgstr[0] "Notiziari memorizzati"
+msgstr[1] "Notiziari memorizzati"
+
+#: classes/pref/feeds.php:555
+msgid "Feed Title"
+msgstr "Titolo notiziario"
+
+#: classes/pref/feeds.php:597
+#: classes/pref/feeds.php:811
+msgid "Update"
+msgstr "Aggiorna"
+
+#: classes/pref/feeds.php:612
+#: classes/pref/feeds.php:827
+msgid "Article purging:"
+msgstr "Eliminazione articoli:"
+
+#: classes/pref/feeds.php:642
+msgid "<b>Hint:</b> you need to fill in your login information if your feed requires authentication, except for Twitter feeds."
+msgstr "<b>Suggerimento:</b> occorre riempire la informazioni di accesso se il proprio notiziario richiede l'autenticazione, eccetto per i notiziari di Twitter."
+
+#: classes/pref/feeds.php:658
+#: classes/pref/feeds.php:856
+msgid "Hide from Popular feeds"
+msgstr "Nascondere nei notiziari popolari"
+
+#: classes/pref/feeds.php:670
+#: classes/pref/feeds.php:862
+msgid "Include in e-mail digest"
+msgstr "Includere nell&apos;email riassunto"
+
+#: classes/pref/feeds.php:683
+#: classes/pref/feeds.php:868
+msgid "Always display image attachments"
+msgstr "Mostrare sempre le immagini allegate"
+
+#: classes/pref/feeds.php:696
+#: classes/pref/feeds.php:876
+msgid "Do not embed images"
+msgstr ""
+
+#: classes/pref/feeds.php:709
+#: classes/pref/feeds.php:884
+msgid "Cache images locally"
+msgstr "Memorizzare le immagini localmente"
+
+#: classes/pref/feeds.php:721
+#: classes/pref/feeds.php:890
+msgid "Mark updated articles as unread"
+msgstr "Segnare gli articoli aggiornati come non letti"
+
+#: classes/pref/feeds.php:727
+msgid "Icon"
+msgstr "Icona"
+
+#: classes/pref/feeds.php:741
+msgid "Replace"
+msgstr "Sostituisci"
+
+#: classes/pref/feeds.php:763
+msgid "Resubscribe to push updates"
+msgstr "Sottoscrivi per inviare aggiornamenti"
+
+#: classes/pref/feeds.php:770
+msgid "Resets PubSubHubbub subscription status for push-enabled feeds."
+msgstr "Reimposta lo stato di sottoscrizione a PubSubHubbub per notiziari abilitati all'invio."
+
+#: classes/pref/feeds.php:1145
+#: classes/pref/feeds.php:1198
+msgid "All done."
+msgstr "Fatto tutto."
+
+#: classes/pref/feeds.php:1253
+msgid "Feeds with errors"
+msgstr "Notiziari con errori"
+
+#: classes/pref/feeds.php:1273
+#, fuzzy
+msgid "Inactive feeds"
+msgstr "Aggiorna notiziario attivo"
+
+#: classes/pref/feeds.php:1310
+msgid "Edit selected feeds"
+msgstr "Modifica i notiziari selezionati"
+
+#: classes/pref/feeds.php:1314
+#: js/prefs.js:1732
+msgid "Batch subscribe"
+msgstr ""
+
+#: classes/pref/feeds.php:1321
+#, fuzzy
+msgid "Categories"
+msgstr "Categorie notiziario"
+
+#: classes/pref/feeds.php:1324
+#, fuzzy
+msgid "Add category"
+msgstr "Modifica categorie"
+
+#: classes/pref/feeds.php:1328
+#, fuzzy
+msgid "Remove selected"
+msgstr "Rimuovere i notiziari selezionati?"
+
+#: classes/pref/feeds.php:1339
+msgid "More actions..."
+msgstr "Altre azioni..."
+
+#: classes/pref/feeds.php:1343
+msgid "Manual purge"
+msgstr "Eliminazione manuale"
+
+#: classes/pref/feeds.php:1347
+msgid "Clear feed data"
+msgstr "Pulisci i dati del notiziario"
+
+#: classes/pref/feeds.php:1398
+msgid "OPML"
+msgstr "OPML"
+
+#: classes/pref/feeds.php:1400
+msgid "Using OPML you can export and import your feeds, filters, labels and Tiny Tiny RSS settings."
+msgstr ""
+
+#: classes/pref/feeds.php:1400
+msgid "Only main settings profile can be migrated using OPML."
+msgstr ""
+
+#: classes/pref/feeds.php:1413
+#, fuzzy
+msgid "Import my OPML"
+msgstr "Importazione OPML..."
+
+#: classes/pref/feeds.php:1417
+#, fuzzy
+msgid "Filename:"
+msgstr "Nome completo"
+
+#: classes/pref/feeds.php:1419
+#, fuzzy
+msgid "Include settings"
+msgstr "Includere nell&apos;email riassunto"
+
+#: classes/pref/feeds.php:1423
+#, fuzzy
+msgid "Export OPML"
+msgstr "Importazione OPML..."
+
+#: classes/pref/feeds.php:1427
+msgid "Your OPML can be published publicly and can be subscribed by anyone who knows the URL below."
+msgstr "OPML può essere pubblicato e può essere sottoscritto da chiunque conosca l&apos;URL seguente."
+
+#: classes/pref/feeds.php:1429
+msgid "Published OPML does not include your Tiny Tiny RSS settings, feeds that require authentication or feeds hidden from Popular feeds."
+msgstr ""
+
+#: classes/pref/feeds.php:1431
+msgid "Public OPML URL"
+msgstr "URL OPML pubblico"
+
+#: classes/pref/feeds.php:1432
+#, fuzzy
+msgid "Display published OPML URL"
+msgstr "URL OPML pubblico"
+
+#: classes/pref/feeds.php:1441
+msgid "Firefox integration"
+msgstr "Integrazione con Firefox"
+
+#: classes/pref/feeds.php:1443
+msgid "This Tiny Tiny RSS site can be used as a Firefox Feed Reader by clicking the link below."
+msgstr "Questo sito di Tiny Tiny RSS può essere utilizzato come lettore di notiziari di Firefox facendo clic sul collegamento qui sotto."
+
+#: classes/pref/feeds.php:1450
+msgid "Click here to register this site as a feed reader."
+msgstr "Fare clic qui per registrare questo sito come lettore di notiziari."
+
+#: classes/pref/feeds.php:1458
+#, fuzzy
+msgid "Published & shared articles / Generated feeds"
+msgstr "Articoli pubblicati e notiziari generati"
+
+#: classes/pref/feeds.php:1460
+msgid "Published articles are exported as a public RSS feed and can be subscribed by anyone who knows the URL specified below."
+msgstr "Gli articoli pubblicati vengono esportati come un notiziario pubblico e possono essere sottoscritti da chiunque conosca l&apos;URL specificato qui sotto."
+
+#: classes/pref/feeds.php:1468
+msgid "Display URL"
+msgstr "Visualizza URL"
+
+#: classes/pref/feeds.php:1471
+msgid "Clear all generated URLs"
+msgstr "Pulisci tutti gli URL generati"
+
+#: classes/pref/feeds.php:1549
+msgid "These feeds have not been updated with new content for 3 months (oldest first):"
+msgstr "Questi notiziari non sono stati aggiornati con nuovi contenuti da 3 mesi (più vecchi prima):"
+
+#: classes/pref/feeds.php:1585
+#: classes/pref/feeds.php:1651
+msgid "Click to edit feed"
+msgstr "Fare clic per modificare il notiziario"
+
+#: classes/pref/feeds.php:1603
+#: classes/pref/feeds.php:1671
+msgid "Unsubscribe from selected feeds"
+msgstr "Annulla la sottoscrizione ai notiziari selezionati"
+
+#: classes/pref/feeds.php:1776
+msgid "Add one valid RSS feed per line (no feed detection is done)"
+msgstr ""
+
+#: classes/pref/feeds.php:1785
+msgid "Feeds to subscribe, One per line"
+msgstr ""
+
+#: classes/pref/feeds.php:1807
+msgid "Feeds require authentication."
+msgstr ""
+
+#: classes/pref/system.php:29
+msgid "Error Log"
+msgstr ""
+
+#: classes/pref/system.php:40
+msgid "Refresh"
+msgstr ""
+
+#: classes/pref/system.php:43
+#, fuzzy
+msgid "Clear log"
+msgstr "Pulisci colori"
+
+#: classes/pref/system.php:48
+msgid "Error"
+msgstr ""
+
+#: classes/pref/system.php:49
+#, fuzzy
+msgid "Filename"
+msgstr "Nome completo"
+
+#: classes/pref/system.php:50
+msgid "Message"
+msgstr ""
+
+#: classes/pref/system.php:52
+msgid "Date"
+msgstr "Data"
+
+#: plugins/close_button/init.php:22
+msgid "Close article"
+msgstr ""
+
+#: plugins/nsfw/init.php:30
+#: plugins/nsfw/init.php:42
+msgid "Not work safe (click to toggle)"
+msgstr ""
+
+#: plugins/nsfw/init.php:52
+msgid "NSFW Plugin"
+msgstr ""
+
+#: plugins/nsfw/init.php:79
+msgid "Tags to consider NSFW (comma-separated)"
+msgstr ""
+
+#: plugins/nsfw/init.php:100
+#, fuzzy
+msgid "Configuration saved."
+msgstr "La configurazione è stata salvata."
+
+#: plugins/auth_internal/init.php:62
+#, fuzzy
+msgid "Please enter your one time password:"
+msgstr "Inserire il titolo della categoria:"
+
+#: plugins/auth_internal/init.php:185
+msgid "Password has been changed."
+msgstr "La password è stata cambiata"
+
+#: plugins/auth_internal/init.php:187
+msgid "Old password is incorrect."
+msgstr "La vecchia password non è corretta."
+
+#: plugins/mailto/init.php:49
+#: plugins/mailto/init.php:55
+#: plugins/mail/init.php:64
+#: plugins/mail/init.php:70
+msgid "[Forwarded]"
+msgstr "[Inoltrato]"
+
+#: plugins/mailto/init.php:49
+#: plugins/mail/init.php:64
+msgid "Multiple articles"
+msgstr "Articoli multipli"
+
+#: plugins/mailto/init.php:71
+msgid "Clicking the following link to invoke your mail client:"
+msgstr ""
+
+#: plugins/mailto/init.php:75
+#, fuzzy
+msgid "Forward selected article(s) by email."
+msgstr "Inoltra l'articolo per email"
+
+#: plugins/mailto/init.php:78
+msgid "You should be able to edit the message before sending in your mail client."
+msgstr ""
+
+#: plugins/mailto/init.php:83
+#, fuzzy
+msgid "Close this dialog"
+msgstr "Chiudi questo pannello"
+
+#: plugins/bookmarklets/init.php:20
+msgid "Bookmarklets"
+msgstr ""
+
+#: plugins/bookmarklets/init.php:22
+msgid "Drag the link below to your browser toolbar, open the feed you're interested in in your browser and click on the link to subscribe to it."
+msgstr "Trascinare il collegamento seguente nella barra degli strumenti del browser; aprire il notiziario al quale si è interessati nel browser a fare clic sul collegamento per sottoscriverlo."
+
+#: plugins/bookmarklets/init.php:26
+#, php-format
+msgid "Subscribe to %s in Tiny Tiny RSS?"
+msgstr "Sottoscrivere %s in Tiny Tiny RSS?"
+
+#: plugins/bookmarklets/init.php:31
+msgid "Subscribe in Tiny Tiny RSS"
+msgstr "Sottoscrive in Tiny Tiny RSS"
+
+#: plugins/bookmarklets/init.php:34
+msgid "Use this bookmarklet to publish arbitrary pages using Tiny Tiny RSS"
+msgstr ""
+
+#: plugins/import_export/init.php:58
+msgid "Import and export"
+msgstr ""
+
+#: plugins/import_export/init.php:60
+msgid "You can export and import your Starred and Archived articles for safekeeping or when migrating between tt-rss instances of same version."
+msgstr ""
+
+#: plugins/import_export/init.php:65
+msgid "Export my data"
+msgstr ""
+
+#: plugins/import_export/init.php:81
+msgid "Import"
+msgstr "Importa"
+
+#: plugins/import_export/init.php:219
+msgid "Could not import: incorrect schema version."
+msgstr ""
+
+#: plugins/import_export/init.php:224
+msgid "Could not import: unrecognized document format."
+msgstr ""
+
+#: plugins/import_export/init.php:383
+msgid "Finished: "
+msgstr ""
+
+#: plugins/import_export/init.php:384
+#, fuzzy, php-format
+msgid "%d article processed, "
+msgid_plural "%d articles processed, "
+msgstr[0] "Modifica note articolo"
+msgstr[1] "Modifica note articolo"
+
+#: plugins/import_export/init.php:385
+#, fuzzy, php-format
+msgid "%d imported, "
+msgid_plural "%d imported, "
+msgstr[0] "già importato."
+msgstr[1] "già importato."
+
+#: plugins/import_export/init.php:386
+#, fuzzy, php-format
+msgid "%d feed created."
+msgid_plural "%d feeds created."
+msgstr[0] "Nessun notiziario selezionato."
+msgstr[1] "Nessun notiziario selezionato."
+
+#: plugins/import_export/init.php:391
+msgid "Could not load XML document."
+msgstr ""
+
+#: plugins/import_export/init.php:403
+msgid "Prepare data"
+msgstr ""
+
+#: plugins/import_export/init.php:446
+#: plugins/googlereaderimport/init.php:92
+msgid "No file uploaded."
+msgstr ""
+
+#: plugins/mail/init.php:90
+msgid "From:"
+msgstr "Da:"
+
+#: plugins/mail/init.php:99
+msgid "To:"
+msgstr "A:"
+
+#: plugins/mail/init.php:112
+msgid "Subject:"
+msgstr "Oggetto:"
+
+#: plugins/mail/init.php:128
+msgid "Send e-mail"
+msgstr "Invia email"
+
+#: plugins/note/init.php:26
+#: plugins/note/note.js:11
+msgid "Edit article note"
+msgstr "Modifica note articolo"
+
+#: plugins/googlereaderimport/init.php:179
+#, php-format
+msgid "All done. %d out of %d articles imported."
+msgstr ""
+
+#: plugins/googlereaderimport/init.php:183
+msgid "The document has incorrect format."
+msgstr ""
+
+#: plugins/googlereaderimport/init.php:354
+msgid "Import starred or shared items from Google Reader"
+msgstr ""
+
+#: plugins/googlereaderimport/init.php:358
+msgid "Paste your starred.json or shared.json into the form below."
+msgstr ""
+
+#: plugins/googlereaderimport/init.php:372
+msgid "Import my Starred items"
+msgstr ""
+
+#: plugins/vf_shared/init.php:16
+#: plugins/vf_shared/init.php:54
+#, fuzzy
+msgid "Shared articles"
+msgstr "Articoli con stella"
+
+#: plugins/instances/init.php:141
+msgid "Linked"
+msgstr "Collegato"
+
+#: plugins/instances/init.php:204
+#: plugins/instances/init.php:395
+msgid "Instance"
+msgstr "Istanza"
+
+#: plugins/instances/init.php:215
+#: plugins/instances/init.php:312
+#: plugins/instances/init.php:404
+msgid "Instance URL"
+msgstr "URL dell'istanza"
+
+#: plugins/instances/init.php:226
+#: plugins/instances/init.php:414
+msgid "Access key:"
+msgstr "Chiave di accesso:"
+
+#: plugins/instances/init.php:229
+#: plugins/instances/init.php:313
+#: plugins/instances/init.php:417
+msgid "Access key"
+msgstr "Chiave di accesso"
+
+#: plugins/instances/init.php:233
+#: plugins/instances/init.php:421
+msgid "Use one access key for both linked instances."
+msgstr "Utilizzare una chiave di accesso per entrambe le istanze collegate."
+
+#: plugins/instances/init.php:241
+#: plugins/instances/init.php:429
+msgid "Generate new key"
+msgstr "Genera nuova chiave"
+
+#: plugins/instances/init.php:292
+msgid "Link instance"
+msgstr "Collega istanza"
+
+#: plugins/instances/init.php:304
+msgid "You can connect other instances of Tiny Tiny RSS to this one to share Popular feeds. Link to this instance of Tiny Tiny RSS by using this URL:"
+msgstr "Impossibile connettere altre istanze di Tiny Tiny RSS a questa per condividere i notiziari popolari. Collegare questa istanza di Tiny Tiny RSS utilizzando questo URL:"
+
+#: plugins/instances/init.php:314
+msgid "Last connected"
+msgstr "Ultimo connesso"
+
+#: plugins/instances/init.php:315
+msgid "Status"
+msgstr ""
+
+#: plugins/instances/init.php:316
+msgid "Stored feeds"
+msgstr "Notiziari memorizzati"
+
+#: plugins/instances/init.php:433
+msgid "Create link"
+msgstr "Crea collegamento"
+
+#: plugins/share/init.php:39
+msgid "You can disable all articles shared by unique URLs here."
+msgstr ""
+
+#: plugins/share/init.php:44
+#, fuzzy
+msgid "Unshare all articles"
+msgstr "Togli la stella all&apos;articolo"
+
+#: plugins/share/init.php:77
+msgid "Share by URL"
+msgstr ""
+
+#: plugins/share/init.php:99
+#, fuzzy
+msgid "You can share this article by the following unique URL:"
+msgstr "È possibile vedere questo notiziario come RSS utilizzando il seguente URL:"
+
+#: plugins/share/init.php:117
+#, fuzzy
+msgid "Unshare article"
+msgstr "Togli la stella all&apos;articolo"
+
+#: plugins/updater/init.php:323
+#: plugins/updater/init.php:340
+#: plugins/updater/updater.js:10
+#, fuzzy
+msgid "Update Tiny Tiny RSS"
+msgstr "Ritorna a Tiny Tiny RSS"
+
+#: plugins/updater/init.php:343
+#, fuzzy
+msgid "Your Tiny Tiny RSS installation is up to date."
+msgstr "Il database di Tiny Tiny RSS è aggiornato."
+
+#: plugins/updater/init.php:351
+msgid "Do not close this dialog until updating is finished."
+msgstr ""
+
+#: plugins/updater/init.php:360
+msgid "It is suggested to backup your tt-rss directory first."
+msgstr ""
+
+#: plugins/updater/init.php:361
+msgid "Your database will not be modified."
+msgstr ""
+
+#: plugins/updater/init.php:362
+msgid "Your current tt-rss installation directory will not be modified. It will be renamed and left in the parent directory. You will be able to migrate all your customized files after update finishes."
+msgstr ""
+
+#: plugins/updater/init.php:363
+#, fuzzy
+msgid "Ready to update."
+msgstr "Ultimo aggiornamento:"
+
+#: plugins/updater/init.php:368
+#, fuzzy
+msgid "Start update"
+msgstr "Ultimo aggiornamento:"
+
+#: js/feedlist.js:406
+#: js/feedlist.js:434
+msgid "Mark all articles in %s as read?"
+msgstr "Segnare tutti gli articoli in «%s» come letti?"
+
+#: js/feedlist.js:425
+#, fuzzy
+msgid "Mark all articles in %s older than 1 day as read?"
+msgstr "Segnare tutti gli articoli in «%s» come letti?"
+
+#: js/feedlist.js:428
+#, fuzzy
+msgid "Mark all articles in %s older than 1 week as read?"
+msgstr "Segnare tutti gli articoli in «%s» come letti?"
+
+#: js/feedlist.js:431
+#, fuzzy
+msgid "Mark all articles in %s older than 2 weeks as read?"
+msgstr "Segnare tutti gli articoli in «%s» come letti?"
+
+#: js/functions.js:65
+msgid "The error will be reported to the configured log destination."
+msgstr ""
+
+#: js/functions.js:107
+msgid "Are you sure to report this exception to tt-rss.org? The report will include your browser information. Your IP would be saved in the database."
+msgstr "Si vuole notificare questa eccezione a tt-rss.org? La notifica includerà le informazioni sul browser. L'IP verrà salvato in un database."
+
+#: js/functions.js:236
+#, fuzzy
+msgid "Click to close"
+msgstr "Fare clic per mettere in pausa"
+
+#: js/functions.js:612
+msgid "Error explained"
+msgstr ""
+
+#: js/functions.js:694
+msgid "Upload complete."
+msgstr ""
+
+#: js/functions.js:718
+msgid "Remove stored feed icon?"
+msgstr "Rimuovi le icone salvate dei notiziari?"
+
+#: js/functions.js:723
+#, fuzzy
+msgid "Removing feed icon..."
+msgstr "Rimuovi le icone salvate dei notiziari?"
+
+#: js/functions.js:728
+#, fuzzy
+msgid "Feed icon removed."
+msgstr "Notiziario non trovato."
+
+#: js/functions.js:750
+msgid "Please select an image file to upload."
+msgstr "Selezionare un file immagine da caricare."
+
+#: js/functions.js:752
+msgid "Upload new icon for this feed?"
+msgstr "Caricare una nuova icona per questo notiziario?"
+
+#: js/functions.js:753
+#, fuzzy
+msgid "Uploading, please wait..."
+msgstr "Caricamento, attendere prego..."
+
+#: js/functions.js:769
+msgid "Please enter label caption:"
+msgstr "Inserire l'intestazione dell'etichetta:"
+
+#: js/functions.js:774
+msgid "Can't create label: missing caption."
+msgstr "Impossibile creare l'etichetta: intestazione mancante."
+
+#: js/functions.js:817
+msgid "Subscribe to Feed"
+msgstr "Sottoscrivi il notiziario"
+
+#: js/functions.js:844
+msgid "Subscribed to %s"
+msgstr "Sottoscrizione effettuata a «%s»"
+
+#: js/functions.js:849
+msgid "Specified URL seems to be invalid."
+msgstr "L'URL specifica sembra essere non valido."
+
+#: js/functions.js:852
+msgid "Specified URL doesn't seem to contain any feeds."
+msgstr "L'URL specificato non sembra contenere alcun notiziario."
+
+#: js/functions.js:862
+#, fuzzy
+msgid "Expand to select feed"
+msgstr "Modifica i notiziari selezionati"
+
+#: js/functions.js:874
+#, fuzzy
+msgid "Couldn't download the specified URL: %s"
+msgstr "Impossibile scaricare l'URL specificato."
+
+#: js/functions.js:878
+msgid "XML validation failed: %s"
+msgstr ""
+
+#: js/functions.js:883
+msgid "You are already subscribed to this feed."
+msgstr "La sottoscrizione a questo notiziario è già stata effettuata."
+
+#: js/functions.js:1013
+#, fuzzy
+msgid "Edit rule"
+msgstr "Modifica filtro"
+
+#: js/functions.js:1039
+#, fuzzy
+msgid "Edit action"
+msgstr "Azioni notiziari"
+
+#: js/functions.js:1076
+msgid "Create Filter"
+msgstr "Crea filtro"
+
+#: js/functions.js:1191
+msgid "Reset subscription? Tiny Tiny RSS will try to subscribe to the notification hub again on next feed update."
+msgstr "Reimpostare la sottoscrizione? Tiny Tiny RSS proverà ancora al prossimo aggiornamento del notiziario a sottoscrivere il centro notifiche."
+
+#: js/functions.js:1202
+#, fuzzy
+msgid "Subscription reset."
+msgstr "Sottoscrivi il notiziario..."
+
+#: js/functions.js:1212
+#: js/tt-rss.js:684
+msgid "Unsubscribe from %s?"
+msgstr "Annullare la sottoscrizione a «%s»?"
+
+#: js/functions.js:1215
+msgid "Removing feed..."
+msgstr ""
+
+#: js/functions.js:1324
+msgid "Please enter category title:"
+msgstr "Inserire il titolo della categoria:"
+
+#: js/functions.js:1355
+msgid "Generate new syndication address for this feed?"
+msgstr "Generare un nuovo indirizzo per questo notiziario?"
+
+#: js/functions.js:1359
+#: js/prefs.js:1218
+msgid "Trying to change address..."
+msgstr ""
+
+#: js/functions.js:1546
+#: js/tt-rss.js:425
+#: js/tt-rss.js:665
+msgid "You can't edit this kind of feed."
+msgstr "Impossibile modificare questo tipo di notiziario."
+
+#: js/functions.js:1561
+msgid "Edit Feed"
+msgstr "Modifica notiziario"
+
+#: js/functions.js:1567
+#: js/prefs.js:99
+#: js/prefs.js:211
+#: js/prefs.js:736
+#, fuzzy
+msgid "Saving data..."
+msgstr "Salva dati"
+
+#: js/functions.js:1599
+msgid "More Feeds"
+msgstr "Altri notiziari"
+
+#: js/functions.js:1660
+#: js/functions.js:1770
+#: js/prefs.js:414
+#: js/prefs.js:444
+#: js/prefs.js:476
+#: js/prefs.js:629
+#: js/prefs.js:649
+#: js/prefs.js:1194
+#: js/prefs.js:1339
+msgid "No feeds are selected."
+msgstr "Nessun notiziario selezionato."
+
+#: js/functions.js:1702
+msgid "Remove selected feeds from the archive? Feeds with stored articles will not be removed."
+msgstr "Rimuovere i notiziari selezionati dall'archivio? I notiziari con articoli archiviati non saranno rimossi."
+
+#: js/functions.js:1741
+msgid "Feeds with update errors"
+msgstr "Notiziari con errori di aggiornamento"
+
+#: js/functions.js:1752
+#: js/prefs.js:1176
+msgid "Remove selected feeds?"
+msgstr "Rimuovere i notiziari selezionati?"
+
+#: js/functions.js:1755
+#: js/prefs.js:1179
+#, fuzzy
+msgid "Removing selected feeds..."
+msgstr "Rimuovere i notiziari selezionati?"
+
+#: js/functions.js:1853
+msgid "Help"
+msgstr ""
+
+#: js/PrefFeedTree.js:48
+#, fuzzy
+msgid "Edit category"
+msgstr "Modifica categorie"
+
+#: js/PrefFeedTree.js:55
+#, fuzzy
+msgid "Remove category"
+msgstr "Crea categoria"
+
+#: js/PrefFilterTree.js:56
+msgid "Inverse"
+msgstr "Inverso"
+
+#: js/prefs.js:55
+msgid "Please enter login:"
+msgstr "Inserire l'accesso:"
+
+#: js/prefs.js:62
+msgid "Can't create user: no login specified."
+msgstr "Impossibile creare l'utente: nessun accesso specificato."
+
+#: js/prefs.js:66
+#, fuzzy
+msgid "Adding user..."
+msgstr "Crea filtro..."
+
+#: js/prefs.js:94
+msgid "User Editor"
+msgstr "Editor utente"
+
+#: js/prefs.js:134
+msgid "Edit Filter"
+msgstr "Modifica filtro"
+
+#: js/prefs.js:181
+#, fuzzy
+msgid "Remove filter?"
+msgstr "Rimuovere il filtro «%s»?"
+
+#: js/prefs.js:186
+#, fuzzy
+msgid "Removing filter..."
+msgstr "Crea filtro..."
+
+#: js/prefs.js:296
+msgid "Remove selected labels?"
+msgstr "Rimuovere le etichette selezionate?"
+
+#: js/prefs.js:299
+#, fuzzy
+msgid "Removing selected labels..."
+msgstr "Rimuovere le etichette selezionate?"
+
+#: js/prefs.js:312
+#: js/prefs.js:1380
+msgid "No labels are selected."
+msgstr "Nessuna etichetta selezionata."
+
+#: js/prefs.js:326
+msgid "Remove selected users? Neither default admin nor your account will be removed."
+msgstr "Rimuovere gli utenti selezionati? Non saranno rimossi l'amministratore predefinito e il proprio utente."
+
+#: js/prefs.js:329
+#, fuzzy
+msgid "Removing selected users..."
+msgstr "Rimuovere i filtri selezionati?"
+
+#: js/prefs.js:343
+#: js/prefs.js:487
+#: js/prefs.js:508
+#: js/prefs.js:547
+msgid "No users are selected."
+msgstr "Nessun utente selezionato."
+
+#: js/prefs.js:361
+msgid "Remove selected filters?"
+msgstr "Rimuovere i filtri selezionati?"
+
+#: js/prefs.js:364
+#, fuzzy
+msgid "Removing selected filters..."
+msgstr "Rimuovere i filtri selezionati?"
+
+#: js/prefs.js:376
+#: js/prefs.js:584
+#: js/prefs.js:603
+msgid "No filters are selected."
+msgstr "Nessun filtro selezionato."
+
+#: js/prefs.js:395
+msgid "Unsubscribe from selected feeds?"
+msgstr "Annullare la sottoscrizione ai notiziari selezionati?"
+
+#: js/prefs.js:399
+#, fuzzy
+msgid "Unsubscribing from selected feeds..."
+msgstr "Annulla la sottoscrizione ai notiziari selezionati"
+
+#: js/prefs.js:429
+msgid "Please select only one feed."
+msgstr "Selezionare solo un notiziario."
+
+#: js/prefs.js:435
+msgid "Erase all non-starred articles in selected feed?"
+msgstr "Eliminare tutti gli articoli senza la stella nel notiziario selezionato?"
+
+#: js/prefs.js:438
+#, fuzzy
+msgid "Clearing selected feed..."
+msgstr "Modifica i notiziari selezionati"
+
+#: js/prefs.js:457
+msgid "How many days of articles to keep (0 - use default)?"
+msgstr "Quanti giorni di articoli tenere (0 - utilizza il valore predefinito)?"
+
+#: js/prefs.js:460
+#, fuzzy
+msgid "Purging selected feed..."
+msgstr "Modifica i notiziari selezionati"
+
+#: js/prefs.js:492
+#: js/prefs.js:513
+#: js/prefs.js:552
+msgid "Please select only one user."
+msgstr "Selezionare un solo utente."
+
+#: js/prefs.js:517
+msgid "Reset password of selected user?"
+msgstr "Reimpostare la password per l&apos;utente selezionato?"
+
+#: js/prefs.js:520
+#, fuzzy
+msgid "Resetting password for selected user..."
+msgstr "Reimpostare la password per l&apos;utente selezionato?"
+
+#: js/prefs.js:565
+msgid "User details"
+msgstr "Dettagli utente"
+
+#: js/prefs.js:589
+msgid "Please select only one filter."
+msgstr "Selezionare solo un filtro."
+
+#: js/prefs.js:607
+#, fuzzy
+msgid "Combine selected filters?"
+msgstr "Rimuovere i filtri selezionati?"
+
+#: js/prefs.js:610
+#, fuzzy
+msgid "Joining filters..."
+msgstr "Crea filtro..."
+
+#: js/prefs.js:671
+msgid "Edit Multiple Feeds"
+msgstr "Modifica notiziari multipli"
+
+#: js/prefs.js:695
+msgid "Save changes to selected feeds?"
+msgstr "Salvare i cambiamenti ai notiziari selezionati?"
+
+#: js/prefs.js:772
+msgid "OPML Import"
+msgstr "Importazione OPML"
+
+#: js/prefs.js:799
+msgid "Please choose an OPML file first."
+msgstr "Scegliere prima un file OPML."
+
+#: js/prefs.js:802
+#: plugins/import_export/import_export.js:115
+#: plugins/googlereaderimport/init.js:45
+#, fuzzy
+msgid "Importing, please wait..."
+msgstr "Caricamento, attendere prego..."
+
+#: js/prefs.js:969
+msgid "Reset to defaults?"
+msgstr "Reimpostare ai valori predefiniti?"
+
+#: js/prefs.js:1083
+msgid "Remove category %s? Any nested feeds would be placed into Uncategorized."
+msgstr ""
+
+#: js/prefs.js:1089
+#, fuzzy
+msgid "Removing category..."
+msgstr "Crea categoria"
+
+#: js/prefs.js:1110
+msgid "Remove selected categories?"
+msgstr "Rimuovere le categorie selezionate?"
+
+#: js/prefs.js:1113
+#, fuzzy
+msgid "Removing selected categories..."
+msgstr "Rimuovi le categorie selezionate"
+
+#: js/prefs.js:1126
+msgid "No categories are selected."
+msgstr "Nessuna categoria selezionata."
+
+#: js/prefs.js:1134
+#, fuzzy
+msgid "Category title:"
+msgstr "Categorie"
+
+#: js/prefs.js:1138
+#, fuzzy
+msgid "Creating category..."
+msgstr "Crea filtro..."
+
+#: js/prefs.js:1165
+msgid "Feeds without recent updates"
+msgstr "Notiziari senza aggiornamenti recenti"
+
+#: js/prefs.js:1214
+msgid "Replace current OPML publishing address with a new one?"
+msgstr "Sostituire l&apos;indirizzo di pubblicazione OPML attuale con uno nuovo?"
+
+#: js/prefs.js:1303
+#, fuzzy
+msgid "Clearing feed..."
+msgstr "Pulisci i dati del notiziario"
+
+#: js/prefs.js:1323
+msgid "Rescore articles in selected feeds?"
+msgstr "Cambiare il punteggio agli articoli nel notiziario selezionato?"
+
+#: js/prefs.js:1326
+#, fuzzy
+msgid "Rescoring selected feeds..."
+msgstr "Cambiare il punteggio agli articoli nel notiziario selezionato?"
+
+#: js/prefs.js:1346
+msgid "Rescore all articles? This operation may take a lot of time."
+msgstr "Cambiare il punteggio a tutti i notiziari? Questa operazione può durare molto tempo."
+
+#: js/prefs.js:1349
+#, fuzzy
+msgid "Rescoring feeds..."
+msgstr "Cambia punteggio notiziario"
+
+#: js/prefs.js:1366
+msgid "Reset selected labels to default colors?"
+msgstr "Reimpostare le etichette selezionate ai colori predefiniti?"
+
+#: js/prefs.js:1403
+msgid "Settings Profiles"
+msgstr "Impostazioni dei profili"
+
+#: js/prefs.js:1412
+msgid "Remove selected profiles? Active and default profiles will not be removed."
+msgstr "Rimuovere i profili selezionati? Il profilo attivo e quello predefinito non saranno rimossi."
+
+#: js/prefs.js:1415
+#, fuzzy
+msgid "Removing selected profiles..."
+msgstr "Rimuovi i profili selezionati"
+
+#: js/prefs.js:1430
+msgid "No profiles are selected."
+msgstr "Nessun profilo selezionato."
+
+#: js/prefs.js:1438
+#: js/prefs.js:1491
+msgid "Activate selected profile?"
+msgstr "Attivare il profilo selezionato?"
+
+#: js/prefs.js:1454
+#: js/prefs.js:1507
+msgid "Please choose a profile to activate."
+msgstr "Scegliere un profilo da attivare"
+
+#: js/prefs.js:1459
+#, fuzzy
+msgid "Creating profile..."
+msgstr "Crea profilo"
+
+#: js/prefs.js:1515
+msgid "This will invalidate all previously generated feed URLs. Continue?"
+msgstr "Questo invaliderà tutti gli URL di notiziari generati precedentemente. Continuare?"
+
+#: js/prefs.js:1518
+#: plugins/share/share_prefs.js:6
+msgid "Clearing URLs..."
+msgstr ""
+
+#: js/prefs.js:1525
+#, fuzzy
+msgid "Generated URLs cleared."
+msgstr "Genera nuovo URL"
+
+#: js/prefs.js:1616
+msgid "Label Editor"
+msgstr "Editor etichette"
+
+#: js/prefs.js:1738
+msgid "Subscribing to feeds..."
+msgstr ""
+
+#: js/prefs.js:1775
+msgid "Clear stored data for this plugin?"
+msgstr ""
+
+#: js/prefs.js:1792
+msgid "Clear all messages in the error log?"
+msgstr ""
+
+#: js/tt-rss.js:127
+msgid "Mark all articles as read?"
+msgstr "Segnare tutti gli articoli come letti?"
+
+#: js/tt-rss.js:133
+#, fuzzy
+msgid "Marking all feeds as read..."
+msgstr "Segna tutti i notiziari come letti"
+
+#: js/tt-rss.js:384
+#, fuzzy
+msgid "Please enable mail plugin first."
+msgstr "Selezionare prima qualche notiziario."
+
+#: js/tt-rss.js:496
+#, fuzzy
+msgid "Please enable embed_original plugin first."
+msgstr "Selezionare prima qualche notiziario."
+
+#: js/tt-rss.js:652
+msgid "Select item(s) by tags"
+msgstr ""
+
+#: js/tt-rss.js:673
+msgid "You can't unsubscribe from the category."
+msgstr "Impossibile annullare la sottoscrizione alla categoria."
+
+#: js/tt-rss.js:678
+#: js/tt-rss.js:827
+msgid "Please select some feed first."
+msgstr "Selezionare prima qualche notiziario."
+
+#: js/tt-rss.js:822
+msgid "You can't rescore this kind of feed."
+msgstr "Impossibile cambiare il punteggio a questo tipo di notiziari."
+
+#: js/tt-rss.js:832
+msgid "Rescore articles in %s?"
+msgstr "Cambiare il punteggio degli articoli in «%s»?"
+
+#: js/tt-rss.js:835
+#, fuzzy
+msgid "Rescoring articles..."
+msgstr "Cambio punteggio degli articoli"
+
+#: js/tt-rss.js:976
+msgid "New version available!"
+msgstr "Nuova versione disponibile."
+
+#: js/viewfeed.js:109
+#, fuzzy
+msgid "Cancel search"
+msgstr "Annulla"
+
+#: js/viewfeed.js:472
+msgid "Unstar article"
+msgstr "Togli la stella all&apos;articolo"
+
+#: js/viewfeed.js:476
+msgid "Star article"
+msgstr "Metti la stella all&apos;articolo"
+
+#: js/viewfeed.js:530
+msgid "Unpublish article"
+msgstr "Non pubblicare articolo"
+
+#: js/viewfeed.js:534
+msgid "Publish article"
+msgstr "Pubblica articolo"
+
+#: js/viewfeed.js:686
+#, fuzzy
+msgid "%d article selected"
+msgid_plural "%d articles selected"
+msgstr[0] "Nessun articolo selezionato."
+msgstr[1] "Nessun articolo selezionato."
+
+#: js/viewfeed.js:758
+#: js/viewfeed.js:786
+#: js/viewfeed.js:813
+#: js/viewfeed.js:878
+#: js/viewfeed.js:912
+#: js/viewfeed.js:1032
+#: js/viewfeed.js:1075
+#: js/viewfeed.js:1128
+#: js/viewfeed.js:2187
+#: plugins/mailto/init.js:7
+#: plugins/mail/mail.js:7
+msgid "No articles are selected."
+msgstr "Nessun articolo selezionato."
+
+#: js/viewfeed.js:1040
+#, fuzzy
+msgid "Delete %d selected article in %s?"
+msgid_plural "Delete %d selected articles in %s?"
+msgstr[0] "Eliminare i %d articoli selezionati in «%s»?"
+msgstr[1] "Eliminare i %d articoli selezionati in «%s»?"
+
+#: js/viewfeed.js:1042
+#, fuzzy
+msgid "Delete %d selected article?"
+msgid_plural "Delete %d selected articles?"
+msgstr[0] "Eliminare i %d articoli selezionati?"
+msgstr[1] "Eliminare i %d articoli selezionati?"
+
+#: js/viewfeed.js:1084
+#, fuzzy
+msgid "Archive %d selected article in %s?"
+msgid_plural "Archive %d selected articles in %s?"
+msgstr[0] "Archiviare i %d articoli selezionati in «%s»?"
+msgstr[1] "Archiviare i %d articoli selezionati in «%s»?"
+
+#: js/viewfeed.js:1087
+#, fuzzy
+msgid "Move %d archived article back?"
+msgid_plural "Move %d archived articles back?"
+msgstr[0] "Spostare %d articoli archiviati indietro?"
+msgstr[1] "Spostare %d articoli archiviati indietro?"
+
+#: js/viewfeed.js:1089
+msgid "Please note that unstarred articles might get purged on next feed update."
+msgstr ""
+
+#: js/viewfeed.js:1134
+#, fuzzy
+msgid "Mark %d selected article in %s as read?"
+msgid_plural "Mark %d selected articles in %s as read?"
+msgstr[0] "Segnare %d articoli selezionati in «%s» come letti?"
+msgstr[1] "Segnare %d articoli selezionati in «%s» come letti?"
+
+#: js/viewfeed.js:1158
+msgid "Edit article Tags"
+msgstr "Modifica etichette articolo"
+
+#: js/viewfeed.js:1164
+#, fuzzy
+msgid "Saving article tags..."
+msgstr "Modifica etichette articolo"
+
+#: js/viewfeed.js:1403
+msgid "No article is selected."
+msgstr "Nessun articolo selezionato."
+
+#: js/viewfeed.js:1438
+msgid "No articles found to mark"
+msgstr "Nessun articolo trovato da segnare"
+
+#: js/viewfeed.js:1440
+#, fuzzy
+msgid "Mark %d article as read?"
+msgid_plural "Mark %d articles as read?"
+msgstr[0] "Segnare %d articolo/i come letto/i?"
+msgstr[1] "Segnare %d articolo/i come letto/i?"
+
+#: js/viewfeed.js:1948
+msgid "Open original article"
+msgstr "Apri articolo di origine"
+
+#: js/viewfeed.js:1954
+#, fuzzy
+msgid "Display article URL"
+msgstr "Visualizza URL"
+
+#: js/viewfeed.js:2054
+msgid "Assign label"
+msgstr "Assegna etichetta"
+
+#: js/viewfeed.js:2059
+msgid "Remove label"
+msgstr "Rimuovi etichetta"
+
+#: js/viewfeed.js:2156
+#, fuzzy
+msgid "Please enter new score for selected articles:"
+msgstr "Eliminare i %d articoli selezionati?"
+
+#: js/viewfeed.js:2198
+#, fuzzy
+msgid "Please enter new score for this article:"
+msgstr "Inserire il titolo della categoria:"
+
+#: js/viewfeed.js:2231
+#, fuzzy
+msgid "Article URL:"
+msgstr "Tutti gli articoli"
+
+#: plugins/embed_original/init.js:6
+msgid "Sorry, your browser does not support sandboxed iframes."
+msgstr ""
+
+#: plugins/mailto/init.js:21
+#: plugins/mail/mail.js:21
+msgid "Forward article by email"
+msgstr "Inoltra l'articolo per email"
+
+#: plugins/import_export/import_export.js:13
+msgid "Export Data"
+msgstr ""
+
+#: plugins/import_export/import_export.js:40
+msgid "Finished, exported %d article. You can download the data <a class='visibleLink' href='%u'>here</a>."
+msgid_plural "Finished, exported %d articles. You can download the data <a class='visibleLink' href='%u'>here</a>."
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugins/import_export/import_export.js:93
+msgid "Data Import"
+msgstr ""
+
+#: plugins/import_export/import_export.js:112
+msgid "Please choose the file first."
+msgstr ""
+
+#: plugins/note/note.js:17
+#, fuzzy
+msgid "Saving article note..."
+msgstr "Modifica note articolo"
+
+#: plugins/shorten_expanded/init.js:37
+#, fuzzy
+msgid "Click to expand article"
+msgstr "Fare clic per espandere l&apos;articolo."
+
+#: plugins/googlereaderimport/init.js:18
+msgid "Google Reader Import"
+msgstr ""
+
+#: plugins/googlereaderimport/init.js:42
+#, fuzzy
+msgid "Please choose a file first."
+msgstr "Scegliere prima un file OPML."
+
+#: plugins/instances/instances.js:10
+msgid "Link Instance"
+msgstr "Collega istanza"
+
+#: plugins/instances/instances.js:73
+msgid "Edit Instance"
+msgstr "Modifica istanza"
+
+#: plugins/instances/instances.js:122
+msgid "Remove selected instances?"
+msgstr "Rimuovere le istanze selezionate?"
+
+#: plugins/instances/instances.js:125
+#, fuzzy
+msgid "Removing selected instances..."
+msgstr "Rimuovere le istanze selezionate?"
+
+#: plugins/instances/instances.js:139
+#: plugins/instances/instances.js:151
+msgid "No instances are selected."
+msgstr "Nessun istanza selezionata."
+
+#: plugins/instances/instances.js:156
+msgid "Please select only one instance."
+msgstr "Selezionare solo un'istanza."
+
+#: plugins/share/share_prefs.js:3
+msgid "This will invalidate all previously shared article URLs. Continue?"
+msgstr ""
+
+#: plugins/share/share_prefs.js:13
+msgid "Shared URLs cleared."
+msgstr ""
+
+#: plugins/share/share.js:10
+#, fuzzy
+msgid "Share article by URL"
+msgstr "Metti la stella all&apos;articolo"
+
+#: plugins/share/share.js:14
+#, fuzzy
+msgid "Generate new share URL for this article?"
+msgstr "Inserire il titolo della categoria:"
+
+#: plugins/share/share.js:18
+msgid "Trying to change URL..."
+msgstr ""
+
+#: plugins/share/share.js:55
+#, fuzzy
+msgid "Remove sharing for this article?"
+msgstr "Modifica le etichette per questo articolo"
+
+#: plugins/share/share.js:59
+msgid "Trying to unshare..."
+msgstr ""
+
+#: plugins/updater/updater.js:58
+msgid "Backup your tt-rss directory before continuing. Please type 'yes' to continue."
+msgstr ""
+
+#~ msgid "Change password to"
+#~ msgstr "Cambiare la password a"
+
+#~ msgid "E-mail: "
+#~ msgstr "Email:"
+
+#~ msgid "Login field cannot be blank."
+#~ msgstr "Il campo accesso non può essere vuoto."
+
+#, fuzzy
+#~ msgid "Saving user..."
+#~ msgstr "Crea filtro..."
+
+#, fuzzy
+#~ msgid "Toggle marked"
+#~ msgstr "Inverti con stella"
+
+#, fuzzy
+#~ msgid "(Un)hide empty categories"
+#~ msgstr "Modifica categorie"
+
+#~ msgid "Published articles and generated feeds"
+#~ msgstr "Articoli pubblicati e notiziari generati"
+
+#~ msgid "These feeds have not been updated because of errors:"
+#~ msgstr "Questi notiziari non sono stati aggiornati a causa di errori:"
+
+#, fuzzy
+#~ msgid "Your browser doesn't support Javascript, which is required for this application to function properly. Please check your browser settings."
+#~ msgstr ""
+#~ "Il browser non supporta Javascript, che è richiesto\n"
+#~ "\t\t\tda questa applicazione per funzionare correttamente. Controllare\n"
+#~ "\t\t\tle impostazioni del browser."
+
+#~ msgid "Hello,"
+#~ msgstr "Salve,"
+
+#~ msgid "Home"
+#~ msgstr "Casa"
+
+#~ msgid "Nothing found (click to reload feed)."
+#~ msgstr "Non trovato (fare clic per ricaricare il notiziario)."
+
+#~ msgid "Enable categories"
+#~ msgstr "Abilitare le categorie"
+
+#~ msgid "ON"
+#~ msgstr "Acceso"
+
+#~ msgid "OFF"
+#~ msgstr "Spento"
+
+#~ msgid "Browse categories like folders"
+#~ msgstr "Sfoglia le categorie come cartelle"
+
+#~ msgid "Show images in posts"
+#~ msgstr "Mostrare le immagini negli articoli"
+
+#, fuzzy
+#~ msgid "Hide read articles and feeds"
+#~ msgstr "Articoli pubblicati e notiziari generati"
+
+#~ msgid "Sort feeds by unread count"
+#~ msgstr "Ordinare i notiziari per numero di non letti"
+
+#, fuzzy
+#~ msgid "Article archive"
+#~ msgstr "Data dell&apos;articolo"
+
+#, fuzzy
+#~ msgid "Set value"
+#~ msgstr "Imposta con stella"
+
+#, fuzzy
+#~ msgid "Mark %d displayed article as read?"
+#~ msgid_plural "Mark %d displayed articles as read?"
+#~ msgstr[0] "Segnare %d articolo/i visualizzato/i come letto/i?"
+#~ msgstr[1] "Segnare %d articolo/i visualizzato/i come letto/i?"
+
+#~ msgid "Error: unable to load article."
+#~ msgstr "Errore: impossibile caricare l'articolo."
+
+#, fuzzy
+#~ msgid "%d more..."
+#~ msgid_plural "%d more..."
+#~ msgstr[0] "%d altri..."
+#~ msgstr[1] "%d altri..."
+
+#~ msgid "No unread feeds."
+#~ msgstr "Nessun notiziario non letto."
+
+#~ msgid "Load more..."
+#~ msgstr "Carica altri..."
+
+#~ msgid "Switch to digest..."
+#~ msgstr "Passa al sommario..."
+
+#~ msgid "Show tag cloud..."
+#~ msgstr "Mostra nuvola etichette..."
+
+#~ msgid "Click to play"
+#~ msgstr "Fare clic per riprodurre"
+
+#~ msgid "Play"
+#~ msgstr "Riproduci"
+
+#~ msgid "Visit the website"
+#~ msgstr "Visita il sito web"
+
+#~ msgid "Select theme"
+#~ msgstr "Seleziona tema"
+
+#~ msgid "Playing..."
+#~ msgstr "In riproduzione..."
+
+#~ msgid "Default interval between feed updates"
+#~ msgstr "Intervallo predefinito tra gli aggiornamenti dei notiziari"
+
+#~ msgid "Could not update database"
+#~ msgstr "Impossibile aggiornare il database"
+
+#~ msgid "Could not find necessary schema file, need version:"
+#~ msgstr "Impossibile trovare il file schema necessario; serve la versione:"
+
+#~ msgid ", found: "
+#~ msgstr ", trovato: "
+
+#~ msgid "Tiny Tiny RSS database is up to date."
+#~ msgstr "Il database di Tiny Tiny RSS è aggiornato."
+
+#~ msgid "Please backup your database before proceeding."
+#~ msgstr "Fare il backup del database prima di procedere."
+
+#~ msgid "Your Tiny Tiny RSS database needs update to the latest version (<b>%d</b> to <b>%d</b>)."
+#~ msgstr "Il database di Tiny Tiny RSS deve essere aggiornato all&apos;ultima versione (<b>%d</b> a <b>%d</b>)."
+
+#~ msgid "Performing updates..."
+#~ msgstr "Esecuzione aggiornamenti..."
+
+#~ msgid "Updating to version %d..."
+#~ msgstr "Aggiornamento alla versione %d..."
+
+#~ msgid "Checking version... "
+#~ msgstr "Controllo della versione..."
+
+#~ msgid "OK!"
+#~ msgstr "OK"
+
+#~ msgid "ERROR!"
+#~ msgstr "ERRORE"
+
+#, fuzzy
+#~ msgid "Finished. Performed <b>%d</b> update up to schema version <b>%d</b>."
+#~ msgid_plural "Finished. Performed <b>%d</b> updates up to schema version <b>%d</b>."
+#~ msgstr[0] ""
+#~ "Fine. Eseguito/i <b>%d</b> aggiornamento/i fino\n"
+#~ "\t\t\tallo schema versione <b>%d</b>."
+#~ msgstr[1] ""
+#~ "Fine. Eseguito/i <b>%d</b> aggiornamento/i fino\n"
+#~ "\t\t\tallo schema versione <b>%d</b>."
+
+#~ msgid "Your database schema is from a newer version of Tiny Tiny RSS."
+#~ msgstr "Lo schema del database è di una versione più recente di Tiny Tiny RSS."
+
+#~ msgid "Found schema version: <b>%d</b>, required: <b>%d</b>."
+#~ msgstr "Versione dello schema trovata: <b>%d</b>, richiesta: <b>%d</b>."
+
+#~ msgid "Schema upgrade impossible. Please update Tiny Tiny RSS files to the newer version and continue."
+#~ msgstr "Impossibile aggiornare lo schema. Aggiornare i file di Tiny Tiny RSS a una nuova versione e continuare."
+
+#~ msgid "Mark feed as read"
+#~ msgstr "Segna notiziario come letto"
+
+#~ msgid "Enable external API"
+#~ msgstr "Abilita API esterna"
+
+#~ msgid "When this option is enabled, headlines in Special feeds and Labels are grouped by feeds"
+#~ msgstr "Quando questa opzione è abilitata, i sommari nei notiziari speciali e nelle etichette vengono raggruppati per notiziario"
+
+#~ msgid "Title or Content"
+#~ msgstr "Titolo o contenuto"
+
+#~ msgid "Link"
+#~ msgstr "Collegamento"
+
+#~ msgid "Content"
+#~ msgstr "Contenuto"
+
+#~ msgid "Article Date"
+#~ msgstr "Data dell&apos;articolo"
+
+#~ msgid "Delete article"
+#~ msgstr "Elimina articolo"
+
+#~ msgid "Set starred"
+#~ msgstr "Imposta con stella"
+
+#~ msgid "Assign tags"
+#~ msgstr "Assegna etichette"
+
+#~ msgid "This option is useful when you are reading several planet-type aggregators with partially colliding userbase. When disabled, it forces same posts from different feeds to appear only once."
+#~ msgstr "Questa opzione è utile quando si stanno leggendo vari aggregatori di tipo «planet» con utenti che collidono parzialmente. Quando disabilitata forza le stesse notizie da differenti notiziari ad apparire una volta sola."
+
+#~ msgid "Date syntax appears to be correct:"
+#~ msgstr "La sintassi della data appare con corretta:"
+
+#~ msgid "Date syntax is incorrect."
+#~ msgstr "La sintassi della data non è corretta."
+
+#~ msgid "Notice"
+#~ msgstr "Notifica"
+
+#~ msgid "Tag Cloud"
+#~ msgstr "Nuvola etichette"
+
+#~ msgid "Mark all visible articles in %s as read?"
+#~ msgstr "Segnare tutti gli articoli visibili in «%s» come letti?"
+
+#~ msgid "Score"
+#~ msgstr "Punteggio"
+
+#~ msgid "New articles available in this feed (click to show)"
+#~ msgstr "Nuovi articoli disponibili per questo notiziario (fare clic per mostrarli)"
+
+#, fuzzy
+#~ msgid "Share on identi.ca"
+#~ msgstr "Condividi su Twitter"
+
+#, fuzzy
+#~ msgid "Flattr this article."
+#~ msgstr "Metti la stella all&apos;articolo"
+
+#, fuzzy
+#~ msgid "Share on Google+"
+#~ msgstr "Condividi su Twitter"
+
+#, fuzzy
+#~ msgid "Share on Twitter"
+#~ msgstr "Condividi su Twitter"
+
+#, fuzzy
+#~ msgid "Show additional preferences"
+#~ msgstr "Esci dalle preferenze"
+
+#, fuzzy
+#~ msgid "Back to feeds"
+#~ msgstr "Notiziari non attivi"
+
+#~ msgid "This will clear your stored authentication information for Twitter. Continue?"
+#~ msgstr "Questo pulirà le informazioni di autenticazione memorizzate per Twitter. Continuare?"
+
+#, fuzzy
+#~ msgid "Clearing credentials..."
+#~ msgstr "Pulisci le credenziali memorizzate"
+
+#~ msgid "Updated"
+#~ msgstr "Aggiornato"
+
+#~ msgid "Notifying <b>%s</b>."
+#~ msgstr "Notifica a <b>%s</b>"
+
+#~ msgid "Yes"
+#~ msgstr "Sì"
+
+#~ msgid "No"
+#~ msgstr "No"
+
+#~ msgid "News"
+#~ msgstr "Notizie"
+
+#~ msgid "Move between feeds"
+#~ msgstr "Sposta tra notiziari"
+
+#~ msgid "Move between articles"
+#~ msgstr "Sposta tra articoli"
+
+#~ msgid "Mark articles below/above active one as read"
+#~ msgstr "Segnare gli articoli sopra e sotto quello attivo come letti"
+
+#~ msgid "Scroll article content"
+#~ msgstr "Scorri il contenuto dell&apos;articolo"
+
+#~ msgid "Other actions"
+#~ msgstr "Altre azioni"
+
+#~ msgid "Display this help dialog"
+#~ msgstr "Visualizza questo dialogo di aiuto"
+
+#, fuzzy
+#~ msgid "Select starred articles"
+#~ msgstr "Articoli con stella"
+
+#~ msgid "Feed actions"
+#~ msgstr "Azioni notiziari"
+
+#~ msgid "If viewing category, (un)collapse it"
+#~ msgstr "Se in visualizzazione categoria, contraila/espandila"
+
+#~ msgid "Press any key to close this window."
+#~ msgstr "Premere qualsiasi tasto per chiudere questa finestra."
+
+#~ msgid "My Feeds"
+#~ msgstr "Notiziari"
+
+#~ msgid "Panel actions"
+#~ msgstr "Riquadro azioni"
+
+#~ msgid "Top 25 feeds"
+#~ msgstr "Primi 25 notiziari"
+
+#~ msgid "Edit feed categories"
+#~ msgstr "Modifica categorie notiziari"
+
+#~ msgid "Focus search (if present)"
+#~ msgstr "Attiva la ricerca (se presente)"
+
+#~ msgid "<b>Note:</b> not all actions may be available, depending on Tiny Tiny RSS configuration and your access level."
+#~ msgstr "<b>Notare:</b> non tutte le azioni potrebbero essere disponibili, in base alla configurazione di Tiny Tiny RSS e al proprio livello di accesso."
+
+#~ msgid "Open article in new tab"
+#~ msgstr "Apri articolo in una nuova scheda"
+
+#~ msgid "Right-to-left content"
+#~ msgstr "Contenuto da destra a sinistra"
+
+#, fuzzy
+#~ msgid "Cache content locally"
+#~ msgstr "Memorizzare le immagini localmente"
+
+#~ msgid "Mark posts as updated on content change"
+#~ msgstr "Segnare gli articoli come aggiornati al cambiamento del contenuto"
+
+#~ msgid "Loading..."
+#~ msgstr "Caricamento..."
+
+#~ msgid "View in a tt-rss tab"
+#~ msgstr "Visualizza in una scheda tt-rss"
+
+#~ msgid "Magpie"
+#~ msgstr "Magpie"
+
+#~ msgid "SimplePie"
+#~ msgstr "SimplePie"
+
+#~ msgid "using"
+#~ msgstr "utilizzando"
+
+#~ msgid "match on"
+#~ msgstr "corrisponde a"
+
+#~ msgid "Title or content"
+#~ msgstr "Titolo o contenuto"
+
+#~ msgid "Your request could not be completed."
+#~ msgstr "La richiesta non può essere completata."
+
+#~ msgid "Feed update has been scheduled."
+#~ msgstr "L'aggiornamento del notiziario è stato pianificato con successo."
+
+#~ msgid "Category update has been scheduled."
+#~ msgstr "Pianificato l'aggiornamento della categoria."
+
+#~ msgid "Can't update this kind of feed."
+#~ msgstr "Impossibile aggiornare questo tipo di notiziario."
+
+#~ msgid "Update feed"
+#~ msgstr "Aggiorna notiziario"
+
+#, fuzzy
+#~ msgid "With subcategories"
+#~ msgstr "Modifica categorie"
+
+#~ msgid "Twitter OAuth"
+#~ msgstr "Twitter OAuth"
+
+#~ msgid "<li>Adding category <b>%s</b>.</li>"
+#~ msgstr "<li>Aggiunta della categoria <b>%s</b>.</li>"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Register with Twitter"
+#~ msgstr "Registra su Twitter"
+
+#~ msgid "Could not connect to Twitter. Refresh the page or try again later."
+#~ msgstr "Impossibile connettersi a Twitter. Aggiornare la pagina o provare più tardi."
+
+#~ msgid "Congratulations! You have successfully registered with Twitter."
+#~ msgstr "Registrazione su Twitter effettuata con successo."
+
+#~ msgid "before"
+#~ msgstr "prima"
+
+#~ msgid "after"
+#~ msgstr "dopo"
+
+#~ msgid "Check it"
+#~ msgstr "Controllalo"
+
+#~ msgid "Category <b>$%s</b> already exists in the database."
+#~ msgstr "La categoria <b>%s</b> esiste già nel database."
+
+#~ msgid "No feed categories defined."
+#~ msgstr "Nessuna categoria notiziari definita."
+
+#~ msgid "<b>Hint:</b> you can drag feeds and categories around."
+#~ msgstr "<b>Suggerimento:</b> si possono trascinare in giro i notiziari e le categorie."
+
+#~ msgid "Subscribing using bookmarklet"
+#~ msgstr "Sottoscrizione utilizzando bookmarklet"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Before you can update your Twitter feeds, you must register this instance of Tiny Tiny RSS with Twitter.com."
+#~ msgstr "Prima di poter aggiornare i notiziari di Twitter, occorre registrare questa instanza di Tiny Tiny RSS su Twitter.com."
+
+#~ msgid "You have been successfully registered with Twitter.com and should be able to access your Twitter feeds."
+#~ msgstr "La registrazione su Twitter.com è avvenuta con successo; adesso si è in grado di accedere a notiziari di Twitter."
+
+#~ msgid "Register with Twitter.com"
+#~ msgstr "Registra su Twitter.com"
+
+#~ msgid "Created filter <b>%s</b>"
+#~ msgstr "Filtro <b>%s</b> creato"
+
+#~ msgid "Attachment:"
+#~ msgstr "Allegato:"
+
+#~ msgid "Subscribing to feed..."
+#~ msgstr "Sottoscrizione al notiziario..."
+
+#~ msgid "Filter Test Results"
+#~ msgstr "Filtra risultati di prova"
+
+#~ msgid "When \"Mark as read\" button is clicked in toolbar, automatically open next feed with unread articles."
+#~ msgstr "Quando viene fatto clic sul pulsante \"Segna come letto\" nella barra degli strumenti, automaticamente si apre il notiziario successivo con articoli non letti."
