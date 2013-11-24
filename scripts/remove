@@ -1,0 +1,10 @@
+#!/bin/bash
+
+db_user=ttrss
+db_name=ttrss
+root_pwd=$(sudo cat /etc/yunohost/mysql)
+domain=$(sudo yunohost app setting ttrss domain)
+
+mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user ;"
+sudo rm -rf /var/www/ttrss
+sudo rm -f /etc/nginx/conf.d/$domain.d/ttrss.conf
