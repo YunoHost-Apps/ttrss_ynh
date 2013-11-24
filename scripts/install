@@ -24,24 +24,24 @@ sudo yunohost app setting ttrss mysqlpwd -v $db_pwd
 # Copy files to the right place
   final_path=/var/www/ttrss
   sudo mkdir -p $final_path
-  sudo cp -a sources/* $final_path
-  sudo cp conf/config.php $final_path/
+  sudo cp -a ../sources/* $final_path
+  sudo cp ../conf/config.php $final_path/
 
 # Change variables in ttrss configuration
-sed -i "s/yunouser/$DB_USER/g" $final_path/config.php
-sed -i "s/yunopass/$DB_PWD/g" $final_path/config.php
-sed -i "s/yunobase/$DB_NAME/g" $final_path/config.php
-sed -i "s,yunopath,https://${APP_DOMAIN}${APP_PATH},g" $final_path/config.php
-echo "*/30 * * * * www-data cd $final_path && /usr/bin/php $final_path/update.php -feeds >/dev/null 2>&1" > /etc/cron.d/ttrss
+sudo sed -i "s/yunouser/$DB_USER/g" $final_path/config.php
+sudo sed -i "s/yunopass/$DB_PWD/g" $final_path/config.php
+sudo sed -i "s/yunobase/$DB_NAME/g" $final_path/config.php
+sudo sed -i "s,yunopath,https://${APP_DOMAIN}${APP_PATH},g" $final_path/config.php
+sudo echo "*/30 * * * * www-data cd $final_path && /usr/bin/php $final_path/update.php -feeds >/dev/null 2>&1" > /etc/cron.d/ttrss
 
 
 # Set permissions to ttrss directory
 sudo chown -R www-data: $final_path
 
 # Modify Nginx configuration file and copy it to Nginx conf directory
-sed -i "s@PATHTOCHANGE@$path@g" conf/nginx.conf
-sed -i "s@ALIASTOCHANGE@$final_path/@g" conf/nginx.conf
-sudo cp conf/nginx.conf /etc/nginx/conf.d/$domain.d/ttrss.conf
+sudo sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
+sudo sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
+sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/ttrss.conf
 
 # Reload Nginx and regenerate SSOwat conf
 sudo service nginx reload
