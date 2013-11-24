@@ -38,7 +38,7 @@ echo "*/30 * * * * www-data cd $final_path && /usr/bin/php $final_path/update.ph
 sudo mkdir $final_path/cache/{export,images,upload,js}
 sudo mkdir $final_path/{feed-icons,lock}
 
-sudo chmod -R 777 cache/images && &&chmod -R 777 cache/upload && chmod -R 777 cache/export && chmod -R 777 cache/js && chmod -R 777 feed-icons && chmod -R 777 lock
+sudo chmod -R 777 cache/images && chmod -R 777 cache/upload && chmod -R 777 cache/export && chmod -R 777 cache/js && chmod -R 777 feed-icons && chmod -R 777 lock
 
 
 # Set permissions to ttrss directory
