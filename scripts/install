@@ -28,10 +28,10 @@ sudo yunohost app setting ttrss mysqlpwd -v $db_pwd
   sudo cp ../conf/config.php $final_path/
 
 # Change variables in ttrss configuration
-sudo sed -i "s/yunouser/$DB_USER/g" $final_path/config.php
-sudo sed -i "s/yunopass/$DB_PWD/g" $final_path/config.php
-sudo sed -i "s/yunobase/$DB_NAME/g" $final_path/config.php
-sudo sed -i "s,yunopath,https://${APP_DOMAIN}${APP_PATH},g" $final_path/config.php
+sudo sed -i "s/yunouser/$db_user/g" $final_path/config.php
+sudo sed -i "s/yunopass/$db_pwf/g" $final_path/config.php
+sudo sed -i "s/yunobase/$db_user/g" $final_path/config.php
+sudo sed -i "s,yunopath,https://$domain$path,g" $final_path/config.php
 sudo echo "*/30 * * * * www-data cd $final_path && /usr/bin/php $final_path/update.php -feeds >/dev/null 2>&1" > /etc/cron.d/ttrss
 
 
