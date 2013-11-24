@@ -1,0 +1,33 @@
+{
+  "name": "Tiny-Tiny-RSS",
+  "id": "ttrss",
+  "description": {
+    "en": "A PHP and Ajax feed reader",
+    "fr": "Lecteur de flux PHP et Ajax"
+  },
+  "developer": {
+    "name": "titoko",
+    "email": "titoko@titoko.fr",
+    "url": "http://dev.yunohost.org"
+  },
+  "multi_instance": "true",
+  "arguments": {
+    "install" : [
+    {
+      "name": "domain",
+      "ask": {
+        "en": "Choose a domain for Tiny-Tiny-RSS"
+      },
+      "example": "domain.org"
+    },
+    {
+      "name": "path",
+      "ask": {
+        "en": "Choose a path for Tiny-Tiny-RSS"
+      },
+      "example": "/ttrss",
+      "default": "/ttrss"
+    }
+    ]
+  }
+}
