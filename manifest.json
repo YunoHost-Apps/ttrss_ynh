@@ -3,7 +3,7 @@
   "id": "ttrss",
   "description": {
     "en": "A PHP and Ajax feed reader",
-    "fr": "Lecteur de flux PHP et Ajax"
+    "fr": "Lecteur de flux en PHP et Ajax"
   },
   "developer": {
     "name": "titoko",
