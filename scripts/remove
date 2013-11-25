@@ -8,3 +8,5 @@ domain=$(sudo yunohost app setting ttrss domain)
 mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
 sudo rm -rf /var/www/ttrss
 sudo rm -f /etc/nginx/conf.d/$domain.d/ttrss.conf
+sudo rm -rf /etc/yunohost/apps/ttrss/
+sudo rm -f /etc/cron.d/ttrss
