@@ -34,6 +34,8 @@ sudo sed -i "s/yunobase/$db_user/g" $final_path/config.php
 sudo sed -i "s,yunopath,https://$domain$path,g" $final_path/config.php
 echo "*/30 * * * * www-data cd $final_path && /usr/bin/php $final_path/update.php -feeds >/dev/null 2>&1" > /tmp/cronttrss
 sudo mv /tmp/cronttrss /etc/cron.d/ttrss
+sudo chown root /etc/cron.d/ttrss
+
 #add folder
 sudo mkdir $final_path/cache/{export,images,upload,js}
 sudo mkdir $final_path/{feed-icons,lock}
