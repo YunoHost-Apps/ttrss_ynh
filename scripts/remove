@@ -9,4 +9,3 @@ mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localh
 sudo rm -rf /var/www/ttrss
 sudo rm -f /etc/nginx/conf.d/$domain.d/ttrss.conf
 sudo rm -f /etc/cron.d/ttrss
-sudo apt-get autoremove --purge php5-cli
