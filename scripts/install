@@ -35,6 +35,7 @@ sudo sed -i "s,yunopath,https://$domain$path,g" $final_path/config.php
 echo "*/30 * * * * www-data cd $final_path && /usr/bin/php $final_path/update.php --feeds >/dev/null 2>&1" > /tmp/cronttrss
 sudo mv /tmp/cronttrss /etc/cron.d/ttrss
 sudo chown root /etc/cron.d/ttrss
+sudo apt-get install php5-cli
 
 #add folder
 sudo mkdir $final_path/cache/{export,images,upload,js}
@@ -54,4 +55,4 @@ sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/ttrss.conf
 # Reload Nginx and regenerate SSOwat conf
 sudo service nginx reload
 sudo yunohost app ssowatconf
-#yunohost app setting ttrss skipped_uris "/public.php"
+yunohost app setting ttrss skipped_uris -v "/public.php"
