@@ -15,8 +15,6 @@ sudo mkdir -p $final_path
 sudo cp -a ../sources/* $final_path
 sudo cp ../conf/config.php $final_path/
 
-sudo mv $final_path/plugins/managesieve/config.inc.php.dist $final_path/plugins/managesieve/config.inc.php
-
 # Change variables in ttrss configuration
 sudo sed -i "s/yunouser/$db_user/g" $final_path/config.php
 sudo sed -i "s/yunopass/$db_pwd/g" $final_path/config.php
