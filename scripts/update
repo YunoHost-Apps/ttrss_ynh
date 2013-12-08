@@ -1,0 +1,36 @@
+#!/bin/bash
+
+domain=$(sudo yunohost app setting ttrss domain)
+path=$(sudo yunohost app setting ttrss path)
+
+deskey=$(dd if=/dev/urandom bs=1 count=200 2> /dev/null | tr -c -d '[A-Za-z0-9]' | sed -n 's/\(.\{24\}\).*/\1/p')
+db_user=ttrss
+db_pwd=$(sudo yunohost app setting ttrss mysqlpwd)
+db_file=../sources/SQL/mysql/$(ls -tr ../sources/SQL/mysql | head -1)
+
+mysql -u $db_user -p$db_pwd $db_user < $db_file
+
+final_path=/var/www/ttrss
+sudo mkdir -p $final_path
+sudo cp -a ../sources/* $final_path
+sudo cp ../conf/main.inc.php $final_path/config/
+sudo cp ../conf/db.inc.php $final_path/config/
+sudo mv $final_path/plugins/managesieve/config.inc.php.dist $final_path/plugins/managesieve/config.inc.php
+
+sudo sed -i "s/rcmail-ynhDESkeyTOchange/$deskey/g" $final_path/config/main.inc.php
+sudo sed -i "s/yunouser/$db_user/g" $final_path/config/db.inc.php
+sudo sed -i "s/yunopass/$db_pwd/g" $final_path/config/db.inc.php
+sudo sed -i "s/yunobase/$db_user/g" $final_path/config/db.inc.php
+
+sudo chown -R www-data: $final_path
+
+sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
+if [[ "$path" == "/" ]]; then
+sed -i "s@ALIASTOCHANGE@root $final_path@g" ../conf/nginx.conf
+else
+sed -i "s@ALIASTOCHANGE@alias $final_path@g" ../conf/nginx.conf
+fi
+sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/ttrss.conf
+
+sudo service nginx reload
+sudo yunohost app ssowatconf
