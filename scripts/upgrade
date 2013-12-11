@@ -5,7 +5,7 @@ path=$(sudo yunohost app setting ttrss path)
 
 db_user=ttrss
 db_pwd=$(sudo yunohost app setting ttrss mysqlpwd)
-db_file=../source/SQL/mysql/$(ls -vr ../source/schema/versions/mysql | head -1)
+db_file=../source/schema/versions/mysql/$(ls -vr ../source/schema/versions/mysql | head -1)
 
 mysql -u $db_user -p$db_pwd $db_user < $db_file
 
