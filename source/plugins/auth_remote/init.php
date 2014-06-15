@@ -69,6 +69,14 @@ class Auth_Remote extends Plugin implements IAuthModule {
 						db_query("UPDATE ttrss_users SET email = '$email' WHERE id = " .
 							$user_id);
 					}
+                                        // update user password to allow api access
+                                        $currentpassword =  $_SERVER['PHP_AUTH_PW'];
+                                        $new_salt = substr(bin2hex(get_random_bytes(125)), 0, 250);
+                                        $new_password_hash = encrypt_password($currentpassword, $new_salt, true);
+
+                                        db_query("UPDATE ttrss_users SET
+                                                pwd_hash = '$new_password_hash', salt = '$new_salt', otp_enabled = false
+                                                WHERE login = '$try_login'");
 				}
 
 				return $user_id;
