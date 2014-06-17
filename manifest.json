@@ -3,7 +3,7 @@
   "id": "ttrss",
   "description": {
     "en": "A PHP and Ajax feed reader",
-    "fr": "Lecteur de flux en PHP et Ajax"
+    "fr": "Un lecteur de flux en PHP et Ajax"
   },
   "developer": {
     "name": "titoko",
@@ -16,14 +16,16 @@
     {
       "name": "domain",
       "ask": {
-        "en": "Choose a domain for Tiny-Tiny-RSS"
+        "en": "Choose a domain for Tiny-Tiny-RSS",
+        "fr": "Choisissez un domaine pour Tiny-Tiny-RSS"
       },
       "example": "domain.org"
     },
     {
       "name": "path",
       "ask": {
-        "en": "Choose a path for Tiny-Tiny-RSS"
+        "en": "Choose a path for Tiny-Tiny-RSS",
+        "fr": "Choisissez un chemin pour Tiny-Tiny-RSS"
       },
       "example": "/ttrss",
       "default": "/ttrss"
