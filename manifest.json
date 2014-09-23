@@ -5,6 +5,7 @@
     "en": "A PHP and Ajax feed reader",
     "fr": "Un lecteur de flux en PHP et Ajax"
   },
+  "licence": "GPL-3",
   "developer": {
     "name": "titoko",
     "email": "titoko@titoko.fr",
