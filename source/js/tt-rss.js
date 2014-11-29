@@ -231,6 +231,7 @@ function init() {
 		dojo.require("dijit.form.Select");
 		dojo.require("dijit.form.SimpleTextarea");
 		dojo.require("dijit.form.TextBox");
+		dojo.require("dijit.form.ComboBox");
 		dojo.require("dijit.form.ValidationTextBox");
 		dojo.require("dijit.InlineEditBox");
 		dojo.require("dijit.layout.AccordionContainer");
@@ -500,6 +501,10 @@ function init() {
 				if (!isCdmMode()) {
 					_widescreen_mode = !_widescreen_mode;
 
+					// reset stored sizes because geometry changed
+					setCookie("ttrss_ci_width", 0);
+					setCookie("ttrss_ci_height", 0);
+
 					switchPanelMode(_widescreen_mode);
 				}
 		};
@@ -550,23 +555,9 @@ function init_second_stage() {
 			updateFeedList();
 			closeArticlePanel();
 
-			_widescreen_mode = getInitParam("widescreen");
-			switchPanelMode(_widescreen_mode);
-
 			if (parseInt(getCookie("ttrss_fh_width")) > 0) {
 				dijit.byId("feeds-holder").domNode.setStyle(
 					{width: getCookie("ttrss_fh_width") + "px" });
-			}
-
-			if (parseInt(getCookie("ttrss_ci_width")) > 0) {
-				if (_widescreen_mode) {
-					dijit.byId("content-insert").domNode.setStyle(
-						{width: getCookie("ttrss_ci_width") + "px" });
-
-				} else {
-					dijit.byId("content-insert").domNode.setStyle(
-						{height: getCookie("ttrss_ci_height") + "px" });
-				}
 			}
 
 			dijit.byId("main").resize();
@@ -623,6 +614,9 @@ function init_second_stage() {
 
 		hotkeys[1] = tmp;
 		setInitParam("hotkeys", hotkeys);
+
+		_widescreen_mode = getInitParam("widescreen");
+		switchPanelMode(_widescreen_mode);
 
 		console.log("second stage ok");
 
@@ -705,6 +699,10 @@ function quickMenuGo(opid) {
 		case "qmcToggleWidescreen":
 			if (!isCdmMode()) {
 				_widescreen_mode = !_widescreen_mode;
+
+				// reset stored sizes because geometry changed
+				setCookie("ttrss_ci_width", 0);
+				setCookie("ttrss_ci_height", 0);
 
 				switchPanelMode(_widescreen_mode);
 			}
@@ -989,6 +987,12 @@ function handle_rpc_json(transport, scheduled_call) {
 	try {
 		var reply = JSON.parse(transport.responseText);
 
+		var netalert_dijit = dijit.byId("net-alert");
+		var netalert = false;
+
+		if (netalert_dijit)
+			netalert = netalert_dijit.domNode;
+
 		if (reply) {
 
 			var error = reply['error'];
@@ -1035,16 +1039,21 @@ function handle_rpc_json(transport, scheduled_call) {
 			if (runtime_info)
 				parse_runtime_info(runtime_info);
 
-			Element.hide(dijit.byId("net-alert").domNode);
+			if (netalert) Element.hide(netalert);
 
 		} else {
-			//notify_error("Error communicating with server.");
-			Element.show(dijit.byId("net-alert").domNode);
+			if (netalert)
+				Element.show(netalert);
+			else
+				notify_error("Communication problem with server.");
 		}
 
 	} catch (e) {
-		Element.show(dijit.byId("net-alert").domNode);
-		//notify_error("Error communicating with server.");
+		if (netalert)
+			Element.show(netalert);
+		else
+			notify_error("Communication problem with server.");
+
 		console.log(e);
 		//exception_error("handle_rpc_json", e, transport);
 	}
@@ -1064,11 +1073,13 @@ function switchPanelMode(wide) {
 
 	  		dijit.byId("content-insert").domNode.setStyle({width: '50%',
 				height: 'auto',
-				borderLeftWidth: '1px',
-				borderLeftColor: '#c0c0c0',
 				borderTopWidth: '0px' });
 
-			$("headlines-toolbar").setStyle({ borderBottomWidth: '0px' });
+			if (parseInt(getCookie("ttrss_ci_width")) > 0) {
+				dijit.byId("content-insert").domNode.setStyle(
+					{width: getCookie("ttrss_ci_width") + "px" });
+			}
+
 			$("headlines-frame").setStyle({ borderBottomWidth: '0px' });
 			$("headlines-frame").addClassName("wide");
 
@@ -1078,10 +1089,12 @@ function switchPanelMode(wide) {
 
 	  		dijit.byId("content-insert").domNode.setStyle({width: 'auto',
 				height: '50%',
-				borderLeftWidth: '0px',
-				borderTopWidth: '1px'});
+				borderTopWidth: '0px'});
 
-			$("headlines-toolbar").setStyle({ borderBottomWidth: '1px' });
+			if (parseInt(getCookie("ttrss_ci_height")) > 0) {
+				dijit.byId("content-insert").domNode.setStyle(
+					{height: getCookie("ttrss_ci_height") + "px" });
+			}
 
 			$("headlines-frame").setStyle({ borderBottomWidth: '1px' });
 			$("headlines-frame").removeClassName("wide");

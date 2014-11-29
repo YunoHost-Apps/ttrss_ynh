@@ -181,7 +181,8 @@ class Pref_Prefs extends Handler_Protected {
 		global $access_level_names;
 
 		$prefs_blacklist = array("STRIP_UNSAFE_TAGS", "REVERSE_HEADLINES",
-			"SORT_HEADLINES_BY_FEED_DATE", "DEFAULT_ARTICLE_LIMIT");
+			"SORT_HEADLINES_BY_FEED_DATE", "DEFAULT_ARTICLE_LIMIT",
+			"FEEDS_SORT_BY_UNREAD");
 
 		/* "FEEDS_SORT_BY_UNREAD", "HIDE_READ_FEEDS", "REVERSE_HEADLINES" */
 
@@ -887,8 +888,9 @@ class Pref_Prefs extends Handler_Protected {
 
 		if (!$otp_enabled) {
 			$secret = $base32->encode(sha1($this->dbh->fetch_result($result, 0, "salt")));
-			$topt = new \OTPHP\TOTP($secret);
-			print QRcode::png($topt->provisioning_uri($login));
+	      print QRcode::png("otpauth://totp/".urlencode($login).
+				"?secret=$secret&issuer=".urlencode("Tiny Tiny RSS"));
+
 		}
 	}
 

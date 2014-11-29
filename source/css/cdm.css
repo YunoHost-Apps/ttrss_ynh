@@ -52,13 +52,24 @@ div.cdmHeader input {
 
 div.cdmContentInner {
 	margin : 10px;
-	line-height : 20px;
+	line-height : 1.5;
+	font-size : 15px;
 }
 
 div.cdmContentInner img {
 	border-width : 0px;
 	max-width : 98%;
 	height : auto;
+}
+
+div.cdmContentInner h1 {
+	font-size : 16px;
+}
+
+div.cdmContentInner h2,
+div.cdmContentInner h3,
+div.cdmContentInner h4 {
+	font-size : 15px;
 }
 
 div.cdmFooter {
@@ -68,15 +79,25 @@ div.cdmFooter {
 	clear : both;
 }
 
+div.cdm {
+	margin-right : 4px;
+}
+
 div.cdm.expanded {
 	margin-top : 4px;
 	margin-bottom : 4px;
 }
 
+div.cdm.expanded div.cdmFooter {
+	border-style : solid;
+	border-width : 0px 0px 1px 0px;
+	border-color : #ddd;
+}
+
 div.cdm.expandable {
 	background-color : #f0f0f0;
 	border-width : 0px 0px 1px 0px;
-	border-color : #c0c0c0;
+	border-color : #ddd;
 	border-style : solid;
 }
 
@@ -98,8 +119,6 @@ div.cdm.expandable.Selected {
 }
 
 div.cdm.expandable.active {
-	box-shadow : inset 0px 0px 3px 0px rgba(0,0,0,0.1);
-	border-color : #88b0f0;
 	background : white ! important;
 }
 
@@ -115,10 +134,15 @@ div.cdm.expandable.active div.cdmHeader span.titleWrap {
 }
 
 div.cdm.expandable div.cdmHeader a.title {
-	font-weight : bold;
+	font-weight : 600;
 	color : #555;
+	font-size : 14px;
 	-webkit-transition : color 0.2s;
 	transition : color 0.2s;
+	text-rendering: optimizelegibility;
+	font-family : "Segoe WP Semibold", "Segoe UI Semibold", 
+		"Segoe UI Web Semibold", "Segoe UI", Ubuntu, "DejaVu Sans", "Helvetica Neue",
+		Helvetica, Arial, sans-serif;
 }
 
 div.cdm.expandable.Unread div.cdmHeader a.title {
@@ -127,6 +151,12 @@ div.cdm.expandable.Unread div.cdmHeader a.title {
 
 div.cdm.expandable.active div.cdmHeader a.title {
 	color : #4684ff;
+	font-size : 16px;
+	font-weight : 600;
+	text-rendering: optimizelegibility;
+	font-family : "Segoe WP Semibold", "Segoe UI Semibold", 
+		"Segoe UI Web Semibold", "Segoe UI", Ubuntu, "DejaVu Sans", "Helvetica Neue",
+		Helvetica, Arial, sans-serif;
 }
 
 div.cdm.expanded div.cdmHeader {
@@ -134,11 +164,15 @@ div.cdm.expanded div.cdmHeader {
 }
 
 div.cdm.expanded div.cdmHeader a.title {
-	font-size : 14px;
+	font-size : 16px;
 	color : #999;
-	font-weight : bold;
+	font-weight : 600;
 	-webkit-transition : color 0.2s;
 	transition : color 0.2s;
+	text-rendering: optimizelegibility;
+	font-family : "Segoe WP Semibold", "Segoe UI Semibold", 
+		"Segoe UI Web Semibold", "Segoe UI", Ubuntu, "DejaVu Sans", "Helvetica Neue",
+		Helvetica, Arial, sans-serif;
 }
 
 div.cdm.expanded.active {
@@ -167,7 +201,7 @@ div.cdm.active div.cdmContent {
 
 span.cdmExcerpt {
 	font-size : 11px;
-	color : #555;
+	color : #999;
 	font-weight : normal;
 	cursor : pointer;
 }
@@ -222,7 +256,6 @@ div.cdm .hlFeed a {
 
 div.cdmContentInner p {
 	max-width : 650px;
-	text-align : justify;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
@@ -242,15 +275,15 @@ div.cdmHeader span.author {
 div#floatingTitle {
 	position : absolute;
 	z-index : 5;
-	top : 25px;
+	top : 0px;
 	right : 0px;
 	left : 0px;
-	border-color : #ccc;
-	border-width : 1px 0px 1px 0px;
+	border-color : #ddd;
+	border-width : 0px 0px 1px 0px;
 	border-style : solid;
-	background : #fcfcfc;
+	background : white;
 	color : #555;
-	box-shadow : 0px 1px 1px 0px rgba(0,0,0,0.1);
+	box-shadow : 0px 1px 1px -1px rgba(0,0,0,0.1);
 }
 
 div#floatingTitle > * {
@@ -272,11 +305,15 @@ div#floatingTitle span.author {
 }
 
 div#floatingTitle a.title {
-	font-size : 14px;
+	font-size : 16px;
 	color : #999;
-	font-weight : bold;
 	-webkit-transition : color 0.2s;
 	transition : color 0.2s;
+	font-weight : 600;
+	text-rendering: optimizelegibility;
+	font-family : "Segoe WP Semibold", "Segoe UI Semibold", 
+		"Segoe UI Web Semibold", "Segoe UI", Ubuntu, "DejaVu Sans", "Helvetica Neue",
+		Helvetica, Arial, sans-serif;
 }
 
 div#floatingTitle.Unread a.title {
@@ -284,7 +321,6 @@ div#floatingTitle.Unread a.title {
 }
 
 div#floatingTitle img.anchor {
-	margin-right : 1px;
 	margin-left : 0px;
 }
 
@@ -341,4 +377,24 @@ div#floatingTitle img.hlScorePic {
 	text-decoration : line-through;
 }
 
+div.cdmFeedTitle > * {
+	display : table-cell;
+	vertical-align : middle;
+}
+
+div.cdmFeedTitle a.title {
+	width : 100%;
+}
+
+div.cdmFeedTitle a.catchup {
+	text-align : right;
+	color : #555;
+	padding-right : 10px;
+	font-size : 11px;
+	white-space : nowrap;
+}
+
+div.cdmFeedTitle a.catchup:hover {
+	color : #4684ff;
+}
 
