@@ -70,7 +70,7 @@ class Auth_Remote extends Plugin implements IAuthModule {
 							$user_id);
 					}
 					// update user password to allow api access
-					if (isset($_SERVER['PHP_AUTH_PW']){
+					if (isset($_SERVER['PHP_AUTH_PW'])){
 						$currentpassword = $_SERVER['PHP_AUTH_PW'];
 						$new_salt = substr(bin2hex(get_random_bytes(125)), 0, 250);
 						$new_password_hash = encrypt_password($currentpassword, $new_salt, true);
