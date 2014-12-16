@@ -3,6 +3,7 @@
 	<title>Tiny Tiny RSS - Installer</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="../css/utility.css">
+	<link rel="stylesheet" type="text/css" href="../css/dijit.css">
 	<style type="text/css">
 	textarea { font-size : 12px; }
 	</style>
@@ -10,6 +11,12 @@
 <body>
 
 <?php
+
+	// could be needed because of existing config.php
+	function define_default($param, $value) {
+		//
+	}
+
 	function make_password($length = 8) {
 
 		$password = "";
@@ -263,7 +270,7 @@
 
 <fieldset>
 	<label>Password</label>
-	<input required name="DB_PASS" size="20" type="password" value="<?php echo $DB_PASS ?>"/>
+	<input name="DB_PASS" size="20" type="password" value="<?php echo $DB_PASS ?>"/>
 </fieldset>
 
 <fieldset>

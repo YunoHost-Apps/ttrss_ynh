@@ -56,15 +56,19 @@
 <head>
 	<title>Tiny Tiny RSS</title>
 
-	<?php stylesheet_tag("lib/dijit/themes/claro/claro.css"); ?>
-	<?php stylesheet_tag("css/layout.css"); ?>
+	<script type="text/javascript">
+		var __ttrss_version = "<?php echo VERSION ?>"
+	</script>
+
+	<?php echo stylesheet_tag("lib/dijit/themes/claro/claro.css"); ?>
+	<?php echo stylesheet_tag("css/layout.css"); ?>
 
 	<?php if ($_SESSION["uid"]) {
 		$theme = get_pref( "USER_CSS_THEME", $_SESSION["uid"], false);
 		if ($theme && file_exists("themes/$theme")) {
-			stylesheet_tag("themes/$theme");
+			echo stylesheet_tag("themes/$theme");
 		} else {
-			stylesheet_tag("themes/default.css");
+			echo stylesheet_tag("themes/default.css");
 		}
 	}
 	?>
@@ -86,12 +90,12 @@
 
 	<?php
 	foreach (array("lib/prototype.js",
-				"lib/scriptaculous/scriptaculous.js?load=effects,dragdrop,controls",
+				"lib/scriptaculous/scriptaculous.js?load=effects,controls",
 				"lib/dojo/dojo.js",
 				"lib/dojo/tt-rss-layer.js",
 				"errors.php?mode=js") as $jsfile) {
 
-		javascript_tag($jsfile);
+		echo javascript_tag($jsfile);
 
 	} ?>
 
@@ -152,6 +156,10 @@
 
 <div id="toolbar" dojoType="dijit.layout.ContentPane" region="top">
 	<div id="main-toolbar" dojoType="dijit.Toolbar">
+
+		<form id="headlines-toolbar" action="" onsubmit='return false'>
+
+		</form>
 
 		<form id="main_toolbar_form" action="" onsubmit='return false'>
 
@@ -256,9 +264,6 @@
 </div> <!-- toolbar pane -->
 
 	<div id="headlines-wrap-inner" dojoType="dijit.layout.BorderContainer" region="center">
-
-		<div id="headlines-toolbar" dojoType="dijit.layout.ContentPane" region="top">
-		</div>
 
 		<div id="floatingTitle" style="display : none"></div>
 

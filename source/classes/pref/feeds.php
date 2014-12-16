@@ -55,6 +55,7 @@ class Pref_Feeds extends Handler_Protected {
 			$cat['unread'] = 0;
 			$cat['child_unread'] = 0;
 			$cat['auxcounter'] = 0;
+			$cat['parent_id'] = $cat_id;
 
 			$cat['items'] = $this->get_category_items($line['id']);
 
@@ -395,7 +396,7 @@ class Pref_Feeds extends Handler_Protected {
 #		print_r($data['items']);
 
 		if (is_array($data) && is_array($data['items'])) {
-			$cat_order_id = 0;
+#			$cat_order_id = 0;
 
 			$data_map = array();
 			$root_item = false;
@@ -494,7 +495,7 @@ class Pref_Feeds extends Handler_Protected {
 		$feed_id = $this->dbh->escape_string($_REQUEST["feed_id"]);
 
 		if (is_file($icon_file) && $feed_id) {
-			if (filesize($icon_file) < 20000) {
+			if (filesize($icon_file) < 65535) {
 
 				$result = $this->dbh->query("SELECT id FROM ttrss_feeds
 					WHERE id = '$feed_id' AND owner_uid = ". $_SESSION["uid"]);
@@ -737,9 +738,9 @@ class Pref_Feeds extends Handler_Protected {
 			<input type=\"hidden\" name=\"op\" value=\"pref-feeds\">
 			<input type=\"hidden\" name=\"feed_id\" value=\"$feed_id\">
 			<input type=\"hidden\" name=\"method\" value=\"uploadicon\">
-			<button dojoType=\"dijit.form.Button\" onclick=\"return uploadFeedIcon();\"
+			<button class=\"small\" dojoType=\"dijit.form.Button\" onclick=\"return uploadFeedIcon();\"
 				type=\"submit\">".__('Replace')."</button>
-			<button dojoType=\"dijit.form.Button\" onclick=\"return removeFeedIcon($feed_id);\"
+			<button class=\"small\" dojoType=\"dijit.form.Button\" onclick=\"return removeFeedIcon($feed_id);\"
 				type=\"submit\">".__('Remove')."</button>
 			</form>";
 
@@ -962,7 +963,7 @@ class Pref_Feeds extends Handler_Protected {
 
 		if (!$batch) {
 
-			$result = $this->dbh->query("UPDATE ttrss_feeds SET
+			$this->dbh->query("UPDATE ttrss_feeds SET
 				$category_qpart
 				title = '$feed_title', feed_url = '$feed_link',
 				update_interval = '$upd_intl',
@@ -1259,13 +1260,18 @@ class Pref_Feeds extends Handler_Protected {
 			$interval_qpart = "DATE_SUB(NOW(), INTERVAL 3 MONTH)";
 		}
 
-		$result = $this->dbh->query("SELECT COUNT(*) AS num_inactive FROM ttrss_feeds WHERE
+		// could be performance-intensive and prevent feeds pref-panel from showing
+		if (!defined('_DISABLE_INACTIVE_FEEDS') || !_DISABLE_INACTIVE_FEEDS) {
+			$result = $this->dbh->query("SELECT COUNT(*) AS num_inactive FROM ttrss_feeds WHERE
 					(SELECT MAX(updated) FROM ttrss_entries, ttrss_user_entries WHERE
 						ttrss_entries.id = ref_id AND
 							ttrss_user_entries.feed_id = ttrss_feeds.id) < $interval_qpart AND
 			ttrss_feeds.owner_uid = ".$_SESSION["uid"]);
 
-		$num_inactive = $this->dbh->fetch_result($result, 0, "num_inactive");
+			$num_inactive = $this->dbh->fetch_result($result, 0, "num_inactive");
+		} else {
+			$num_inactive = 0;
+		}
 
 		if ($num_inactive > 0) {
 			$inactive_button = "<button dojoType=\"dijit.form.Button\"
@@ -1573,8 +1579,6 @@ class Pref_Feeds extends Handler_Protected {
 			# class needed for selectTableRows()
 			print "<tr class=\"placeholder\" $this_row_id>";
 
-			$edit_title = htmlspecialchars($line["title"]);
-
 			# id needed for selectTableRows()
 			print "<td width='5%' align='center'><input
 				onclick='toggleSelectRow2(this);' dojoType=\"dijit.form.CheckBox\"
@@ -1638,8 +1642,6 @@ class Pref_Feeds extends Handler_Protected {
 
 			# class needed for selectTableRows()
 			print "<tr class=\"placeholder\" $this_row_id>";
-
-			$edit_title = htmlspecialchars($line["title"]);
 
 			# id needed for selectTableRows()
 			print "<td width='5%' align='center'><input
@@ -1891,7 +1893,7 @@ class Pref_Feeds extends Handler_Protected {
 			AND owner_uid = " . $owner_uid);
 
 		if ($this->dbh->num_rows($result) == 1) {
-			$key = $this->dbh->escape_string(sha1(uniqid(rand(), true)));
+			$key = $this->dbh->escape_string(uniqid(base_convert(rand(), 10, 36)));
 
 			$this->dbh->query("UPDATE ttrss_access_keys SET access_key = '$key'
 				WHERE feed_id = '$feed_id' AND is_cat = $sql_is_cat
