@@ -33,4 +33,4 @@ sudo yunohost app ssowatconf
 sudo yunohost app setting ttrss skipped_uris -v "/public.php,/api"
 
 # Update database schema
-sudo su - www-data -c "$final_path/update.php --update-schema --quiet"
+sudo su - www-data -c "$final_path/update.php --update-schema"
