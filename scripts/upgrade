@@ -23,9 +23,6 @@ sudo sed -i "s,yunopath,https://$domain$path,g" $final_path/config.php
 
 sudo chown -R www-data: $final_path
 
-# Update database schema
-su - www-data -c "php5 $final_path/update.php --update-schema"
-
 # Modify Nginx configuration file and copy it to Nginx conf directory
 sudo sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
 sudo sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
