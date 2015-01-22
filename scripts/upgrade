@@ -11,7 +11,8 @@ sudo mkdir -p $final_path
 
 sudo cp -a ../source/* $final_path
 sudo cp ../conf/config.php $final_path/
-sudo patch -d $final_path -p0 < ..conf/ttrss.diff
+sudo cp ../conf/ttrss.diff /tmp/
+sudo patch -d $final_path -p0 < /tmp/ttrss.diff
 
 
 # Change variables in ttrss configuration
