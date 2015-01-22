@@ -44,7 +44,6 @@ create table ttrss_users (id integer primary key not null auto_increment,
 	pwd_hash varchar(250) not null,
 	last_login datetime default null,
 	access_level integer not null default 0,
-	theme_id integer default null,
 	email varchar(250) not null default '',
 	full_name varchar(250) not null default '',
 	email_digest bool not null default false,
@@ -53,7 +52,7 @@ create table ttrss_users (id integer primary key not null auto_increment,
 	created datetime default null,
 	twitter_oauth longtext default null,
 	otp_enabled boolean not null default false,
-	index (theme_id)) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+	resetpass_token varchar(250) default null) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
 insert into ttrss_users (login,pwd_hash,access_level) values ('admin',
 	'SHA1:5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 10);
@@ -302,7 +301,7 @@ create table ttrss_tags (id integer primary key auto_increment,
 
 create table ttrss_version (schema_version int not null) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
-insert into ttrss_version values (123);
+insert into ttrss_version values (126);
 
 create table ttrss_enclosures (id integer primary key auto_increment,
 	content_url text not null,
@@ -310,6 +309,8 @@ create table ttrss_enclosures (id integer primary key auto_increment,
 	post_id integer not null,
 	title text not null,
 	duration text not null,
+	width integer not null default 0,
+	height integer not null default 0,
 	index (post_id),
 	foreign key (post_id) references ttrss_entries(id) ON DELETE cascade) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 

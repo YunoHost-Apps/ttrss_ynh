@@ -22,10 +22,13 @@ sudo yunohost app initdb $db_user -p $db_pwd -s $(readlink -e ../source/schema/T
 sudo yunohost app setting ttrss mysqlpwd -v $db_pwd
 
 # Copy files to the right place
-  final_path=/var/www/ttrss
-  sudo mkdir -p $final_path
-  sudo cp -r ../source/* $final_path
-  sudo cp ../conf/config.php $final_path/
+final_path=/var/www/ttrss
+sudo mkdir -p $final_path
+sudo cp -r ../source/* $final_path
+sudo cp ../conf/config.php $final_path/
+sudo cp ../conf/ttrss.diff $final_path/
+sudo patch -p0 $final_path/ttrss.diff
+
 
 # Change variables in ttrss configuration
 sudo sed -i "s/yunouser/$db_user/g" $final_path/config.php
