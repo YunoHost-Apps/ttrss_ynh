@@ -5,20 +5,13 @@ path=$(sudo yunohost app setting ttrss path)
 
 db_user=ttrss
 db_pwd=$(sudo yunohost app setting ttrss mysqlpwd)
-<<<<<<< HEAD
-=======
-#db_file=../source/schema/versions/mysql/$(ls -vr ../source/schema/versions/mysql | head -1)
-
-#mysql -u $db_user -p$db_pwd $db_user < $db_file
->>>>>>> f6f84fd2b073b67a92eaed31b51016470a2e0d4e
 
 final_path=/var/www/ttrss
 sudo mkdir -p $final_path
 
 sudo cp -a ../source/* $final_path
 sudo cp ../conf/config.php $final_path/
-sudo cp ../conf/ttrss.diff $final_path/
-sudo patch -p0 $final_path/ttrss.diff
+sudo patch -d $final_path -p0 < ..conf/ttrss.diff
 
 
 # Change variables in ttrss configuration
