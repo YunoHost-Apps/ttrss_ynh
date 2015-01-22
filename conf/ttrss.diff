@@ -4,10 +4,10 @@
  			_debug("WARNING: please backup your database before continuing.");
  			_debug("Type 'yes' to continue.");
  
--			//if (read_stdin() != 'yes')
--			//	exit;
-+			if (read_stdin() != 'yes')
-+				exit;
+-			if (read_stdin() != 'yes')
+-				exit;
++			//if (read_stdin() != 'yes')
++			//	exit;
  
  			for ($i = $updater->getSchemaVersion() + 1; $i <= SCHEMA_VERSION; $i++) {
  				_debug("performing update up to version $i...");
@@ -18,16 +18,16 @@
  						db_query("UPDATE ttrss_users SET email = '$email' WHERE id = " .
  							$user_id);
  					}
--					// update user password to allow api access
--					if (isset($_SERVER['PHP_AUTH_PW'])){
--						$currentpassword = $_SERVER['PHP_AUTH_PW'];
--						$new_salt = substr(bin2hex(get_random_bytes(125)), 0, 250);
--						$new_password_hash = encrypt_password($currentpassword, $new_salt, true);
--
--						db_query("UPDATE ttrss_users SET
--							pwd_hash = '$new_password_hash', salt = '$new_salt', otp_enabled = false
--							WHERE login = '$try_login'");
--					}
++					// update user password to allow api access
++					if (isset($_SERVER['PHP_AUTH_PW'])){
++						$currentpassword = $_SERVER['PHP_AUTH_PW'];
++						$new_salt = substr(bin2hex(get_random_bytes(125)), 0, 250);
++						$new_password_hash = encrypt_password($currentpassword, $new_salt, true);
++
++						db_query("UPDATE ttrss_users SET
++							pwd_hash = '$new_password_hash', salt = '$new_salt', otp_enabled = false
++							WHERE login = '$try_login'");
++					}
  				}
  
  				return $user_id;
