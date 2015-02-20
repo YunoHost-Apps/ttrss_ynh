@@ -27,7 +27,8 @@ sudo mkdir -p $final_path
 sudo cp -r ../source/* $final_path
 sudo cp ../conf/config.php $final_path/
 sudo cp ../conf/ttrss.diff /tmp/
-sudo patch -d $final_path -p0 < /tmp/ttrss.diff
+sudo patch -d $final_path -p0 < /tmp/update.patch
+sudo patch -d $final_path/plugins/auth_remote/ -p0 < /tmp/init.patch
 
 
 # Change variables in ttrss configuration

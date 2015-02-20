@@ -311,8 +311,8 @@
 			_debug("WARNING: please backup your database before continuing.");
 			_debug("Type 'yes' to continue.");
 
-			//if (read_stdin() != 'yes')
-			//	exit;
+			if (read_stdin() != 'yes')
+				exit;
 
 			for ($i = $updater->getSchemaVersion() + 1; $i <= SCHEMA_VERSION; $i++) {
 				_debug("performing update up to version $i...");
