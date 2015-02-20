@@ -44,7 +44,8 @@ sudo apt-get install php5-cli -y
 #add folder
 for i in export images upload js
 do
-  if [ ! -d $final_path/cache/$i ]
+  if [ ! -d $final_path/cache/$i ];
+  then
     sudo mkdir $final_path/cache/$i
   fi
   sudo chmod -R 777 $final_path/cache/$i
@@ -52,7 +53,8 @@ done
 
 for i in feed-icons lock
 do
-  if [ ! -d $final_path/$i ]
+  if [ ! -d $final_path/$i ];
+  then
     sudo mkdir $final_path/$i
   fi
   sudo chmod -R 777 $final_path/$i
