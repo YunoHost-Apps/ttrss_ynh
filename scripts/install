@@ -51,6 +51,7 @@ do
 done
 
 for i in feed-icons lock
+do
   if [ ! -d $final_path/$i ]
     sudo mkdir $final_path/$i
   fi
