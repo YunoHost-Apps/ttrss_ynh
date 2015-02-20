@@ -46,7 +46,7 @@ for i in export images upload js
 do
   if [ ! -d $final_path/cache/$i ]
     sudo mkdir $final_path/cache/$i
-  if
+  fi
   sudo chmod -R 777 $final_path/cache/$i
 done
 
