@@ -42,11 +42,20 @@ sudo chown root /etc/cron.d/ttrss
 sudo apt-get install php5-cli -y
 
 #add folder
-sudo mkdir $final_path/cache/{export,images,upload,js}
-sudo mkdir $final_path/{feed-icons,lock}
+for i in export images upload js
+do
+  if [ ! -d $final_path/cache/$i ]
+    sudo mkdir $final_path/cache/$i
+  if
+  sudo chmod -R 777 $final_path/cache/$i
+done
 
-sudo chmod -R 777 $final_path/cache/images && sudo chmod -R 777 $final_path/cache/upload && sudo chmod -R 777 $final_path/cache/export && sudo chmod -R 777 $final_path/cache/js && sudo chmod -R 777 $final_path/feed-icons && sudo chmod -R 777 $final_path/lock
-
+for i in feed-icons lock
+  if [ ! -d $final_path/$i ]
+    sudo mkdir $final_path/$i
+  fi
+  sudo chmod -R 777 $final_path/$i
+done
 
 # Set permissions to ttrss directory
 sudo chown -R www-data: $final_path
