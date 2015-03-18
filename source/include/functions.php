@@ -14,6 +14,8 @@
 	$fetch_curl_used = false;
 	$suppress_debugging = false;
 
+	libxml_disable_entity_loader(true);
+
 	mb_internal_encoding("UTF-8");
 	date_default_timezone_set('UTC');
 	if (defined('E_DEPRECATED')) {
@@ -356,6 +358,9 @@
 
 		$url = ltrim($url, ' ');
 		$url = str_replace(' ', '%20', $url);
+
+		if (strpos($url, "//") === 0)
+			$url = 'http:' . $url;
 
 		if (!defined('NO_CURL') && function_exists('curl_init')) {
 

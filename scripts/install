@@ -22,10 +22,14 @@ sudo yunohost app initdb $db_user -p $db_pwd -s $(readlink -e ../source/schema/T
 sudo yunohost app setting ttrss mysqlpwd -v $db_pwd
 
 # Copy files to the right place
-  final_path=/var/www/ttrss
-  sudo mkdir -p $final_path
-  sudo cp -r ../source/* $final_path
-  sudo cp ../conf/config.php $final_path/
+final_path=/var/www/ttrss
+sudo mkdir -p $final_path
+sudo cp -r ../source/* $final_path
+sudo cp ../conf/config.php $final_path/
+sudo cp ../conf/*.patch /tmp/
+sudo patch -d $final_path -p0 < /tmp/update.patch
+sudo patch -d $final_path/plugins/auth_remote/ -p0 < /tmp/init.patch
+
 
 # Change variables in ttrss configuration
 sudo sed -i "s/yunouser/$db_user/g" $final_path/config.php
@@ -38,11 +42,23 @@ sudo chown root /etc/cron.d/ttrss
 sudo apt-get install php5-cli -y
 
 #add folder
-sudo mkdir $final_path/cache/{export,images,upload,js}
-sudo mkdir $final_path/{feed-icons,lock}
+for i in export images upload js
+do
+  if [ ! -d $final_path/cache/$i ];
+  then
+    sudo mkdir $final_path/cache/$i
+  fi
+  sudo chmod -R 777 $final_path/cache/$i
+done
 
-sudo chmod -R 777 $final_path/cache/images && sudo chmod -R 777 $final_path/cache/upload && sudo chmod -R 777 $final_path/cache/export && sudo chmod -R 777 $final_path/cache/js && sudo chmod -R 777 $final_path/feed-icons && sudo chmod -R 777 $final_path/lock
-
+for i in feed-icons lock
+do
+  if [ ! -d $final_path/$i ];
+  then
+    sudo mkdir $final_path/$i
+  fi
+  sudo chmod -R 777 $final_path/$i
+done
 
 # Set permissions to ttrss directory
 sudo chown -R www-data: $final_path
