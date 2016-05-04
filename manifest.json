@@ -2,6 +2,9 @@
   "name": "Tiny Tiny RSS",
   "id": "ttrss",
   "packaging_format": 1,
+  "requirements": {
+    "yunohost": ">> 2.3.12.1"
+  },
   "description": {
     "en": "A PHP and Ajax feed reader",
     "fr": "Un lecteur de flux en PHP et Ajax"

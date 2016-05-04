@@ -64,5 +64,5 @@ sudo chown root /etc/cron.d/$app
 sudo service nginx reload
 
 # Set ssowat config
-sudo yunohost app setting ttrss skipped_uris -v "/public.php,/api"
+sudo yunohost app setting $app skipped_uris -v "/public.php,/api"
 sudo yunohost app ssowatconf

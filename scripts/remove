@@ -1,11 +1,14 @@
 #!/bin/bash
+set -e
 
-db_user=ttrss
-db_name=ttrss
+app=${!#}
+
+db_user=$app
+db_name=$app
 root_pwd=$(sudo cat /etc/yunohost/mysql)
-domain=$(sudo yunohost app setting ttrss domain)
+domain=$(sudo yunohost app setting $app domain)
 
 mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
-sudo rm -rf /var/www/ttrss
-sudo rm -f /etc/nginx/conf.d/$domain.d/ttrss.conf
-sudo rm -f /etc/cron.d/ttrss
+sudo rm -rf /var/www/$app
+sudo rm -f /etc/nginx/conf.d/$domain.d/$app.conf
+sudo rm -f /etc/cron.d/$app
