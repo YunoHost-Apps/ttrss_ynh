@@ -4,8 +4,8 @@
 # The parameter $1 is the backup directory location dedicated to the app
 backup_dir=$1
 
-# The parameter $2 is the id of the app instance ex: ynhexample__2
-app=$2
+# The last parameter is the id of the app instance
+app=${!#}
 
 # Get old parameter of the app
 domain=$(sudo yunohost app setting $app domain)
@@ -25,7 +25,7 @@ if [ -d $final_path ]; then
     echo "There is already a directory: $final_path " | sudo tee /dev/stderr
     exit 1
 fi
-sudo cp -a "${backup_dir}/var/www/$app" $final_path
+sudo cp -a ./www "$final_path"
 
 # Dependences
 sudo apt-get install php5-cli -y
@@ -33,8 +33,8 @@ sudo apt-get install php5-cli -y
 db_pwd=$(sudo yunohost app setting $app mysqlpwd)
 db_user=$app
 sudo yunohost app initdb $db_user -p $db_pwd
-sudo su -c "mysql -u $db_user -p$db_pwd $app < ${backup_dir}/db.sql"
-sudo rm -f "${backup_dir}/db.sql"
+sudo su -c "mysql -u $db_user -p$db_pwd $app < ./db.sql"
+sudo rm -f "./db.sql"
 sudo sed -i -e "s/'DB_USER', *\"[^\"]*\"/'DB_USER', \"$app\"/g" $final_path/config.php
 sudo sed -i -e "s/'DB_NAME', *\"[^\"]*\"/'DB_NAME', \"$app\"/g" $final_path/config.php
 
@@ -56,8 +56,8 @@ if [ -f $conf ]; then
     echo "There is already a nginx conf file at this path: $conf " | sudo tee /dev/stderr
     exit 1
 fi
-sudo cp -a "${backup_dir}/conf/nginx.conf" $conf
-sudo mv "${backup_dir}/conf/cron" /etc/cron.d/$app
+sudo cp -a "./conf/nginx.conf" $conf
+sudo mv "./conf/cron" /etc/cron.d/$app
 sudo chown root /etc/cron.d/$app
 
 # Reload Nginx
