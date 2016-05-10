@@ -1,5 +1,7 @@
 #!/bin/bash
-# This restore script is adapted to Yunohost >=2.4
+
+# causes the shell to exit if any subcommand or pipeline returns a non-zero status
+set -e
 
 # The parameter $1 is the backup directory location dedicated to the app
 backup_dir=$1

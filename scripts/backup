@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# causes the shell to exit if any subcommand or pipeline returns a non-zero status
+set -e
+
 # The parameter $1 is the backup directory location dedicated to the app
 backup_dir=$1
 
@@ -11,12 +14,12 @@ path=$(sudo yunohost app setting $app path)
 
 # Copy the app files
 final_path="/var/www/$app"
-sudo cp -a "$final_path" ./www
+ynh_backup "$final_path" "./www"
 
 # Copy the conf files
 sudo mkdir -p ./conf
-sudo cp -a /etc/nginx/conf.d/$domain.d/$app.conf ./conf/nginx.conf
-sudo cp -a /etc/cron.d/$app ./conf/cron
+ynh_backup "/etc/nginx/conf.d/$domain.d/$app.conf" "./conf/nginx.conf"
+ynh_backup "/etc/cron.d/$app" "./conf/cron"
 
 # Backup db
 root_pwd=$(sudo cat /etc/yunohost/mysql)
