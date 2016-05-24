@@ -38,4 +38,4 @@ sudo yunohost app ssowatconf
 sudo yunohost app setting $app skipped_uris -v "/public.php,/api"
 
 # Update database schema
-sudo su - www-data -c "$final_path/update.php --update-schema"
+sudo sudo -u www-data php ${final_path}/update.php --update-schema
