@@ -75,4 +75,3 @@ sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/$app.conf
 # Reload Nginx and regenerate SSOwat conf
 sudo service nginx reload
 sudo yunohost app setting $app skipped_uris -v "/public.php,/api"
-sudo yunohost app ssowatconf
