@@ -10,6 +10,7 @@
     "fr": "Un lecteur de flux en PHP et Ajax"
   },
   "url": "http://tt-rss.org",
+  "version": "17.1",
   "maintainer": {
     "name": "titoko",
     "email": "titoko@titoko.fr"
