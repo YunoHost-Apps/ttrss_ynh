@@ -5,7 +5,7 @@
 APPNAME="ttrss"
 
 # ttrss version
-VERSION="16.8"
+VERSION="17.1"
 
 # Remote URL to fetch ttrss tarball
 TTRSS_BINARY_URL="https://tt-rss.org/gitlab/fox/tt-rss/repository/archive.zip?ref=${VERSION}"
