@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // *******************************************
 // *** Database configuration (important!) ***
 // *******************************************
@@ -20,11 +20,16 @@ define('MYSQL_CHARSET', 'UTF8');
 
 define('SELF_URL_PATH', 'yunopath');
 // Full URL of your tt-rss installation. This should be set to the
-// location of tt-rss directory, e.g. http://yourserver/tt-rss/
+// location of tt-rss directory, e.g. http://example.org/tt-rss/
 // You need to set this option correctly otherwise several features
 // including PUSH, bookmarklets and browser integration will not work properly.
 
 define('FEED_CRYPT_KEY', '');
+// WARNING: mcrypt is deprecated in php 7.1. This directive exists for backwards
+// compatibility with existing installs, new passwords are NOT going to be encrypted.
+// Use update.php --decrypt-feeds to decrypt existing passwords in the database while
+// mcrypt is still available.
+
 // Key used for encryption of passwords for password-protected feeds
 // in the database. A string of 24 random characters. If left blank, encryption
 // is not used. Requires mcrypt functions.
@@ -104,13 +109,9 @@ define('PUBSUBHUBBUB_ENABLED', false);
 // Enable client PubSubHubbub support in tt-rss. When disabled, tt-rss
 // won't try to subscribe to PUSH feed updates.
 
-// *********************
-// *** Sphinx search ***
-// *********************
-
-define('SPHINX_ENABLED', false);
-// Enable fulltext search using Sphinx (http://www.sphinxsearch.com)
-// Please see http://tt-rss.org/wiki/SphinxSearch for more information.
+// ****************************
+// *** Sphinx search plugin ***
+// ****************************
 
 define('SPHINX_SERVER', 'localhost:9312');
 // Hostname:port combination for the Sphinx server.
@@ -145,13 +146,6 @@ define('SESSION_COOKIE_LIFETIME', 86400);
 // Default lifetime of a session (e.g. login) cookie. In seconds, 
 // 0 means cookie will be deleted when browser closes.
 
-define('SESSION_CHECK_ADDRESS', 1);
-// Check client IP address when validating session:
-// 0 - disable checking
-// 1 - check first 3 octets of an address (recommended)
-// 2 - check first 2 octets of an address
-// 3 - check entire address
-
 // *********************************
 // *** Email and digest settings ***
 // *********************************
@@ -181,14 +175,8 @@ define('SMTP_SECURE', '');
 // *** Other settings (less important) ***
 // ***************************************
 
-define('CHECK_FOR_NEW_VERSION', true);
-// Check for new versions of tt-rss automatically.
-
-define('DETECT_ARTICLE_LANGUAGE', false);
-// Detect article language when updating feeds, presently this is only
-// used for hyphenation. This may increase amount of CPU time used by 
-// update processes, disable if necessary (i.e. you are being billed
-// for CPU time)
+define('CHECK_FOR_UPDATES', true);
+// Check for updates automatically if running Git version
 
 define('ENABLE_GZIP_OUTPUT', false);
 // Selectively gzip output to improve wire performance. This requires
@@ -197,7 +185,7 @@ define('ENABLE_GZIP_OUTPUT', false);
 // if you experience weird errors and tt-rss failing to start, blank pages
 // after login, or content encoding errors, disable it.
 
-define('PLUGINS', 'auth_remote, auth_internal, note, updater');
+define('PLUGINS', 'auth_remote, auth_internal, note');
 // Comma-separated list of plugins to load automatically for all users.
 // System plugins have to be specified here. Please enable at least one
 // authentication plugin here (auth_*).
@@ -217,4 +205,3 @@ define('CONFIG_VERSION', 26);
 // if necessary (after migrating all new options from this file).
 
 // vim:ft=php
-?>

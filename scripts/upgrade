@@ -3,6 +3,9 @@
 # causes the shell to exit if any subcommand or pipeline returns a non-zero status
 set -e
 
+# Load common variables
+source ./_common.sh
+
 app=${!#}
 
 domain=$(sudo yunohost app setting $app domain)
@@ -14,7 +17,8 @@ db_pwd=$(sudo yunohost app setting $app mysqlpwd)
 final_path=/var/www/$app
 sudo mkdir -p $final_path
 
-sudo cp -a ../source/* $final_path
+extract_ttrss $final_path
+
 sudo cp ../conf/config.php $final_path/
 sudo cp ../conf/*.patch /tmp/
 sudo patch -d $final_path -p0 < /tmp/update.patch
