@@ -27,6 +27,6 @@ extract_ttrss() {
     || ynh_die "Unable to download ttrss tarball"
   unzip -q "$ttrss_tarball" -d "$TMPDIR" \
     || ynh_die "Unable to extract ttrss tarball"
-  sudo rsync -a "$TMPDIR"/tt-rss.git/* "$DESTDIR"
+  sudo rsync -a "$TMPDIR"/tt-rss*/* "$DESTDIR"
   rm -rf "$ttrss_tarball" "$TMPDIR"
 }
