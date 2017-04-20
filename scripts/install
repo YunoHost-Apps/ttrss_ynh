@@ -5,7 +5,8 @@ set -e
 
 # Load common variables
 source ./_common.sh
-
+# Source app helpers
+source /usr/share/yunohost/helpers
 
 # Retrieve arguments
 domain=$1
