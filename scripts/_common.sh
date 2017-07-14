@@ -5,10 +5,10 @@
 APPNAME="ttrss"
 
 # ttrss version, use latest commit found here: https://tt-rss.org/fox/tt-rss/commits/master
-VERSION="6fd03996"
+VERSION="17.4"
 
 # Remote URL to fetch ttrss tarball
-TTRSS_BINARY_URL="https://tt-rss.org/fox/tt-rss/repository/archive.zip?ref=${VERSION}"
+TTRSS_BINARY_URL="https://git.tt-rss.org/git/tt-rss/archive/${VERSION}.tar.gz"
 
 #
 # Common helpers
