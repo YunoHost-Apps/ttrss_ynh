@@ -8,7 +8,7 @@ APPNAME="ttrss"
 VERSION="17.4"
 
 # Remote URL to fetch ttrss tarball
-TTRSS_BINARY_URL="https://git.tt-rss.org/git/tt-rss/archive/${VERSION}.tar.gz"
+TTRSS_BINARY_URL="https://git.tt-rss.org/git/tt-rss/archive/${VERSION}.zip"
 
 #
 # Common helpers
