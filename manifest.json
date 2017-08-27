@@ -2,20 +2,21 @@
   "name": "Tiny Tiny RSS",
   "id": "ttrss",
   "packaging_format": 1,
-  "requirements": {
-    "yunohost": ">> 2.3.12.1"
-  },
   "description": {
     "en": "A PHP and Ajax feed reader",
     "fr": "Un lecteur de flux en PHP et Ajax"
   },
   "url": "http://tt-rss.org",
-  "version": "17.1",
+  "license": "GPL-3",
+  "version": "17.4",
   "maintainer": {
     "name": "titoko",
     "email": "titoko@titoko.fr"
   },
-  "multi_instance": "true",
+  "requirements": {
+    "yunohost": ">= 2.6.4"
+  },
+  "multi_instance": true,
   "services": [
       "nginx",
       "php5-fpm",

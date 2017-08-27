@@ -1,44 +1,132 @@
 #!/bin/bash
 
-# causes the shell to exit if any subcommand or pipeline returns a non-zero status
-set -e
+#=================================================
+# GENERIC START
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
 
-# Load common variables
-source ./_common.sh
+source _common.sh
+source /usr/share/yunohost/helpers
 
-app=${!#}
+#=================================================
+# LOAD SETTINGS
+#=================================================
 
-domain=$(sudo yunohost app setting $app domain)
-path=$(sudo yunohost app setting $app path)
+app=$YNH_APP_INSTANCE_NAME
 
-db_user=$app
-db_pwd=$(sudo yunohost app setting $app mysqlpwd)
+domain=$(ynh_app_setting_get $app domain)
+path_url=$(ynh_app_setting_get $app path)
+final_path=$(ynh_app_setting_get $app final_path)
+db_name=$(ynh_app_setting_get $app db_name)
 
-final_path=/var/www/$app
-sudo mkdir -p $final_path
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
 
-extract_ttrss $final_path
+if [ -z $final_path ]; then	# If final_path doesn't exist, create it
+	final_path="/var/www/$app"
+	ynh_app_setting_set $app final_path $final_path
+fi
 
-sudo cp ../conf/config.php $final_path/
-sudo cp ../conf/*.patch /tmp/
-sudo patch -d $final_path -p0 < /tmp/update.patch
-sudo patch -d $final_path/plugins/auth_remote/ -p0 < /tmp/init.patch
+if [ -z $db_name ]; then	# If db_name doesn't exist, create it
+	db_name=$(ynh_sanitize_dbid $app)
+	ynh_app_setting_set $app db_name $db_name
+fi
+
+#=================================================
+# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
+#=================================================
+
+ynh_backup_before_upgrade	# Backup the current version of the app
+ynh_clean_setup () {
+	ynh_restore_upgradebackup	# restore it if the upgrade fails
+}
+ynh_abort_if_errors	# Active trap pour arrêter le script si une erreur est détectée.
+
+#=================================================
+# CHECK THE PATH
+#=================================================
+
+# Normalize the URL path syntax
+path_url=$(ynh_normalize_url_path $path_url)
+
+#=================================================
+# STANDARD UPGRADE STEPS
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+
+# Download, check integrity, uncompress and patch the source from app.src
+ynh_setup_source "$final_path"
+
+#=================================================
+# NGINX CONFIGURATION
+#=================================================
+
+# Create a dedicated nginx config
+ynh_add_nginx_config
+
+#=================================================
+# CREATE DEDICATED USER
+#=================================================
+
+# Create a system user
+ynh_system_user_create $app
+
+#=================================================
+# PHP-FPM CONFIGURATION
+#=================================================
+
+# Create a dedicated php-fpm config
+ynh_add_fpm_config
+
+#=================================================
+# SPECIFIC UPGRADE
+#=================================================
+# CONFIGURE TTRSS
+#=================================================
+
+# Verify the checksum and backup the file if it's different
+ynh_backup_if_checksum_is_different "$final_path/config.php"
+
+cp ../conf/config.php "$final_path/config.php"
 
 # Change variables in ttrss configuration
-sudo sed -i "s/yunouser/$db_user/g" $final_path/config.php
-sudo sed -i "s/yunopass/$db_pwd/g" $final_path/config.php
-sudo sed -i "s/yunobase/$db_user/g" $final_path/config.php
-sudo sed -i "s,yunopath,https://$domain$path,g" $final_path/config.php
+ynh_replace_string "__DBNAME__" "$db_name" "$final_path/config.php"
+db_pwd=$(ynh_app_setting_get $app mysqlpwd)
+ynh_replace_string "__DBPWD__" "$db_pwd" "$final_path/config.php"
+ynh_replace_string "__DOMAINPATH__" "https://$domain$path_url" "$final_path/config.php"
 
-sudo chown -R www-data: $final_path
+# Recalculate and store the config file checksum into the app settings
+ynh_store_file_checksum "$final_path/config.php"
 
-# Modify Nginx configuration file and copy it to Nginx conf directory
-sudo sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
-sudo sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
-sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/$app.conf
+#=================================================
+# UPGRADE THE CRON FILE
+#=================================================
 
-sudo service nginx reload
-sudo yunohost app setting $app skipped_uris -v "/public.php,/api"
+echo "*/30 * * * * $app cd $final_path && /usr/bin/php $final_path/update.php --feeds >/dev/null 2>&1" \
+    > /etc/cron.d/$app
 
-# Update database schema
-sudo sudo -u www-data php ${final_path}/update.php --update-schema
+#=================================================
+# UPGRADE DATABASE
+#=================================================
+
+chown -R $app: $final_path
+sudo -u $app php ${final_path}/update.php --update-schema
+
+#=================================================
+# SECURE FILES AND DIRECTORIES
+#=================================================
+
+# Set permissions to app files
+chown -R root: $final_path
+chown -R $app $final_path/{cache,feed-icons,lock}
+
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# RELOAD NGINX
+#=================================================
+
+systemctl reload nginx

@@ -1,5 +1,4 @@
 ;; Nom du test
-	auto_remove=1
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
 		path="/path"	(PATH)
@@ -13,22 +12,22 @@
 		upgrade=1
 		backup_restore=1
 		multi_instance=1
-		wrong_user=1
-		wrong_path=1
 		incorrect_path=1
-		corrupt_source=0
-		fail_download_source=0
 		port_already_use=0
-		final_path_already_use=0
+		change_url=0
 ;;; Levels
 	Level 1=auto
 	Level 2=auto
 	Level 3=auto
-# ttrss semble prendre en charge ldap, mais je ne trouve pas sa prise en charge.
-	Level 4=0
-	Level 5=auto
+# Plugin auth_remote
+	Level 4=1
+# https://github.com/YunoHost-Apps/ttrss_ynh/issues/35
+	Level 5=1
 	Level 6=auto
 	Level 7=auto
 	Level 8=0
 	Level 9=0
 	Level 10=0
+;;; Options
+Email=
+Notification=none
