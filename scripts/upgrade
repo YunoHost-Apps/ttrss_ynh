@@ -102,13 +102,6 @@ ynh_replace_string "__DOMAINPATH__" "https://$domain$path_url" "$final_path/conf
 ynh_store_file_checksum "$final_path/config.php"
 
 #=================================================
-# UPGRADE THE CRON FILE
-#=================================================
-
-echo "*/30 * * * * $app cd $final_path && /usr/bin/php $final_path/update.php --feeds >/dev/null 2>&1" \
-    > /etc/cron.d/$app
-
-#=================================================
 # UPGRADE DATABASE
 #=================================================
 
@@ -122,6 +115,20 @@ sudo -u $app php ${final_path}/update.php --update-schema
 # Set permissions to app files
 chown -R root: $final_path
 chown -R $app $final_path/{cache,feed-icons,lock}
+
+#=================================================
+# REMOVE OLD CRON JOB
+#=================================================
+
+ynh_secure_remove "/etc/cron.d/$app"
+
+#=================================================
+# UPGRADE SERVICE
+#=================================================
+
+ynh_add_systemd_config
+sudo systemctl daemon-reload
+sudo systemctl restart $app
 
 #=================================================
 # GENERIC FINALIZATION

@@ -109,11 +109,10 @@ ynh_replace_string "__DOMAINPATH__" "https://$domain$path_url" "$final_path/conf
 ynh_store_file_checksum "$final_path/config.php"
 
 #=================================================
-# ADD A CRON FILE
+# SETUP SYSTEMD
 #=================================================
 
-echo "*/30 * * * * $app cd $final_path && /usr/bin/php $final_path/update.php --feeds >/dev/null 2>&1" \
-    > /etc/cron.d/$app
+ynh_add_systemd_config
 
 #=================================================
 # SECURE FILES AND DIRECTORIES
@@ -131,6 +130,12 @@ ynh_mysql_connect_as "$db_name" "$db_pwd" "$db_name" \
     < "$final_path/schema/ttrss_schema_mysql.sql"
 
 sudo -u $app php ${final_path}/update.php --update-schema
+
+#=================================================
+# START TTRSS IN BACKGROUND
+#=================================================
+
+sudo systemctl start $app
 
 #=================================================
 # GENERIC FINALIZATION
