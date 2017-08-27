@@ -101,6 +101,7 @@ ynh_install_app_dependencies php5-cli
 ynh_restore_file "/etc/systemd/system/$app.service"
 ## Démarrage auto du service
 sudo systemctl enable $app.service
+sudo systemctl start $app
 
 #=================================================
 # GENERIC FINALIZATION
