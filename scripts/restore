@@ -95,10 +95,12 @@ ynh_restore_file "/etc/php5/fpm/conf.d/20-$app.ini"
 ynh_install_app_dependencies php5-cli
 
 #=================================================
-# RESTORE THE CRON FILE
+# RESTORE SYSTEMD
 #=================================================
 
-ynh_restore_file "/etc/cron.d/$app"
+ynh_restore_file "/etc/systemd/system/$app.service"
+## Démarrage auto du service
+sudo systemctl enable $app.service
 
 #=================================================
 # GENERIC FINALIZATION

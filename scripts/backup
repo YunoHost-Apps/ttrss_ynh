@@ -61,7 +61,7 @@ ynh_mysql_dump_db "$db_name" > db.sql
 #=================================================
 # SPECIFIC BACKUP
 #=================================================
-# BACKUP THE CRON FILE
+# BACKUP SYSTEMD
 #=================================================
 
-ynh_backup "/etc/cron.d/$app" "${YNH_APP_BACKUP_DIR}/etc/cron.d/$app"
+ynh_backup "/etc/systemd/system/$app.service" "${YNH_APP_BACKUP_DIR}/etc/systemd/system/$app.service"
