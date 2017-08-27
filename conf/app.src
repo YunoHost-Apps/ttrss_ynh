@@ -1,5 +1,5 @@
-SOURCE_URL=https://git.tt-rss.org/git/tt-rss/archive/17.4.tar.gz
-SOURCE_SUM=6800f75a59877fab3833eb8c8cd354add89410d8564f98752c499cb72cf24a6e
+SOURCE_URL=https://git.tt-rss.org/git/tt-rss/archive/153cb6d30510f9804fe596ac6777bc2f35111ae2.tar.gz
+SOURCE_SUM=1413d5d2ce6e4dfd63f4c69bb79f6e18287313756329eaf61928ce25085ebc13
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
