@@ -138,7 +138,7 @@ sudo -u $app php ${final_path}/update.php --update-schema
 # SETUP SSOWAT
 #=================================================
 
-ynh_app_setting_set $app skipped_uris "/public.php,/api"
+ynh_app_setting_set $app skipped_uris "/public.php,/api,/opml.php?op=publish"
 
 #=================================================
 # RELOAD NGINX
