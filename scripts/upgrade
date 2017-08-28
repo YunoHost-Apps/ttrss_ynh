@@ -34,6 +34,9 @@ if [ -z $db_name ]; then	# If db_name doesn't exist, create it
 	ynh_app_setting_set $app db_name $db_name
 fi
 
+# Remove old cron job
+ynh_secure_remove "/etc/cron.d/$app"
+
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
@@ -117,17 +120,11 @@ chown -R root: $final_path
 chown -R $app $final_path/{cache,feed-icons,lock}
 
 #=================================================
-# REMOVE OLD CRON JOB
-#=================================================
-
-ynh_secure_remove "/etc/cron.d/$app"
-
-#=================================================
 # UPGRADE SERVICE
 #=================================================
 
 ynh_add_systemd_config
-sudo systemctl restart $app
+systemctl restart $app
 
 #=================================================
 # GENERIC FINALIZATION
