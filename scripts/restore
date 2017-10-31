@@ -1,69 +1,113 @@
 #!/bin/bash
 
-# causes the shell to exit if any subcommand or pipeline returns a non-zero status
-set -e
+#=================================================
+# GENERIC START
+#=================================================
+# MANAGE SCRIPT FAILURE
+#=================================================
 
-# The parameter $1 is the backup directory location dedicated to the app
-backup_dir=$1
+# Exit on command errors and treat access to unset variables as an error
+set -eu
 
-# The last parameter is the id of the app instance
-app=${!#}
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
 
-# Get old parameter of the app
-domain=$(sudo yunohost app setting $app domain)
-path=$(sudo yunohost app setting $app path)
+# if [ ! -e _common.sh ]; then
+# 	# Get the _common.sh file if it's not in the current directory
+# 	cp ../settings/scripts/_common.sh ./_common.sh
+# 	chmod a+rx _common.sh
+# fi
+# source _common.sh
+source /usr/share/yunohost/helpers
 
-# Check domain/path availability
-sudo yunohost app checkurl $domain$path -a $app
-if [[ ! $? -eq 0 ]]; then
-    echo "There is already an app on this URL : $domain$path" | sudo tee /dev/stderr
-    exit 1
-fi
+#=================================================
+# LOAD SETTINGS
+#=================================================
 
-# Restore sources & data
-final_path=/var/www/$app
+app=$YNH_APP_INSTANCE_NAME
 
-if [ -d $final_path ]; then
-    echo "There is already a directory: $final_path " | sudo tee /dev/stderr
-    exit 1
-fi
-sudo cp -a ./www "$final_path"
+domain=$(ynh_app_setting_get $app domain)
+path_url=$(ynh_app_setting_get $app path)
+final_path=$(ynh_app_setting_get $app final_path)
+db_name=$(ynh_app_setting_get $app db_name)
 
-# Dependences
-sudo apt-get install php5-cli -y
+#=================================================
+# CHECK IF THE APP CAN BE RESTORED
+#=================================================
 
-db_pwd=$(sudo yunohost app setting $app mysqlpwd)
-db_user=$app
-sudo yunohost app initdb $db_user -p $db_pwd
-sudo su -c "mysql -u $db_user -p$db_pwd $app < ./db.sql"
-sudo rm -f "./db.sql"
-sudo sed -i -e "s/'DB_USER', *\"[^\"]*\"/'DB_USER', \"$app\"/g" $final_path/config.php
-sudo sed -i -e "s/'DB_NAME', *\"[^\"]*\"/'DB_NAME', \"$app\"/g" $final_path/config.php
+ynh_webpath_available $domain $path_url \
+	|| ynh_die "Path not available: ${domain}${path_url}"
+test ! -d $final_path \
+	|| ynh_die "There is already a directory: $final_path "
 
-# Set permissions
-sudo chown -R www-data:www-data $final_path
-for i in export images upload js
-do
-  sudo chmod -R 777 $final_path/cache/$i
-done
+#=================================================
+# STANDARD RESTORATION STEPS
+#=================================================
+# RESTORE THE NGINX CONFIGURATION
+#=================================================
 
-for i in feed-icons lock
-do
-  sudo chmod -R 777 $final_path/$i
-done
+ynh_restore_file "/etc/nginx/conf.d/$domain.d/$app.conf"
 
-# Restore conf files
-conf=/etc/nginx/conf.d/$domain.d/$app.conf
-if [ -f $conf ]; then
-    echo "There is already a nginx conf file at this path: $conf " | sudo tee /dev/stderr
-    exit 1
-fi
-sudo cp -a "./conf/nginx.conf" $conf
-sudo mv "./conf/cron" /etc/cron.d/$app
-sudo chown root /etc/cron.d/$app
+#=================================================
+# RESTORE THE APP MAIN DIR
+#=================================================
 
-# Reload Nginx
-sudo service nginx reload
+ynh_restore_file "$final_path"
 
-# Set ssowat config
-sudo yunohost app setting $app skipped_uris -v "/public.php,/api"
+#=================================================
+# RESTORE THE MYSQL DATABASE
+#=================================================
+
+db_pwd=$(ynh_app_setting_get $app mysqlpwd)
+ynh_mysql_setup_db $db_name $db_name $db_pwd
+ynh_mysql_connect_as $db_name $db_pwd $db_name < ./db.sql
+
+#=================================================
+# RECREATE THE DEDICATED USER
+#=================================================
+
+# Create the dedicated user (if not existing)
+ynh_system_user_create $app
+
+#=================================================
+# RESTORE USER RIGHTS
+#=================================================
+
+# Set permissions to app files
+chown -R root: $final_path
+chown -R $app $final_path/{cache,feed-icons,lock}
+
+#=================================================
+# RESTORE THE PHP-FPM CONFIGURATION
+#=================================================
+
+ynh_restore_file "/etc/php5/fpm/pool.d/$app.conf"
+ynh_restore_file "/etc/php5/fpm/conf.d/20-$app.ini"
+
+#=================================================
+# SPECIFIC RESTORATION
+#=================================================
+# REINSTALL DEPENDENCIES
+#=================================================
+
+# Define and install dependencies
+ynh_install_app_dependencies php5-cli
+
+#=================================================
+# RESTORE SYSTEMD
+#=================================================
+
+ynh_restore_file "/etc/systemd/system/$app.service"
+## Démarrage auto du service
+sudo systemctl enable $app.service
+sudo systemctl start $app
+
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# RELOAD NGINX AND PHP-FPM
+#=================================================
+
+systemctl reload php5-fpm
+systemctl reload nginx
