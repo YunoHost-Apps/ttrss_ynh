@@ -10,6 +10,7 @@
     "fr": "Un lecteur de flux en PHP et Ajax"
   },
   "url": "http://tt-rss.org",
+  "license": "GPL-3",
   "version": "17.1",
   "maintainer": {
     "name": "titoko",
