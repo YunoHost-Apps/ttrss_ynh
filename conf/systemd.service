@@ -1,0 +1,11 @@
+[Unit]
+Description=ttrss_backend
+After=network.target mysql.service
+
+[Service]
+User=__APP__
+Group=__APP__
+ExecStart=/usr/bin/php __FINALPATH__/update_daemon2.php
+
+[Install]
+WantedBy=multi-user.target
