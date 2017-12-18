@@ -34,9 +34,6 @@ if [ -z $db_name ]; then	# If db_name doesn't exist, create it
 	ynh_app_setting_set $app db_name $db_name
 fi
 
-# Remove old cron job
-ynh_secure_remove "/etc/cron.d/$app"
-
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
@@ -46,6 +43,13 @@ ynh_clean_setup () {
 	ynh_restore_upgradebackup	# restore it if the upgrade fails
 }
 ynh_abort_if_errors	# Active trap pour arrêter le script si une erreur est détectée.
+
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY BIS
+#=================================================
+
+# Remove old cron job
+ynh_secure_remove "/etc/cron.d/$app"
 
 #=================================================
 # CHECK THE PATH
