@@ -6,15 +6,15 @@
     "en": "A PHP and Ajax feed reader",
     "fr": "Un lecteur de flux en PHP et Ajax"
   },
-  "url": "http://tt-rss.org",
-  "license": "GPL-3",
+  "url": "https://tt-rss.org",
+  "license": "GPL-3.0",
   "version": "153cb6d30510f9804fe596ac6777bc2f35111ae2",
   "maintainer": {
     "name": "titoko",
     "email": "titoko@titoko.fr"
   },
   "requirements": {
-    "yunohost": ">= 2.6.4"
+    "yunohost": ">= 2.7.0"
   },
   "multi_instance": true,
   "services": [
