@@ -6,7 +6,6 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-# source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -49,7 +48,9 @@ ynh_abort_if_errors	# Active trap pour arrêter le script si une erreur est dét
 #=================================================
 
 # Remove old cron job
-ynh_secure_remove "/etc/cron.d/$app"
+if [ -e "/etc/cron.d/$app" ]; then
+    ynh_secure_remove "/etc/cron.d/$app"
+fi
 
 #=================================================
 # CHECK THE PATH
