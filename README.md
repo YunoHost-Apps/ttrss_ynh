@@ -1,4 +1,4 @@
 Tiny-Tiny RSS package for YunoHost
 ======================
 
-http://tt-rss.org/redmine/projects/tt-rss/wiki
+https://git.tt-rss.org/git/tt-rss/wiki
