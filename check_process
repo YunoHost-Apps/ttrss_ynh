@@ -10,6 +10,7 @@
 		setup_private=0
 		setup_public=0
 		upgrade=1
+		upgrade=1	from_commit=481513180a18fce470250aaae251605ef9ede890
 		backup_restore=1
 		multi_instance=1
 		incorrect_path=1
@@ -31,3 +32,7 @@
 ;;; Options
 Email=
 Notification=none
+;;; Upgrade options
+	; commit=481513180a18fce470250aaae251605ef9ede890
+		name=Update 17.4 & refactoring 
+		manifest_arg=domain=DOMAIN&path=PATH&
