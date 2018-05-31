@@ -143,6 +143,12 @@ sudo -u $app php ${final_path}/update.php --update-schema
 sudo systemctl start $app
 
 #=================================================
+# ADVERTISE SERVICE IN ADMIN PANEL
+#=================================================
+
+yunohost service add $app
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # SETUP SSOWAT

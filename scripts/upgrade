@@ -132,6 +132,12 @@ ynh_add_systemd_config
 systemctl restart $app
 
 #=================================================
+# ADVERTISE SERVICE IN ADMIN PANEL
+#=================================================
+
+yunohost service add $app
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # RELOAD NGINX
