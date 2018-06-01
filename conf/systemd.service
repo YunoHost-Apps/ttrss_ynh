@@ -6,6 +6,8 @@ After=network.target mysql.service
 User=__APP__
 Group=__APP__
 ExecStart=/usr/bin/php __FINALPATH__/update_daemon2.php
+Restart=always
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
