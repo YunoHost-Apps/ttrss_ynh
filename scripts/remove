@@ -65,6 +65,12 @@ ynh_remove_fpm_config
 ynh_remove_systemd_config
 
 #=================================================
+# REMOVE SERVICE INTEGRATION
+#=================================================
+
+yunohost service remove $app
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # REMOVE DEDICATED USER
