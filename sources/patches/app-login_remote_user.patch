@@ -1,0 +1,21 @@
+--- /include/functions.php
++++ /include/functions.php
+@@ -825,6 +825,18 @@
+ 				}
+ 
+ 			} else {
++				/* We need to check that the "REMOTE_USER" and "uid" are same.
++				 * If it has changed it's probably that the user logged out and
++				 * was authenticated with a other username.
++				 * In this case we need to reauthenticate the user
++				 */
++				if (AUTH_AUTO_LOGIN && $_SERVER["REMOTE_USER"] != $_SESSION["uid"]) {
++					if (authenticate_user(null, null)) {
++						$_SESSION["ref_schema_version"] = get_schema_version(true);
++					} else {
++						authenticate_user(null, null, true);
++					}
++				}
+ 				/* bump login timestamp */
+ 				$sth = $pdo->prepare("UPDATE ttrss_users SET last_login = NOW() WHERE id = ?");
+ 				$sth->execute([$_SESSION['uid']]);
