@@ -124,8 +124,7 @@ ynh_add_systemd_config
 #=================================================
 
 # Set permissions to app files
-chown -R root: $final_path
-chown -R $app $final_path/{cache,feed-icons,lock}
+chown -R $app:$app $final_path
 
 #=================================================
 # INITIALIZE DATABASE
