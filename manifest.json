@@ -14,7 +14,7 @@
     "email": "titoko@titoko.fr"
   },
   "requirements": {
-    "yunohost": ">= 2.7.12"
+    "yunohost": ">= 3.2.0"
   },
   "multi_instance": true,
   "services": [
