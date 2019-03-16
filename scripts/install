@@ -6,7 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-# source _common.sh
+source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -53,7 +53,7 @@ ynh_app_setting_set $app path $path_url
 # INSTALL DEPENDENCIES
 #=================================================
 
-ynh_install_app_dependencies php5-cli
+ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # CREATE A MYSQL DATABASE
