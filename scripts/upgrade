@@ -6,7 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-# source _common.sh
+source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -57,6 +57,12 @@ ynh_secure_remove "/etc/cron.d/$app"
 
 # Normalize the URL path syntax
 path_url=$(ynh_normalize_url_path $path_url)
+
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+
+ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # STANDARD UPGRADE STEPS

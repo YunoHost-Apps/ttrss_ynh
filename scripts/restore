@@ -4,12 +4,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-# if [ ! -e _common.sh ]; then
-# 	# Get the _common.sh file if it's not in the current directory
-# 	cp ../settings/scripts/_common.sh ./_common.sh
-# 	chmod a+rx _common.sh
-# fi
-# source _common.sh
+source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -41,6 +36,12 @@ test ! -d $final_path \
 
 #=================================================
 # STANDARD RESTORATION STEPS
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+
+ynh_install_app_dependencies $pkg_dependencies
+
 #=================================================
 # RESTORE THE NGINX CONFIGURATION
 #=================================================
