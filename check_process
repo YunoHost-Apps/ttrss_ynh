@@ -17,18 +17,7 @@
 		port_already_use=0
 		change_url=1
 ;;; Levels
-	Level 1=auto
-	Level 2=auto
-	Level 3=auto
-# Plugin auth_remote
-	Level 4=1
-# https://github.com/YunoHost-Apps/ttrss_ynh/issues/35
-	Level 5=1
-	Level 6=auto
-	Level 7=auto
-	Level 8=0
-	Level 9=0
-	Level 10=0
+	Level 5=auto
 ;;; Options
 Email=
 Notification=none
