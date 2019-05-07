@@ -12,55 +12,66 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
+ynh_script_progression --message="Loading installation settings..."
 
 app=$YNH_APP_INSTANCE_NAME
 
-domain=$(ynh_app_setting_get $app domain)
-path_url=$(ynh_app_setting_get $app path)
-final_path=$(ynh_app_setting_get $app final_path)
-db_name=$(ynh_app_setting_get $app db_name)
+domain=$(ynh_app_setting_get --app=$app --key=domain)
+path_url=$(ynh_app_setting_get --app=$app --key=path)
+final_path=$(ynh_app_setting_get --app=$app --key=final_path)
+db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+
+#=================================================
+# CHECK VERSION
+#=================================================
+
+upgrade_type=$(ynh_check_app_version_changed)
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
+ynh_script_progression --message="Ensuring downward compatibility..."
 
-if [ -z $final_path ]; then	# If final_path doesn't exist, create it
-	final_path="/var/www/$app"
-	ynh_app_setting_set $app final_path $final_path
+# If final_path doesn't exist, create it
+if [ -z "$final_path" ]; then
+	final_path=/var/www/$app
+	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 fi
 
-if [ -z $db_name ]; then	# If db_name doesn't exist, create it
-	db_name=$(ynh_sanitize_dbid $app)
-	ynh_app_setting_set $app db_name $db_name
+# If db_name doesn't exist, create it
+if [ -z "$db_name" ]; then
+	db_name=$(ynh_sanitize_dbid --db_name=$app)
+	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 fi
 
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
+ynh_script_progression --message="Backing up the app before upgrading (may take a while)..." --weight=7
 
-ynh_backup_before_upgrade	# Backup the current version of the app
+# Backup the current version of the app
+ynh_backup_before_upgrade
 ynh_clean_setup () {
-	# Delete any created temporary folder
-	if [ -v tmpdir ] && [ -d $tmpdir ]; then
-		ynh_secure_remove $tmpdir
-	fi
-	ynh_restore_upgradebackup	# restore it if the upgrade fails
+	# restore it if the upgrade fails
+	ynh_restore_upgradebackup
 }
-ynh_abort_if_errors	# Active trap pour arrêter le script si une erreur est détectée.
+# Exit if an error occurs during the execution of the script
+ynh_abort_if_errors
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY BIS
 #=================================================
 
+# Do not remove the file before the backup, to not fail the backup.
 # Remove old cron job
-ynh_secure_remove "/etc/cron.d/$app"
+ynh_secure_remove --file="/etc/cron.d/$app"
 
 #=================================================
 # CHECK THE PATH
 #=================================================
 
 # Normalize the URL path syntax
-path_url=$(ynh_normalize_url_path $path_url)
+path_url=$(ynh_normalize_url_path --path_url=$path_url)
 
 #=================================================
 # STANDARD UPGRADE STEPS
@@ -68,34 +79,37 @@ path_url=$(ynh_normalize_url_path $path_url)
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-# Create a temporary directory
-tmpdir="$(ynh_smart_mktemp 10)"
+if [ "$upgrade_type" == "UPGRADE_APP" ]
+then
+	ynh_script_progression --message="Upgrading source files..." --weight=7
 
-# Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source "$tmpdir"
+	# Create a temporary directory
+	tmpdir="$(ynh_smart_mktemp --min_size=10)"
+
+	# Download, check integrity, uncompress and patch the source from app.src
+	ynh_setup_source --dest_dir="$tmpdir"
+fi
 
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
+ynh_script_progression --message="Upgrading nginx web server configuration..." --weight=2
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
-if [ "$path_url" != "/" ]
-then
-	ynh_replace_string "^#sub_path_only" "" "/etc/nginx/conf.d/$domain.d/$app.conf"
-fi
-ynh_store_file_checksum "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
+ynh_script_progression --message="Making sure dedicated system user exists..."
 
-# Create a system user
-ynh_system_user_create $app
+# Create a dedicated user (if not existing)
+ynh_system_user_create --username=$app
 
 #=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
+ynh_script_progression --message="Upgrading php-fpm configuration..." --weight=2
 
 # Create a dedicated php-fpm config
 ynh_add_fpm_config
@@ -105,36 +119,48 @@ ynh_add_fpm_config
 #=================================================
 # CONFIGURE TTRSS
 #=================================================
+ynh_script_progression --message="Reconfiguring ttrss..." --weight=2
 
 # Backup the config file in the temp dir
 cp -a "$final_path/config.php" "$tmpdir/config.php"
 
 # Replace the old ttrss by the new one
-ynh_secure_remove "$final_path"
+ynh_secure_remove --file="$final_path"
 mv "$tmpdir" "$final_path"
-ynh_secure_remove "$tmpdir"
+ynh_secure_remove --file="$tmpdir"
 
 # Verify the checksum and backup the file if it's different
-ynh_backup_if_checksum_is_different "$final_path/config.php"
+ynh_backup_if_checksum_is_different --file="$final_path/config.php"
 
 cp ../conf/config.php "$final_path/config.php"
 
 # Change variables in ttrss configuration
-ynh_replace_string "__DBNAME__" "$db_name" "$final_path/config.php"
-db_pwd=$(ynh_app_setting_get $app mysqlpwd)
-ynh_replace_string "__DBPWD__" "$db_pwd" "$final_path/config.php"
-ynh_replace_string "__DOMAINPATH__" "https://$domain$path_url" "$final_path/config.php"
+ynh_replace_string --match_string="__DBNAME__" --replace_string="$db_name" --target_file="$final_path/config.php"
+db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
+ynh_replace_string --match_string="__DBPWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
 
 # Recalculate and store the config file checksum into the app settings
-ynh_store_file_checksum "$final_path/config.php"
+ynh_store_file_checksum --file="$final_path/config.php"
 
 #=================================================
 # UPGRADE DATABASE
 #=================================================
+ynh_script_progression --message="Upgrading ttrss database..." --weight=2
 
 chown -R $app: $final_path
-sudo -u $app php ${final_path}/update.php --update-schema
+ynh_exec_as $app php ${final_path}/update.php --update-schema
 
+#=================================================
+# SETUP SYSTEMD
+#=================================================
+ynh_script_progression --message="Upgrading systemd configuration..." --weight=2
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+#=================================================
+# GENERIC FINALIZATION
 #=================================================
 # SECURE FILES AND DIRECTORIES
 #=================================================
@@ -145,11 +171,11 @@ chmod 0755 $final_path
 chown -R $app $final_path/{cache,feed-icons,lock}
 
 #=================================================
-# UPGRADE SERVICE
+# RESTART TTRSS
 #=================================================
+ynh_script_progression --message="Restarting ttrss..."
 
-ynh_add_systemd_config
-systemctl restart $app
+ynh_systemd_action --service_name=$app --action=restart
 
 #=================================================
 # ADVERTISE SERVICE IN ADMIN PANEL
@@ -162,5 +188,12 @@ yunohost service add $app
 #=================================================
 # RELOAD NGINX
 #=================================================
+ynh_script_progression --message="Reloading nginx web server..." --weight=2
 
-systemctl reload nginx
+ynh_systemd_action --service_name=nginx --action=reload
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression --message="Upgrade of $app completed" --last
