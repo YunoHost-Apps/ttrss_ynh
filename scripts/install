@@ -28,6 +28,7 @@ app=$YNH_APP_INSTANCE_NAME
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
+ynh_script_progression --message="Validating installation parameters..."
 
 final_path=/var/www/$app
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
@@ -35,64 +36,64 @@ test ! -e "$final_path" || ynh_die "This path already contains a folder"
 # Normalize the url path syntax
 path_url=$(ynh_normalize_url_path $path_url)
 
-# Check web path availability
-ynh_webpath_available $domain $path_url
 # Register (book) web path
-ynh_webpath_register $app $domain $path_url
+ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
+ynh_script_progression --message="Storing installation settings..."
 
-ynh_app_setting_set $app domain $domain
-ynh_app_setting_set $app path $path_url
+ynh_app_setting_set --app=$app --key=domain --value=$domain
+ynh_app_setting_set --app=$app --key=path --value=$path_url
 
 #=================================================
 # STANDARD MODIFICATIONS
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
+ynh_script_progression --message="Installing dependencies..." --weight=9
 
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # CREATE A MYSQL DATABASE
 #=================================================
+ynh_script_progression --message="Creating a MySQL database..." --weight=2
 
 db_name=$(ynh_sanitize_dbid $app)
-ynh_app_setting_set $app db_name $db_name
-ynh_mysql_setup_db $db_name $db_name
+ynh_app_setting_set --app=$app --key=db_name --value=$db_name
+ynh_mysql_setup_db --db_user=$db_name --db_name=$db_name
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression --message="Setting up source files..." --weight=7
 
-ynh_app_setting_set $app final_path $final_path
+ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source "$final_path"
+ynh_setup_source --dest_dir="$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
+ynh_script_progression --message="Configuring nginx web server..."
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
-if [ "$path_url" != "/" ]
-then
-	ynh_replace_string "^#sub_path_only" "" "/etc/nginx/conf.d/$domain.d/$app.conf"
-fi
-ynh_store_file_checksum "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
+ynh_script_progression --message="Configuring system user..." --weight=2
 
 # Create a system user
-ynh_system_user_create $app
+ynh_system_user_create --username=$app
 
 #=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
+ynh_script_progression --message="Configuring php-fpm..." --weight=2
 
 # Create a dedicated php-fpm config
 ynh_add_fpm_config
@@ -102,20 +103,22 @@ ynh_add_fpm_config
 #=================================================
 # CONFIGURE TTRSS
 #=================================================
+ynh_script_progression --message="Configuring ttrss..."
 
 cp ../conf/config.php "$final_path/config.php"
 
 # Change variables in ttrss configuration
-ynh_replace_string "__DBNAME__" "$db_name" "$final_path/config.php"
-ynh_replace_string "__DBPWD__" "$db_pwd" "$final_path/config.php"
-ynh_replace_string "__DOMAINPATH__" "https://$domain$path_url" "$final_path/config.php"
+ynh_replace_string --match_string="__DBNAME__" --replace_string="$db_name" --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DBPWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
 
 # Recalculate and store the config file checksum into the app settings
-ynh_store_file_checksum "$final_path/config.php"
+ynh_store_file_checksum --file="$final_path/config.php"
 
 #=================================================
 # SETUP SYSTEMD
 #=================================================
+ynh_script_progression --message="Configuring a systemd service..." --weight=2
 
 ynh_add_systemd_config
 
@@ -130,18 +133,22 @@ chown -R $app $final_path/{cache,feed-icons,lock}
 #=================================================
 # INITIALIZE DATABASE
 #=================================================
+ynh_script_progression --message="Initializing database..." --weight=6
 
-ynh_mysql_connect_as "$db_name" "$db_pwd" "$db_name" \
+ynh_mysql_connect_as --user="$db_name" --password="$db_pwd" --database="$db_name" \
     < "$final_path/schema/ttrss_schema_mysql.sql"
 
-sudo -u $app php ${final_path}/update.php --update-schema
+ynh_exec_as $app php ${final_path}/update.php --update-schema
 
 #=================================================
 # START TTRSS IN BACKGROUND
 #=================================================
+ynh_script_progression --message="Starting ttrss..."
 
-sudo systemctl start $app
+ynh_systemd_action --service_name=$app --action=start
 
+#=================================================
+# GENERIC FINALIZATION
 #=================================================
 # ADVERTISE SERVICE IN ADMIN PANEL
 #=================================================
@@ -149,15 +156,21 @@ sudo systemctl start $app
 yunohost service add $app
 
 #=================================================
-# GENERIC FINALIZATION
-#=================================================
 # SETUP SSOWAT
 #=================================================
+ynh_script_progression --message="Configuring SSOwat..."
 
-ynh_app_setting_set $app skipped_uris "/public.php,/api,/opml.php?op=publish"
+ynh_app_setting_set --app=$app --key=skipped_uris --value="/public.php,/api,/opml.php?op=publish"
 
 #=================================================
 # RELOAD NGINX
 #=================================================
+ynh_script_progression --message="Reloading nginx web server..." --weight=2
 
-systemctl reload nginx
+ynh_systemd_action --service_name=nginx --action=reload
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression --message="Installation of $app completed" --last
