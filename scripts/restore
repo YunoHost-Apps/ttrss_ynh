@@ -6,7 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-# source ../settings/scripts/_common.sh
+source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -40,6 +40,12 @@ test ! -d $final_path \
 
 #=================================================
 # STANDARD RESTORATION STEPS
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+
+ynh_install_app_dependencies $pkg_dependencies
+
 #=================================================
 # RESTORE THE NGINX CONFIGURATION
 #=================================================
