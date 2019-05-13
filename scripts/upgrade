@@ -125,37 +125,41 @@ ynh_add_fpm_config
 #=================================================
 # CONFIGURE TTRSS
 #=================================================
-ynh_script_progression --message="Reconfiguring ttrss..." --weight=2
 
-# Backup the config file in the temp dir
-cp -a "$final_path/config.php" "$tmpdir/config.php"
+if [ "$upgrade_type" == "UPGRADE_APP" ]
+then
+	ynh_script_progression --message="Reconfiguring ttrss..." --weight=2
 
-# Replace the old ttrss by the new one
-ynh_secure_remove --file="$final_path"
-mv "$tmpdir" "$final_path"
-ynh_secure_remove --file="$tmpdir"
+	# Backup the config file in the temp dir
+	cp -a "$final_path/config.php" "$tmpdir/config.php"
 
-# Verify the checksum and backup the file if it's different
-ynh_backup_if_checksum_is_different --file="$final_path/config.php"
+	# Replace the old ttrss by the new one
+	ynh_secure_remove --file="$final_path"
+	mv "$tmpdir" "$final_path"
+	ynh_secure_remove --file="$tmpdir"
 
-cp ../conf/config.php "$final_path/config.php"
+	# Verify the checksum and backup the file if it's different
+	ynh_backup_if_checksum_is_different --file="$final_path/config.php"
 
-# Change variables in ttrss configuration
-ynh_replace_string --match_string="__DBNAME__" --replace_string="$db_name" --target_file="$final_path/config.php"
-db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
-ynh_replace_string --match_string="__DBPWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
-ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
+	cp ../conf/config.php "$final_path/config.php"
 
-# Recalculate and store the config file checksum into the app settings
-ynh_store_file_checksum --file="$final_path/config.php"
+	# Change variables in ttrss configuration
+	ynh_replace_string --match_string="__DBNAME__" --replace_string="$db_name" --target_file="$final_path/config.php"
+	db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
+	ynh_replace_string --match_string="__DBPWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
+	ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
 
-#=================================================
-# UPGRADE DATABASE
-#=================================================
-ynh_script_progression --message="Upgrading ttrss database..." --weight=2
+	# Recalculate and store the config file checksum into the app settings
+	ynh_store_file_checksum --file="$final_path/config.php"
 
-chown -R $app: $final_path
-ynh_exec_as $app php ${final_path}/update.php --update-schema
+	#=================================================
+	# UPGRADE DATABASE
+	#=================================================
+	ynh_script_progression --message="Upgrading ttrss database..." --weight=2
+
+	chown -R $app: $final_path
+	ynh_exec_as $app php ${final_path}/update.php --update-schema
+fi
 
 #=================================================
 # SETUP SYSTEMD
