@@ -1,22 +1,28 @@
 #!/bin/bash
 
 #=================================================
+# COMMON VARIABLES
+#=================================================
+
+pkg_dependencies="php-cli php-mbstring php-xml"
+
+#=================================================
 # EXPERIMENTAL HELPERS
 #=================================================
 
-# Delete a file checksum from the app settings
+# Check available space before creating a temp directory.
 #
-# $app should be defined when calling this helper
+# usage: ynh_smart_mktemp --min_size="Min size"
 #
-# usage: ynh_remove_file_checksum file
-# | arg: file - The file for which the checksum will be deleted
-ynh_delete_file_checksum () {
-	local checksum_setting_name=checksum_${1//[\/ ]/_}	# Replace all '/' and ' ' by '_'
-	ynh_app_setting_delete $app $checksum_setting_name
-}
-
+# | arg: -s, --min_size= - Minimal size needed for the temporary directory, in Mb
 ynh_smart_mktemp () {
-        local min_size="${1:-300}"
+        # Declare an array to define the options of this helper.
+        declare -Ar args_array=( [s]=min_size= )
+        local min_size
+        # Manage arguments with getopts
+        ynh_handle_getopts_args "$@"
+
+        min_size="${min_size:-300}"
         # Transform the minimum size from megabytes to kilobytes
         min_size=$(( $min_size * 1024 ))
 
@@ -31,12 +37,27 @@ ynh_smart_mktemp () {
         elif is_there_enough_space /var; then
                 local tmpdir=/var
         elif is_there_enough_space /; then
-                local tmpdir=/
+                local tmpdir=/   
         elif is_there_enough_space /home; then
                 local tmpdir=/home
         else
-		ynh_die "Insufficient free space to continue..."
+                ynh_die "Insufficient free space to continue..."
         fi
 
         echo "$(sudo mktemp --directory --tmpdir="$tmpdir")"
+}
+
+#=================================================
+
+# Execute a command as another user
+# usage: ynh_exec_as USER COMMAND [ARG ...]
+ynh_exec_as() {
+  local USER=$1
+  shift 1
+
+  if [[ $USER = $(whoami) ]]; then
+    eval "$@"
+  else
+    sudo -u "$USER" "$@"
+  fi
 }
