@@ -10,8 +10,8 @@
   "url": "http://tt-rss.org",
   "license": "GPL-3.0-only",
   "maintainer": {
-    "name": "titoko",
-    "email": "titoko@titoko.fr"
+    "name": "YunoHost Contributors",
+    "email": "apps@yunohost.org"
   },
   "requirements": {
     "yunohost": ">= 3.5"
