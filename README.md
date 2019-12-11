@@ -10,7 +10,7 @@ If you don't have YunoHost, please see [here](https://yunohost.org/#/install) to
 
 Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader and aggregator.
 
-**Shipped version:** 19.2
+**Shipped version:** 20191209
 
 ## Screenshots
 
