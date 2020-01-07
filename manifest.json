@@ -6,7 +6,7 @@
     "en": "A PHP and Ajax feed reader",
     "fr": "Un lecteur de flux en PHP et Ajax"
   },
-  "version": "19.2~ynh2",
+  "version": "20191209~ynh1",
   "url": "http://tt-rss.org",
   "license": "GPL-3.0-only",
   "maintainer": {
