@@ -3,7 +3,7 @@
   "id": "ttrss",
   "packaging_format": 1,
   "description": {
-    "en": "A RSS feed reader",
+    "en": "A news feed (RSS/Atom) reader and aggregator",
     "fr": "Un lecteur de flux RSS"
   },
   "version": "20200618~ynh1",
