@@ -3,10 +3,10 @@
   "id": "ttrss",
   "packaging_format": 1,
   "description": {
-    "en": "A PHP and Ajax feed reader",
-    "fr": "Un lecteur de flux en PHP et Ajax"
+    "en": "A RSS feed reader",
+    "fr": "Un lecteur de flux RSS"
   },
-  "version": "20191209~ynh1",
+  "version": "20200618~ynh1",
   "url": "http://tt-rss.org",
   "license": "GPL-3.0-only",
   "maintainer": {
