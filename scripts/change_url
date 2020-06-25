@@ -24,7 +24,7 @@ app=$YNH_APP_INSTANCE_NAME
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..."
+ynh_script_progression --message="Loading installation settings..."  --weight=1
 
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 
@@ -87,7 +87,7 @@ ynh_replace_string --match_string="define('SELF_URL_PATH'.*" --replace_string="d
 #=================================================
 # RELOAD NGINX
 #=================================================
-ynh_script_progression --message="Reloading nginx web server..."
+ynh_script_progression --message="Reloading nginx web server..."  --weight=2
 
 ynh_systemd_action --service_name=nginx --action=reload
 

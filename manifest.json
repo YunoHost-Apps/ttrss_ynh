@@ -3,10 +3,10 @@
   "id": "ttrss",
   "packaging_format": 1,
   "description": {
-    "en": "A PHP and Ajax feed reader",
-    "fr": "Un lecteur de flux en PHP et Ajax"
+    "en": "News feed (RSS/Atom) reader and aggregator.",
+    "fr": "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom."
   },
-  "version": "20191209~ynh1",
+  "version": "20200618~ynh1",
   "url": "http://tt-rss.org",
   "license": "GPL-3.0-only",
   "maintainer": {
@@ -28,8 +28,8 @@
       "name": "domain",
       "type": "domain",
       "ask": {
-        "en": "Choose a domain for Tiny-Tiny-RSS",
-        "fr": "Choisissez un domaine pour Tiny-Tiny-RSS"
+        "en": "Choose a domain for Tiny Tiny RSS",
+        "fr": "Choisissez un domaine pour Tiny Tiny RSS"
       },
       "example": "domain.org"
     },
@@ -37,8 +37,8 @@
       "name": "path",
       "type": "path",
       "ask": {
-        "en": "Choose a path for Tiny-Tiny-RSS",
-        "fr": "Choisissez un chemin pour Tiny-Tiny-RSS"
+        "en": "Choose a path for Tiny Tiny RSS",
+        "fr": "Choisissez un chemin pour Tiny Tiny RSS"
       },
       "example": "/ttrss",
       "default": "/ttrss"

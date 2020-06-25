@@ -2,7 +2,7 @@
 - *Description of why you made this PR*
 
 ## Solution
-- *And how you fix that*
+- *And how do you fix that problem*
 
 ## PR Status
 - [ ] Code finished.
@@ -11,14 +11,8 @@
 - [ ] Upgrade from last version tested.
 - [ ] Can be reviewed and tested.
 
-## Validation
+## Package_check results
 ---
-*Minor decision*
-- **Upgrade previous version** : 
-- [ ] **Code review** : 
-- [ ] **Approval (LGTM)** : 
-- [ ] **Approval (LGTM)** : 
-- **CI succeeded** : 
-[![Build Status](https://ci-apps-hq.yunohost.org/jenkins/job/ttrss_ynh%20PR-NUM-/badge/icon)](https://ci-apps-hq.yunohost.org/jenkins/job/ttrss_ynh%20PR-NUM-/)  
-*Please replace '-NUM-' in this link by the PR number.*  
-When the PR is marked as ready to merge, you have to wait for 3 days before really merging it.
+*If you have access to [App Continuous Integration for packagers](https://yunohost.org/#/packaging_apps_ci) you can provide a link to the package_check results like below, replacing '-NUM-' in this link by the PR number and USERNAME by your username on the ci-apps-dev. Or you provide a screenshot or a pastebin of the results*
+
+[![Build Status](https://ci-apps-dev.yunohost.org/jenkins/job/ttrss_ynh_ynh%20PR-NUM-%20(USERNAME)/badge/icon)](https://ci-apps-dev.yunohost.org/jenkins/job/ttrss_ynh_ynh%20PR-NUM-%20(USERNAME)/)  

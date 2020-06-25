@@ -10,7 +10,6 @@
 		setup_private=0
 		setup_public=0
 		upgrade=1
-		upgrade=1	from_commit=bed542465ee917060d802d8764b006c755b09422
 		backup_restore=1
 		multi_instance=1
 		incorrect_path=1
@@ -21,7 +20,3 @@
 ;;; Options
 Email=
 Notification=none
-;;; Upgrade options
-	; commit=bed542465ee917060d802d8764b006c755b09422
-		name=Move cron's remove
-		manifest_arg=domain=DOMAIN&path=PATH&
