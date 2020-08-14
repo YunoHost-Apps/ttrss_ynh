@@ -140,7 +140,7 @@ then
 	# Change variables in ttrss configuration
 	ynh_replace_string --match_string="__DBNAME__" --replace_string="$db_name" --target_file="$final_path/config.php"
 	db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
-	ynh_replace_string --match_string="__DBPWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
+	ynh_replace_string --match_string="__DBPWD__" --replace_string="$mysqlpwd" --target_file="$final_path/config.php"
 	ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
 
 	# Recalculate and store the config file checksum into the app settings
