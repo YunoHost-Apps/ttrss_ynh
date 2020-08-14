@@ -73,20 +73,10 @@ chown -R $app $final_path/{cache,feed-icons,lock}
 #=================================================
 # RESTORE THE PHP-FPM CONFIGURATION
 #=================================================
+ynh_script_progression --message="Reconfiguring PHP-FPM..." --weight=50
 
 ynh_restore_file --origin_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
 
-#=================================================
-# SPECIFIC RESTORATION
-#=================================================
-# RESTORE THE PHP-FPM CONFIGURATION
-#=================================================
-ynh_script_progression --message="Reconfiguring PHP-FPM..." --weight=50
-
-# Restore the file first, so it can have a backup if different
-ynh_restore_file --origin_path="/etc/php/$YNH_PHP_VERSION/fpm/pool.d/$app.conf"
-
-# Recreate a dedicated PHP-FPM config
 ynh_add_fpm_config --phpversion=$YNH_PHP_VERSION --package="$extra_php_dependencies"
 
 #=================================================
