@@ -12,7 +12,7 @@ If you don't have YunoHost, please see [here](https://yunohost.org/#/install) to
 
 Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader and aggregator.
 
-**Shipped version:** 2020.06.18
+**Shipped version:** 2020.08.14
 
 ## Screenshots
 
@@ -37,7 +37,6 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 
 * x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
 * ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/ttrss/)
-* Buster x86-64 - [![Build Status](https://ci-buster.nohost.me/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-buster.nohost.me/ci/apps/ttrss/)
 
 ## Limitations
 
@@ -52,8 +51,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 
 ---
 
-Developers infos
-----------------
+## Developers infos
 
 Please do your pull request to the [testing branch](https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing).
 

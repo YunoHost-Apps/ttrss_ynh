@@ -12,7 +12,7 @@ Si vous n’avez pas YunoHost, consultez [le guide](https://yunohost.org/#/insta
 
 Tiny-Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS / Atom) en ligne gratuit et open source.
 
-**Version incluse :** 2020.06.18
+**Version incluse :** 2020.08.14
 
 ## Captures d’écran
 
@@ -40,7 +40,6 @@ Tiny-Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS / Atom) e
 
 * x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
 * ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/ttrss/)
-* Buster x86-64 - [![Build Status](https://ci-buster.nohost.me/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-buster.nohost.me/ci/apps/ttrss/)
 
 ## Limitations
 
@@ -55,8 +54,7 @@ Tiny-Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS / Atom) e
 
 ---
 
-Developers infos
-----------------
+## Developers infos
 
 Merci de faire vos pull request sur la [testing branch](https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing).
 
