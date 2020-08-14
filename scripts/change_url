@@ -28,7 +28,7 @@ ynh_script_progression --message="Loading installation settings..."  --weight=1
 
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-db_pwd=$(ynh_app_setting_get --app=$app --key=db_pwd)
+db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 
 #=================================================
 # CHECK WHICH PARTS SHOULD BE CHANGED
@@ -88,8 +88,8 @@ path_url="$new_path"
 cp ../conf/config.php "$final_path/config.php"
 
 # Change domain name in config.php
-ynh_replace_string --match_string="__DBNAME__" --replace_string="$db_name" --target_file="$final_path/config.php"
-ynh_replace_string --match_string="__DBPWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DBNAME__"     --replace_string="$db_name"                 --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DBPWD__"      --replace_string="$db_pwd"                  --target_file="$final_path/config.php"
 ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
 
 # Recalculate and store the config file checksum into the app settings
