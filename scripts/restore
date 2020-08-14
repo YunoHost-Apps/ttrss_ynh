@@ -84,7 +84,7 @@ ynh_restore_file --origin_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
 ynh_script_progression --message="Reinstalling dependencies..." --weight=6
 
 # Define and install dependencies
-ynh_install_app_dependencies php${YNH_PHP_VERSION}-cli
+ynh_install_extra_app_dependencies --package="php${YNH_PHP_VERSION}-cli"
 
 #=================================================
 # RESTORE THE MYSQL DATABASE
