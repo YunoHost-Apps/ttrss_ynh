@@ -1,11 +1,11 @@
-# Tiny-Tiny RSS for YunoHost
+# Tiny Tiny RSS for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)  
-[![Install Tiny-Tiny RSS with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=ttrss)
+[![Install Tiny Tiny RSS with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=ttrss)
 
 *[Lire ce readme en français.](./README_fr.md)*
 
-> *This package allow you to install Tiny-Tiny RSS quickly and simply on a YunoHost server.  
+> *This package allow you to install Tiny Tiny RSS quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please see [here](https://yunohost.org/#/install) to know how to install and enjoy it.*
 
 ## Overview
@@ -45,8 +45,8 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 ## Links
 
  * Report a bug: https://github.com/YunoHost-Apps/ttrss_ynh/issues
- * Tiny-Tiny RSS website: https://tt-rss.org/
- * Tiny-Tiny RSS repository: https://git.tt-rss.org/git/tt-rss
+ * Tiny Tiny RSS website: https://tt-rss.org/
+ * Tiny Tiny RSS repository: https://git.tt-rss.org/git/tt-rss
  * YunoHost website: https://yunohost.org/
 
 ---
