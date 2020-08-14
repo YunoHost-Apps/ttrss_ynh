@@ -6,7 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-# source _common.sh
+source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -79,7 +79,7 @@ fi
 # SPECIFIC MODIFICATIONS
 #=================================================
 
-# Change domain name in parameters.yml
+# Change domain name in config.php
 ynh_replace_string --match_string="define('SELF_URL_PATH'.*" --replace_string="define('SELF_URL_PATH', 'https://$new_domain$new_path');" --target_file="$final_path/config.php"
 
 #=================================================
@@ -87,7 +87,7 @@ ynh_replace_string --match_string="define('SELF_URL_PATH'.*" --replace_string="d
 #=================================================
 # RELOAD NGINX
 #=================================================
-ynh_script_progression --message="Reloading NGINX web server..."  --weight=2
+ynh_script_progression --message="Reloading NGINX web server..." --weight=2
 
 ynh_systemd_action --service_name=nginx --action=reload
 
