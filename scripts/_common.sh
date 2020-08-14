@@ -4,7 +4,9 @@
 # COMMON VARIABLES
 #=================================================
 
-pkg_dependencies="php-cli php-mbstring php-xml"
+YNH_PHP_VERSION="7.3"
+
+extra_php_dependencies="php${YNH_PHP_VERSION}-cli php${YNH_PHP_VERSION}-mbstring php${YNH_PHP_VERSION}-xml"
 
 #=================================================
 # EXPERIMENTAL HELPERS
