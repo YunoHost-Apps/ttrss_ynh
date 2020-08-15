@@ -80,10 +80,12 @@ fi
 #=================================================
 # SPECIFIC MODIFICATIONS
 #=================================================
-ynh_script_progression --message="Configuring ttrss..." --weight=1
+ynh_script_progression --message="Configuring $app..." --weight=1
 
 domain="$new_domain"
 path_url="$new_path"
+
+ynh_backup_if_checksum_is_different --file="$final_path/config.php"
 
 cp ../conf/config.php "$final_path/config.php"
 
