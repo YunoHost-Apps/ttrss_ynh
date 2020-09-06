@@ -12,7 +12,7 @@ Si vous n’avez pas YunoHost, consultez [le guide](https://yunohost.org/#/insta
 
 Tiny Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS/Atom) en ligne gratuit et open source.
 
-**Version incluse :** 2020.08.14
+**Version incluse :** 2020.09.06
 
 ## Captures d’écran
 
