@@ -57,7 +57,7 @@ ynh_script_progression --message="Creating a MySQL database..." --weight=2
 db_name=$(ynh_sanitize_dbid $app)
 db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 ynh_app_setting_set --app=$app --key=db_name --value=$db_name
-ynh_mysql_setup_db --db_user=$db_name --db_name=$db_name --db_pwd=$db_pwd
+ynh_mysql_setup_db --db_user=$db_name --db_name=$db_name
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
