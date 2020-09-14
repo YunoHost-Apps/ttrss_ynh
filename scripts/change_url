@@ -6,7 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-# source _common.sh
+source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -27,6 +27,8 @@ app=$YNH_APP_INSTANCE_NAME
 ynh_script_progression --message="Loading installation settings..."  --weight=1
 
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
+db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 
 #=================================================
 # CHECK WHICH PARTS SHOULD BE CHANGED
@@ -49,23 +51,23 @@ fi
 #=================================================
 # MODIFY URL IN NGINX CONF
 #=================================================
-ynh_script_progression --message="Updating nginx web server configuration..." --weight=2
+ynh_script_progression --message="Updating NGINX web server configuration..." --weight=2
 
 nginx_conf_path=/etc/nginx/conf.d/$old_domain.d/$app.conf
 
-# Change the path in the nginx config file
+# Change the path in the NGINX config file
 if [ $change_path -eq 1 ]
 then
-	# Make a backup of the original nginx config file if modified
+	# Make a backup of the original NGINX config file if modified
 	ynh_backup_if_checksum_is_different --file="$nginx_conf_path"
-	# Set global variables for nginx helper
+	# Set global variables for NGINX helper
 	domain="$old_domain"
 	path_url="$new_path"
-	# Create a dedicated nginx config
+	# Create a dedicated NGINX config
 	ynh_add_nginx_config
 fi
 
-# Change the domain for nginx
+# Change the domain for NGINX
 if [ $change_domain -eq 1 ]
 then
 	# Delete file checksum for the old conf file location
@@ -78,16 +80,29 @@ fi
 #=================================================
 # SPECIFIC MODIFICATIONS
 #=================================================
+ynh_script_progression --message="Configuring $app..." --weight=1
 
-# Change domain name in parameters.yml
-ynh_replace_string --match_string="define('SELF_URL_PATH'.*" --replace_string="define('SELF_URL_PATH', 'https://$new_domain$new_path');" --target_file="$final_path/config.php"
+domain="$new_domain"
+path_url="$new_path"
+
+ynh_backup_if_checksum_is_different --file="$final_path/config.php"
+
+cp ../conf/config.php "$final_path/config.php"
+
+# Change domain name in config.php
+ynh_replace_string --match_string="__DBNAME__"     --replace_string="$db_name"                 --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DBPWD__"      --replace_string="$db_pwd"                  --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
+
+# Recalculate and store the config file checksum into the app settings
+ynh_store_file_checksum --file="$final_path/config.php"
 
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
 # RELOAD NGINX
 #=================================================
-ynh_script_progression --message="Reloading nginx web server..."  --weight=2
+ynh_script_progression --message="Reloading NGINX web server..." --weight=2
 
 ynh_systemd_action --service_name=nginx --action=reload
 

@@ -8,7 +8,7 @@
 	define('DB_USER', "__DBNAME__");
 	define('DB_NAME', "__DBNAME__");
 	define('DB_PASS', "__DBPWD__");
-	define('DB_PORT', ''); // usually 5432 for PostgreSQL, 3306 for MySQL
+	define('DB_PORT', '3306'); // usually 5432 for PostgreSQL, 3306 for MySQL
 
 	define('MYSQL_CHARSET', 'UTF8');
 	// Connection charset for MySQL. If you have a legacy database and/or experience

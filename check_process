@@ -1,7 +1,7 @@
 ;; Nom du test
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
-		path="/path"	(PATH)
+		path="/path"	    (PATH)
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
@@ -10,6 +10,7 @@
 		setup_private=0
 		setup_public=0
 		upgrade=1
+		upgrade=1    from_commit=e27175c2dde0ebbd483b212dc76c5b27877e4ed2
 		backup_restore=1
 		multi_instance=1
 		incorrect_path=1
@@ -20,3 +21,7 @@
 ;;; Options
 Email=
 Notification=none
+;;; Upgrade options
+	; commit=e27175c2dde0ebbd483b212dc76c5b27877e4ed2
+		name=Merge pull request #79 from ericgaspar/update-to-upstream 
+		manifest_arg=domain=DOMAIN&path=PATH

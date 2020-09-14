@@ -1,5 +1,5 @@
 [Unit]
-Description=ttrss_backend
+Description=News feed reader and aggregator
 After=network.target mysql.service
 
 [Service]
