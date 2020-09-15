@@ -1,16 +1,18 @@
-# Tiny-Tiny RSS for YunoHost
+# Tiny Tiny RSS for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss)  
-[![Install Tiny-Tiny RSS with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=ttrss)
+[![Integration level](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)  
+[![Install Tiny Tiny RSS with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=ttrss)
 
-> *This package allow you to install Tiny-Tiny RSS quickly and simply on a YunoHost server.  
+*[Lire ce readme en français.](./README_fr.md)*
+
+> *This package allow you to install Tiny Tiny RSS quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please see [here](https://yunohost.org/#/install) to know how to install and enjoy it.*
 
 ## Overview
 
 Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader and aggregator.
 
-**Shipped version:** 20191209
+**Shipped version:** 2020.09.06
 
 ## Screenshots
 
@@ -33,9 +35,8 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 
 #### Supported architectures
 
-* x86-64b - [![Build Status](https://ci-apps.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
 * ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/ttrss/)
-* Jessie x86-64b - [![Build Status](https://ci-stretch.nohost.me/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-stretch.nohost.me/ci/apps/ttrss/)
 
 ## Limitations
 
@@ -44,14 +45,13 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 ## Links
 
  * Report a bug: https://github.com/YunoHost-Apps/ttrss_ynh/issues
- * Tiny-Tiny RSS website: https://tt-rss.org/
- * Tiny-Tiny RSS repository: https://git.tt-rss.org/git/tt-rss
+ * Tiny Tiny RSS website: https://tt-rss.org/
+ * Tiny Tiny RSS repository: https://git.tt-rss.org/git/tt-rss
  * YunoHost website: https://yunohost.org/
 
 ---
 
-Developers infos
-----------------
+## Developers infos
 
 Please do your pull request to the [testing branch](https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing).
 
