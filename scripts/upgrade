@@ -21,6 +21,7 @@ path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
 db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
+phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 #=================================================
 # CHECK VERSION
@@ -152,7 +153,7 @@ then
 	ynh_script_progression --message="Upgrading ttrss database..." --weight=2
 
 	chown -R $app: $final_path
-	ynh_exec_as $app php ${final_path}/update.php --update-schema
+	ynh_exec_as $app php"${phpversion}" ${final_path}/update.php --update-schema
 fi
 
 #=================================================
