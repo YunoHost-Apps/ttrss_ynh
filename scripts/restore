@@ -98,7 +98,7 @@ yunohost service add $app --description="News feed reader and aggregator" --log=
 #=================================================
 # RESTORE SYSTEMD
 #=================================================
-ynh_script_progression --message="Restoring the systemd configuration..."  --weight=2
+ynh_script_progression --message="Restoring the systemd configuration..." --weight=2
 
 ynh_restore_file --origin_path="/etc/systemd/system/$app.service"
 systemctl enable $app.service --quiet
