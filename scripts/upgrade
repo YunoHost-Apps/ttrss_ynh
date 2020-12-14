@@ -69,13 +69,6 @@ ynh_abort_if_errors
 ynh_secure_remove --file="/etc/cron.d/$app"
 
 #=================================================
-# CHECK THE PATH
-#=================================================
-
-# Normalize the URL path syntax
-path_url=$(ynh_normalize_url_path --path_url=$path_url)
-
-#=================================================
 # STANDARD UPGRADE STEPS
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -114,7 +107,7 @@ ynh_system_user_create --username=$app
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=2
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --phpversion=$YNH_PHP_VERSION --package="$extra_php_dependencies"
+ynh_add_fpm_config --package="$extra_php_dependencies"
 
 #=================================================
 # SPECIFIC UPGRADE
@@ -185,8 +178,9 @@ ynh_systemd_action --service_name=$app --action=restart
 #=================================================
 # ADVERTISE SERVICE IN ADMIN PANEL
 #=================================================
+ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
 
-yunohost service add $app
+yunohost service add $app --description="News feed reader and aggregator" --log="/var/log/$app/$app.log"
 
 #=================================================
 # GENERIC FINALIZATION
