@@ -27,7 +27,7 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS/Atom) en 
 ## Documentation
 
 * Documentation officielle : https://git.tt-rss.org/git/tt-rss/wiki
-* Documentation YunoHost : https://yunohost.org/#/app_ttrss
+* Documentation YunoHost : https://yunohost.org/fr/app_ttrss
 
 ## Caractéristiques spécifiques YunoHost
 

@@ -5,9 +5,9 @@
 
 	define('DB_TYPE', "mysql"); // or mysql
 	define('DB_HOST', "localhost");
-	define('DB_USER', "__DBNAME__");
-	define('DB_NAME', "__DBNAME__");
-	define('DB_PASS', "__DBPWD__");
+	define('DB_USER', "__DB_NAME__");
+	define('DB_NAME', "__DB_NAME__");
+	define('DB_PASS', "__DB_PWD__");
 	define('DB_PORT', '3306'); // usually 5432 for PostgreSQL, 3306 for MySQL
 
 	define('MYSQL_CHARSET', 'UTF8');
@@ -18,7 +18,7 @@
 	// *** Basic settings (important!) ***
 	// ***********************************
 
-	define('SELF_URL_PATH', '__DOMAINPATH__');
+	define('SELF_URL_PATH', '__DOMAIN_PATH__');
 	// Full URL of your tt-rss installation. This should be set to the
 	// location of tt-rss directory, e.g. http://example.org/tt-rss/
 	// You need to set this option correctly otherwise several features
