@@ -31,6 +31,23 @@ db_name=$(ynh_app_setting_get --app=$app --key=db_name)
 db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 
 #=================================================
+# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
+#=================================================
+ynh_script_progression --message="Backing up the app before changing its URL (may take a while)..." --time --weight=1
+
+# Backup the current version of the app
+ynh_backup_before_upgrade
+ynh_clean_setup () {
+	# Remove the new domain config file, the remove script won't do it as it doesn't know yet its location.
+	ynh_secure_remove --file="/etc/nginx/conf.d/$new_domain.d/$app.conf"
+
+	# Restore it if the upgrade fails
+	ynh_restore_upgradebackup
+}
+# Exit if an error occurs during the execution of the script
+ynh_abort_if_errors
+
+#=================================================
 # CHECK WHICH PARTS SHOULD BE CHANGED
 #=================================================
 
@@ -90,9 +107,9 @@ ynh_backup_if_checksum_is_different --file="$final_path/config.php"
 cp ../conf/config.php "$final_path/config.php"
 
 # Change domain name in config.php
-ynh_replace_string --match_string="__DBNAME__"     --replace_string="$db_name"                 --target_file="$final_path/config.php"
-ynh_replace_string --match_string="__DBPWD__"      --replace_string="$db_pwd"                  --target_file="$final_path/config.php"
-ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DB_NAME__"     --replace_string="$db_name"                 --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DB_PWD__"      --replace_string="$db_pwd"                  --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DOMAIN_PATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
 
 # Recalculate and store the config file checksum into the app settings
 ynh_store_file_checksum --file="$final_path/config.php"
