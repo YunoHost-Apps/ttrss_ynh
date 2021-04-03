@@ -127,7 +127,7 @@ then
 	mv "$tmpdir" "$final_path"
 	ynh_secure_remove --file="$tmpdir"
 
-	domain_path=$(https://$domain$path_url)
+	domain_path=https://$domain$path_url
 	ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
 	#=================================================
