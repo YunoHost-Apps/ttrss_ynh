@@ -38,8 +38,8 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS/Atom) en 
 
 #### Architectures supportées
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/ttrss%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/ttrss/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/ttrss.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/ttrss.svg)](https://ci-apps-arm.yunohost.org/ci/apps/ttrss/)
 
 ## Limitations
 
