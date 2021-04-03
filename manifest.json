@@ -6,7 +6,7 @@
     "en": "News feed (RSS/Atom) reader and aggregator.",
     "fr": "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom."
   },
-  "version": "20200916~ynh2",
+  "version": "20200916~ynh3",
   "url": "http://tt-rss.org",
   "license": "GPL-3.0-only",
   "maintainer": {
@@ -14,12 +14,12 @@
     "email": ""
   },
   "requirements": {
-    "yunohost": ">= 3.8.1"
+    "yunohost": ">= 4.1.7"
   },
   "multi_instance": true,
   "services": [
       "nginx",
-      "php7.0-fpm",
+      "php7.3-fpm",
       "mysql"
   ],
   "arguments": {
@@ -27,19 +27,11 @@
     {
       "name": "domain",
       "type": "domain",
-      "ask": {
-        "en": "Choose a domain for Tiny Tiny RSS",
-        "fr": "Choisissez un domaine pour Tiny Tiny RSS"
-      },
       "example": "domain.org"
     },
     {
       "name": "path",
       "type": "path",
-      "ask": {
-        "en": "Choose a path for Tiny Tiny RSS",
-        "fr": "Choisissez un chemin pour Tiny Tiny RSS"
-      },
       "example": "/ttrss",
       "default": "/ttrss"
       }
