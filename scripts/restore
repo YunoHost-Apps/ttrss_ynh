@@ -68,7 +68,6 @@ ynh_system_user_create --username=$app
 
 # Set permissions to app files
 chown -R root: $final_path
-chmod -R o-rwx $final_path
 chown -R $app $final_path/{cache,feed-icons,lock}
 
 #=================================================
