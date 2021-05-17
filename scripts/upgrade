@@ -126,7 +126,7 @@ then
 	ynh_secure_remove --file="$final_path"
 	mv "$tmpdir" "$final_path"
 	ynh_secure_remove --file="$tmpdir"
-  
+
 	domain_path=https://$domain$path_url
 	ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
@@ -135,7 +135,8 @@ then
 	#=================================================
 	ynh_script_progression --message="Upgrading ttrss database..." --weight=2
 
-	chown -R $app: $final_path
+	chown -R root:$app $final_path
+	chown -R $app $final_path/{cache,feed-icons,lock}
 	ynh_exec_as $app php"${phpversion}" ${final_path}/update.php --update-schema
 fi
 
@@ -154,8 +155,7 @@ ynh_add_systemd_config
 #=================================================
 
 # Set permissions to app files
-chown -R root: $final_path
-chmod 0755 $final_path
+chown -R root:$app $final_path
 chown -R $app $final_path/{cache,feed-icons,lock}
 
 #=================================================
