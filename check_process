@@ -1,7 +1,7 @@
-;; Nom du test
+;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
-		path="/path"	    (PATH)
+		domain="domain.tld"
+		path="/path"
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
@@ -17,6 +17,3 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=
-		name=
-		manifest_arg=domain=DOMAIN&path=PATH
