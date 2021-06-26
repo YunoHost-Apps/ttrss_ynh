@@ -106,7 +106,7 @@ domain_path=https://$domain$path_url
 ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
 chmod 400 "$final_path/config.php"
-chown $app:$app "$final_path/config.php"
+chown $app "$final_path/config.php"
 
 #=================================================
 # SETUP SYSTEMD
@@ -124,7 +124,7 @@ ynh_script_progression --message="Initializing database..." --weight=6
 ynh_mysql_connect_as --user="$db_name" --password="$db_pwd" --database="$db_name" \
     < "$final_path/schema/ttrss_schema_mysql.sql"
 
-ynh_exec_as $app php${phpversion} ${final_path}/update.php --update-schema
+php${phpversion} ${final_path}/update.php --update-schema
 
 #=================================================
 # GENERIC FINALIZATION
