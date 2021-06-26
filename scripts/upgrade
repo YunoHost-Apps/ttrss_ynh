@@ -71,6 +71,13 @@ if [ -z "$db_name" ]; then
 	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 fi
 
+# Cleaning legacy permissions
+if ynh_legacy_permissions_exists; then
+	ynh_legacy_permissions_delete_all
+
+	ynh_app_setting_delete --app=$app --key=is_public
+fi
+
 # Do not remove the file before the backup, to not fail the backup.
 # Remove old cron job
 ynh_secure_remove --file="/etc/cron.d/$app"
@@ -87,23 +94,31 @@ ynh_system_user_create --username=$app --home_dir=$final_path
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
+# if [ "$upgrade_type" == "UPGRADE_APP" ]
+# then
+# 	ynh_script_progression --message="Upgrading source files..." --weight=7
+
+# 	# Create a temporary directory
+# 	tmpdir="$(ynh_smart_mktemp --min_size=10)"
+
+# 	# Download, check integrity, uncompress and patch the source from app.src
+# 	ynh_setup_source --dest_dir="$tmpdir"
+
+# 	# Backup the config file in the temp dir
+# 	cp -a "$final_path/config.php" "$tmpdir/config.php"
+
+# 	# Replace the old ttrss by the new one
+# 	ynh_secure_remove --file="$final_path"
+# 	mv "$tmpdir" "$final_path"
+# 	ynh_secure_remove --file="$tmpdir"
+# fi
+
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression --message="Upgrading source files..." --weight=7
-
-	# Create a temporary directory
-	tmpdir="$(ynh_smart_mktemp --min_size=10)"
+	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$tmpdir"
-
-	# Backup the config file in the temp dir
-	cp -a "$final_path/config.php" "$tmpdir/config.php"
-
-	# Replace the old ttrss by the new one
-	ynh_secure_remove --file="$final_path"
-	mv "$tmpdir" "$final_path"
-	ynh_secure_remove --file="$tmpdir"
+	ynh_setup_source --dest_dir="$final_path"
 fi
 
 chmod 750 "$final_path"
