@@ -24,21 +24,21 @@
   ],
   "arguments": {
     "install" : [
-    {
-      "name": "domain",
-      "type": "domain"
-    },
-    {
-      "name": "path",
-      "type": "path",
-      "example": "/ttrss",
-      "default": "/ttrss"
+      {
+        "name": "domain",
+        "type": "domain"
       },
-    {
-      "name": "is_public",
-      "type": "boolean",
-      "default": true
-    },
+      {
+        "name": "path",
+        "type": "path",
+        "example": "/ttrss",
+        "default": "/ttrss"
+        },
+      {
+        "name": "is_public",
+        "type": "boolean",
+        "default": true
+      }
     ]
   }
 }
