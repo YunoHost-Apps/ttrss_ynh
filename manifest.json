@@ -3,10 +3,10 @@
   "id": "ttrss",
   "packaging_format": 1,
   "description": {
-    "en": "News feed (RSS/Atom) reader and aggregator.",
-    "fr": "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom."
+    "en": "News feed (RSS/Atom) reader and aggregator",
+    "fr": "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
   },
-  "version": "20210916~ynh5",
+  "version": "2021.11.20~ynh1",
   "url": "http://tt-rss.org",
   "license": "GPL-3.0-only",
   "maintainer": {
@@ -14,7 +14,7 @@
     "email": ""
   },
   "requirements": {
-    "yunohost": ">= 4.2.4"
+    "yunohost": ">= 4.3.0"
   },
   "multi_instance": true,
   "services": [
