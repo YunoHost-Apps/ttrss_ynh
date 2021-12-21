@@ -25,7 +25,7 @@
 	// You need to set this option correctly otherwise several features
 	// including PUSH, bookmarklets and browser integration will not work properly.
 
-	//putenv('TTRSS_FEED_CRYPT_KEY', '');
+	//putenv('TTRSS_FEED_CRYPT_KEY= ');
 	// WARNING: mcrypt is deprecated in php 7.1. This directive exists for backwards
 	// compatibility with existing installs, new passwords are NOT going to be encrypted.
 	// Use update.php --decrypt-feeds to decrypt existing passwords in the database while
