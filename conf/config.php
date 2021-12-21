@@ -25,18 +25,6 @@
 	// You need to set this option correctly otherwise several features
 	// including PUSH, bookmarklets and browser integration will not work properly.
 
-	//putenv('TTRSS_FEED_CRYPT_KEY= ');
-	// WARNING: mcrypt is deprecated in php 7.1. This directive exists for backwards
-	// compatibility with existing installs, new passwords are NOT going to be encrypted.
-	// Use update.php --decrypt-feeds to decrypt existing passwords in the database while
-	// mcrypt is still available.
-
-	// Key used for encryption of passwords for password-protected feeds
-	// in the database. A string of 24 random characters. If left blank, encryption
-	// is not used. Requires mcrypt functions.
-	// Warning: changing this key will make your stored feed passwords impossible
-	// to decrypt.
-
 	putenv('TTRSS_SINGLE_USER_MODE=true');
 	// Operate in single user mode, disables all functionality related to
 	// multiple users and authentication. Enabling this assumes you have
@@ -103,10 +91,6 @@
 	// older than this amount of days are purged.
 
 	// *** PubSubHubbub settings ***
-
-	//putenv('TTRSS_PUBSUBHUBBUB_HUB= ');
-	// URL to a PubSubHubbub-compatible hub server. If defined, "Published
-	// articles" generated feed would automatically become PUSH-enabled.
 
 	putenv('TTRSS_PUBSUBHUBBUB_ENABLED=false');
 	// Enable client PubSubHubbub support in tt-rss. When disabled, tt-rss
