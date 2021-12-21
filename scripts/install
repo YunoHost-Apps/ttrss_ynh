@@ -132,7 +132,7 @@ ynh_script_progression --message="Initializing database..." --weight=6
 ynh_mysql_connect_as --user="$db_name" --password="$db_pwd" --database="$db_name" \
     < "$final_path/schema/ttrss_schema_mysql.sql"
 
-sudo -u www-data php${phpversion} ${final_path}/update.php --update-schema
+php${phpversion} ${final_path}/update.php --update-schema
 
 #=================================================
 # GENERIC FINALIZATION
@@ -152,6 +152,15 @@ ynh_script_progression --message="Starting a systemd service..." --weight=1
 ynh_systemd_action --service_name=$app --action="start"
 
 #=================================================
+# SETUP A CRON
+#=================================================
+ynh_script_progression --message="Setuping a cron..." --weight=1
+
+ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
+chown root: "/etc/cron.d/$app"
+chmod 644 "/etc/cron.d/$app"
+
+#=================================================
 # SETUP SSOWAT
 #=================================================
 ynh_script_progression --message="Configuring permissions..." --weight=1
@@ -161,8 +170,6 @@ ynh_script_progression --message="Configuring permissions..." --weight=1
 
 if [ $is_public -eq 1 ]
 then
-	# Everyone can access the app.
-	# The "main" permission is automatically created before the install script.
 	ynh_permission_update --permission="main" --add="visitors"
 fi
 
