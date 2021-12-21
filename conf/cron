@@ -1,0 +1,1 @@
+*/30 * * * * /usr/bin/php__PHPVERSION__ __FINALPATH__/update.php --feeds --quiet
