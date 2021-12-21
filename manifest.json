@@ -6,7 +6,7 @@
     "en": "News feed (RSS/Atom) reader and aggregator",
     "fr": "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
   },
-  "version": "2021.11.20~ynh1",
+  "version": "2021.12.21~ynh1",
   "url": "http://tt-rss.org",
   "license": "GPL-3.0-only",
   "maintainer": {
