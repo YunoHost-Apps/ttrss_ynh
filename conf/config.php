@@ -64,6 +64,6 @@
 	// *** Cookies and login sessions ***
 	// **********************************
 	
-	define('TTRSS_SESSION_COOKIE_LIFETIME=86400');
+	putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 	// Default lifetime of a session (e.g. login) cookie. In seconds, 
 	// 0 means cookie will be deleted when browser closes.
