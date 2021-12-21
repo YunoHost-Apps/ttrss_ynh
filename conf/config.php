@@ -104,7 +104,7 @@
 
 	// *** PubSubHubbub settings ***
 
-	//putenv('TTRSS_PUBSUBHUBBUB_HUB', '');
+	//putenv('TTRSS_PUBSUBHUBBUB_HUB= ');
 	// URL to a PubSubHubbub-compatible hub server. If defined, "Published
 	// articles" generated feed would automatically become PUSH-enabled.
 
