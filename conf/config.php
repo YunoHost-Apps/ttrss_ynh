@@ -25,6 +25,7 @@
 	// You need to set this option correctly otherwise several features
 	// including PUSH, bookmarklets and browser integration will not work properly.
 
+	//putenv('TTRSS_SIMPLE_UPDATE_MODE=true');
 
 	// **********************
 	// *** Authentication ***
