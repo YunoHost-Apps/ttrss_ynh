@@ -142,7 +142,7 @@ then
 	ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
 	ynh_script_progression --message="Upgrading ttrss database..." --weight=2
-	ynh_exec_as $app php${phpversion} ${final_path}/update.php --update-schema
+	sudo -u $app php${phpversion} ${final_path}/update.php --update-schema=force-yes
 fi
 
 chmod 400 "$final_path/config.php"
