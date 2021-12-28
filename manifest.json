@@ -8,6 +8,13 @@
   },
   "version": "20211221~ynh1",
   "url": "http://tt-rss.org",
+  "upstream": {
+        "license": "GPL-3.0-only",
+        "website": "http://tt-rss.org",
+        "demo": "https://demo.yunohost.org/ttrss/",
+        "admindoc": "https://git.tt-rss.org/git/tt-rss/wiki",
+        "code": "https://git.tt-rss.org/git/tt-rss"
+    },
   "license": "GPL-3.0-only",
   "maintainer": {
     "name": "",
