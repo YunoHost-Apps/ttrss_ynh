@@ -165,9 +165,6 @@ chmod 644 "/etc/cron.d/$app"
 #=================================================
 ynh_script_progression --message="Configuring permissions..." --weight=1
 
-# ynh_app_setting_set --app=$app --key=skipped_uris --value="/public.php,/api,/opml.php?op=publish"
-# Make app public if necessary
-
 if [ $is_public -eq 1 ]
 then
 	ynh_permission_update --permission="main" --add="visitors"
