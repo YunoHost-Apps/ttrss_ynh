@@ -12,7 +12,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..."  --weight=1
+ynh_script_progression --message="Loading installation settings..." --weight=1
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -56,7 +56,7 @@ ynh_systemd_action --service_name=$app --action="stop"
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
-ynh_script_progression --message="Ensuring downward compatibility..."  --weight=2
+ynh_script_progression --message="Ensuring downward compatibility..." --weight=2
 
 # If final_path doesn't exist, create it
 if [ -z "$final_path" ]; then
