@@ -99,20 +99,12 @@ fi
 #=================================================
 ynh_script_progression --message="Configuring $app..." --weight=1
 
-domain="$new_domain"
-path_url="$new_path"
+domain_path=https://$new_domain$new_path
 
-ynh_backup_if_checksum_is_different --file="$final_path/config.php"
+ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
-cp ../conf/config.php "$final_path/config.php"
-
-# Change domain name in config.php
-ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config.php"
-ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
-ynh_replace_string --match_string="__DOMAIN_PATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/config.php"
-
-# Recalculate and store the config file checksum into the app settings
-ynh_store_file_checksum --file="$final_path/config.php"
+chmod 400 "$final_path/config.php"
+chown $app "$final_path/config.php"
 
 #=================================================
 # GENERIC FINALIZATION
