@@ -132,3 +132,64 @@
 	putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 	// Default lifetime of a session (e.g. login) cookie. In seconds, 
 	// 0 means cookie will be deleted when browser closes.
+
+	// *********************************
+	// *** Email and digest settings ***
+	// *********************************
+
+	putenv('TTRSS_SMTP_FROM_NAME=Tiny Tiny RSS');
+	putenv('TTRSS_SMTP_FROM_ADDRESS=noreply@your.domain.dom');
+	// Name, address and subject for sending outgoing mail. This applies
+	// to password reset notifications, digest emails and any other mail.
+
+	putenv('TTRSS_DIGEST_SUBJECT=[tt-rss] New headlines for last 24 hours');
+	// Subject line for email digests
+
+	putenv('TTRSS_SMTP_SERVER=localhost:25');
+	// Hostname:port combination to send outgoing mail (i.e. localhost:25). 
+	// Blank - use system MTA.
+	
+	putenv('TTRSS_SMTP_LOGIN=');
+	putenv('TTRSS_SMTP_PASSWORD=');
+	// These two options enable SMTP authentication when sending
+	// outgoing mail. Only used with SMTP_SERVER.
+
+	putenv('TTRSS_SMTP_SECURE=');
+	// Used to select a secure SMTP connection. Allowed values: ssl, tls,
+	// or empty.
+
+	// ***************************************
+	// *** Other settings (less important) ***
+	// ***************************************
+
+	putenv('TTRSS_CHECK_FOR_UPDATES=true');
+	// Check for updates automatically if running Git version
+ 
+	putenv('TTRSS_ENABLE_GZIP_OUTPUT=false');
+	// Selectively gzip output to improve wire performance. This requires
+	// PHP Zlib extension on the server.
+	// Enabling this can break tt-rss in several httpd/php configurations,
+	// if you experience weird errors and tt-rss failing to start, blank pages
+	// after login, or content encoding errors, disable it.
+
+	putenv('TTRSS_PLUGINS=auth_internal, note');
+	// Comma-separated list of plugins to load automatically for all users.
+	// System plugins have to be specified here. Please enable at least one
+	// authentication plugin here (auth_*).
+	// Users may enable other user plugins from Preferences/Plugins but may not
+	// disable plugins specified in this list.
+	// Disabling auth_internal in this list would automatically disable
+	// reset password link on the login form.
+	
+	putenv('TTRSS_LOG_DESTINATION=sql');
+	// Log destination to use. Possible values: sql (uses internal logging
+	// you can read in Preferences -> System), syslog - logs to system log.
+	// Setting this to blank uses PHP logging (usually to http server 
+	// error.log).
+
+	putenv('TTRSS_CONFIG_VERSION=26');
+	// Expected config version. Please update this option in config.php
+	// if necessary (after migrating all new options from this file).
+
+	// vim:ft=php
+
