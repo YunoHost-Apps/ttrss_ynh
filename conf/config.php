@@ -192,4 +192,3 @@
 	// if necessary (after migrating all new options from this file).
 
 	// vim:ft=php
-
