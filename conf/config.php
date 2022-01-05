@@ -21,7 +21,7 @@
 	// You need to set this option correctly otherwise several features
 	// including PUSH, bookmarklets and browser integration will not work properly.
 
-	putenv('TTRSS_SINGLE_USER_MODE=true');
+	putenv('TTRSS_SINGLE_USER_MODE=false');
 	// Operate in single user mode, disables all functionality related to
 	// multiple users and authentication. Enabling this assumes you have
 	// your tt-rss directory protected by other means (e.g. http auth).
