@@ -118,7 +118,7 @@
 	// and potentially might lead to data loss or server exploit. Disabled
 	// by default.
 
-	putenv('TTRSS_REG_NOTIFY_ADDRESS=user@your.domain.dom');
+	putenv('TTRSS_REG_NOTIFY_ADDRESS=user@__DOMAIN__');
 	// Email address to send new user notifications to.
 
 	putenv('TTRSS_REG_MAX_USERS=10');
