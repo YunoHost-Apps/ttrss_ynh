@@ -6,7 +6,7 @@
 
 	putenv('TTRSS_DB_TYPE=mysql'); // or mysql
 	putenv('TTRSS_DB_HOST=localhost');
-	putenv('TTRSS_DB_USER=__DB_NAME__');
+	putenv('TTRSS_DB_USER=__DB_USER__');
 	putenv('TTRSS_DB_NAME=__DB_NAME__');
 	putenv('TTRSS_DB_PASS=__DB_PWD__');
 	putenv('TTRSS_DB_PORT=3306'); // usually 5432 for PostgreSQL, 3306 for MySQL
