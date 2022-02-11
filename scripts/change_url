@@ -100,7 +100,7 @@ fi
 #=================================================
 ynh_script_progression --message="Configuring $app..." --weight=1
 
-domain_path=https://$new_domain$new_path
+domain_path="https://${new_domain}${new_path}"
 
 ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
