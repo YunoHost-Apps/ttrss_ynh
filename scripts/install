@@ -22,6 +22,7 @@ ynh_abort_if_errors
 
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
+is_public=$YNH_APP_ARG_IS_PUBLIC
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -45,6 +46,13 @@ ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
 
 #=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Installing dependencies..." --weight=1
+
+ynh_install_app_dependencies $pkg_dependencies
+
+#=================================================
 # STANDARD MODIFICATIONS
 #=================================================
 # CREATE DEDICATED USER
@@ -63,7 +71,6 @@ db_name=$(ynh_sanitize_dbid --db_name=$app)
 db_user=$db_name
 ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
-db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -92,7 +99,7 @@ ynh_add_nginx_config
 ynh_script_progression --message="Configuring PHP-FPM..." --weight=2
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --package="$extra_php_dependencies"
+ynh_add_fpm_config
 phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 #=================================================
@@ -107,7 +114,7 @@ domain_path=https://$domain$path_url
 ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
 chmod 400 "$final_path/config.php"
-chown $app:$app "$final_path/config.php"
+chown $app "$final_path/config.php"
 
 #=================================================
 # SETUP SYSTEMD
@@ -125,7 +132,7 @@ ynh_script_progression --message="Initializing database..." --weight=6
 ynh_mysql_connect_as --user="$db_name" --password="$db_pwd" --database="$db_name" \
     < "$final_path/schema/ttrss_schema_mysql.sql"
 
-ynh_exec_as $app php${phpversion} ${final_path}/update.php --update-schema
+sudo -u $app php${phpversion} ${final_path}/update.php --update-schema=force-yes
 
 #=================================================
 # GENERIC FINALIZATION
@@ -145,11 +152,23 @@ ynh_script_progression --message="Starting a systemd service..." --weight=1
 ynh_systemd_action --service_name=$app --action="start"
 
 #=================================================
+# SETUP A CRON
+#=================================================
+ynh_script_progression --message="Setuping a cron..." --weight=1
+
+ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
+chown root: "/etc/cron.d/$app"
+chmod 644 "/etc/cron.d/$app"
+
+#=================================================
 # SETUP SSOWAT
 #=================================================
 ynh_script_progression --message="Configuring permissions..." --weight=1
 
-ynh_app_setting_set --app=$app --key=skipped_uris --value="/public.php,/api,/opml.php?op=publish"
+if [ $is_public -eq 1 ]
+then
+	ynh_permission_update --permission="main" --add="visitors"
+fi
 
 #=================================================
 # RELOAD NGINX

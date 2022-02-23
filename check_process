@@ -2,14 +2,16 @@
 	; Manifest
 		domain="domain.tld"
 		path="/path"
+		is_public=1
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
 		setup_root=1
 		setup_nourl=0
-		setup_private=0
-		setup_public=0
+		setup_private=1
+		setup_public=1
 		upgrade=1
+		upgrade=1	from_commit=be16ff54ae531329590ef6576d6f928315ebe0cf
 		backup_restore=1
 		multi_instance=1
 		change_url=1
@@ -17,3 +19,7 @@
 Email=
 Notification=none
 ;;; Upgrade options
+	; commit=be16ff54ae531329590ef6576d6f928315ebe0cf
+		name=Create cron
+		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
+

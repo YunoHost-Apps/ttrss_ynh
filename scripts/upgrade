@@ -12,7 +12,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..."  --weight=1
+ynh_script_progression --message="Loading installation settings..." --weight=1
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -27,7 +27,6 @@ phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 #=================================================
 # CHECK VERSION
 #=================================================
-ynh_script_progression --message="Checking version..."
 
 upgrade_type=$(ynh_check_app_version_changed)
 
@@ -57,7 +56,7 @@ ynh_systemd_action --service_name=$app --action="stop"
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
-ynh_script_progression --message="Ensuring downward compatibility..."  --weight=2
+ynh_script_progression --message="Ensuring downward compatibility..." --weight=2
 
 # If final_path doesn't exist, create it
 if [ -z "$final_path" ]; then
@@ -69,6 +68,13 @@ fi
 if [ -z "$db_name" ]; then
 	db_name=$(ynh_sanitize_dbid --db_name=$app)
 	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
+fi
+
+# Cleaning legacy permissions
+if ynh_legacy_permissions_exists; then
+	ynh_legacy_permissions_delete_all
+
+	ynh_app_setting_delete --app=$app --key=is_public
 fi
 
 # Do not remove the file before the backup, to not fail the backup.
@@ -89,21 +95,10 @@ ynh_system_user_create --username=$app --home_dir=$final_path
 
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression --message="Upgrading source files..." --weight=7
-
-	# Create a temporary directory
-	tmpdir="$(ynh_smart_mktemp --min_size=10)"
+	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$tmpdir"
-
-	# Backup the config file in the temp dir
-	cp -a "$final_path/config.php" "$tmpdir/config.php"
-
-	# Replace the old ttrss by the new one
-	ynh_secure_remove --file="$final_path"
-	mv "$tmpdir" "$final_path"
-	ynh_secure_remove --file="$tmpdir"
+	ynh_setup_source --dest_dir="$final_path"
 fi
 
 chmod 750 "$final_path"
@@ -119,12 +114,19 @@ ynh_script_progression --message="Upgrading NGINX web server configuration..." -
 ynh_add_nginx_config
 
 #=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Upgrading dependencies..." --weight=1
+
+ynh_install_app_dependencies $pkg_dependencies
+
+#=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=2
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --package="$extra_php_dependencies"
+ynh_add_fpm_config
 
 #=================================================
 # SPECIFIC UPGRADE
@@ -138,19 +140,13 @@ then
 
 	domain_path=https://$domain$path_url
 	ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
+
+	ynh_script_progression --message="Upgrading ttrss database..." --weight=2
+	sudo -u $app php${phpversion} ${final_path}/update.php --update-schema=force-yes
 fi
+
 chmod 400 "$final_path/config.php"
 chown $app:$app "$final_path/config.php"
-	
-#=================================================
-# UPGRADE DATABASE
-#=================================================
-
-if [ "$upgrade_type" == "UPGRADE_APP" ]
-then
-	ynh_script_progression --message="Upgrading ttrss database..." --weight=2
-	ynh_exec_as $app php"${phpversion}" ${final_path}/update.php --update-schema
-fi
 
 #=================================================
 # SETUP SYSTEMD
