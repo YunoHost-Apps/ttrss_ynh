@@ -82,6 +82,10 @@ if ! ynh_permission_exists --permission="api"; then
 	ynh_permission_create --permission="api" --url="/api" --allowed="visitors" --show_tile="false" --protected="true"
 fi
 
+# Do not remove the file before the backup, to not fail the backup.
+# Remove old cron job
+ynh_secure_remove --file="/etc/cron.d/$app"
+
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
