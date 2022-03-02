@@ -59,12 +59,6 @@ ynh_backup --src_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
 ynh_backup --src_path="/etc/systemd/system/$app.service"
 
 #=================================================
-# BACKUP VARIOUS FILES
-#=================================================
-
-ynh_backup --src_path="/etc/cron.d/$app"
-
-#=================================================
 # BACKUP THE MYSQL DATABASE
 #=================================================
 ynh_print_info --message="Backing up the MySQL database..."

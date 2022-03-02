@@ -11,7 +11,7 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
-		upgrade=1	from_commit=be16ff54ae531329590ef6576d6f928315ebe0cf
+		upgrade=1	from_commit=20435c4d005d7abffc45db4eac3d3e9492302c21
 		backup_restore=1
 		multi_instance=1
 		change_url=1
@@ -19,7 +19,7 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=be16ff54ae531329590ef6576d6f928315ebe0cf
-		name=Create cron
+	; commit=20435c4d005d7abffc45db4eac3d3e9492302c21
+		name=Testing (#105)
 		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
 
