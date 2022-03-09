@@ -1,5 +1,5 @@
-SOURCE_URL=https://git.tt-rss.org/fox/tt-rss/archive/9a5c21630b5b7e2e3adb2e0334defbd9515aa833.tar.gz
-SOURCE_SUM=12e0930daa54d2fad3ce39c934c455de3b75adde33e406420e40650e755438bf
+SOURCE_URL=https://git-gitea.tt-rss.org/fox/tt-rss/archive/95431890bea57c6fcc3f6198a7a27b1993f3fba4.tar.gz
+SOURCE_SUM=17e6dfd342e125ac2091145ca52f40a6380619180d12774a2378ee0709d3d4d4
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
