@@ -32,7 +32,7 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS/Atom) en 
 
 * Site officiel de l'app : http://tt-rss.org
 * Documentation officielle de l'admin : https://git.tt-rss.org/git/tt-rss/wiki
-* Dépôt de code officiel de l'app : https://git.tt-rss.org/git/tt-rss
+* Dépôt de code officiel de l'app : https://git-gitea.tt-rss.org/fox/tt-rss
 * Documentation YunoHost pour cette app : https://yunohost.org/app_ttrss
 * Signaler un bug : https://github.com/YunoHost-Apps/ttrss_ynh/issues
 
