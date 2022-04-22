@@ -83,14 +83,6 @@ ynh_script_progression --message="Removing dependencies..." --weight=1
 ynh_remove_app_dependencies
 
 #=================================================
-# REMOVE VARIOUS FILES
-#=================================================
-ynh_script_progression --message="Removing various files..." --weight=1
-
-# Remove a cron file
-ynh_secure_remove --file="/etc/cron.d/$app"
-
-#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # REMOVE DEDICATED USER
