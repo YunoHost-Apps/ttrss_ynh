@@ -130,7 +130,7 @@ ynh_add_systemd_config
 #=================================================
 ynh_script_progression --message="Initializing database..." --weight=6
 
-ynh_psql_connect_as --user="$db_name" --password="$db_pwd" --database="$db_name" \
+ynh_psql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" \
     < "$final_path/schema/ttrss_schema_pgsql.sql"
 
 sudo -u $app php${phpversion} ${final_path}/update.php --update-schema=force-yes
