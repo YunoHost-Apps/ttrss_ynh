@@ -6,14 +6,14 @@
     "en": "News feed (RSS/Atom) reader and aggregator",
     "fr": "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
   },
-  "version": "20220326~ynh1",
+  "version": "20220414~ynh1",
   "url": "http://tt-rss.org",
   "upstream": {
         "license": "GPL-3.0-only",
         "website": "http://tt-rss.org",
         "demo": "https://demo.yunohost.org/ttrss/",
         "admindoc": "https://git.tt-rss.org/git/tt-rss/wiki",
-        "code": "https://git.tt-rss.org/git/tt-rss"
+        "code": "https://git-gitea.tt-rss.org/fox/tt-rss"
     },
   "license": "GPL-3.0-only",
   "maintainer": {
