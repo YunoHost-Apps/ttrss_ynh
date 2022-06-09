@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # Tiny Tiny RSS for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![Working status](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)  
 [![Install Tiny Tiny RSS with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ttrss)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -27,13 +27,13 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 - podcasts,
 - flexible article filtering
 
-**Shipped version:** 20220414~ynh1
+**Shipped version:** 20220606~ynh1
 
 **Demo:** https://demo.yunohost.org/ttrss/
 
 ## Screenshots
 
-![](./doc/screenshots/screenshot.png)
+![Screenshot of Tiny Tiny RSS](./doc/screenshots/screenshot.png)
 
 ## Disclaimers / important information
 
@@ -43,21 +43,22 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 - password: `password`
 ## Documentation and resources
 
-* Official app website: http://tt-rss.org
-* Official admin documentation: https://git.tt-rss.org/git/tt-rss/wiki
-* Upstream app code repository: https://git-gitea.tt-rss.org/fox/tt-rss
-* YunoHost documentation for this app: https://yunohost.org/app_ttrss
-* Report a bug: https://github.com/YunoHost-Apps/ttrss_ynh/issues
+* Official app website: <http://tt-rss.org>
+* Official admin documentation: <https://git.tt-rss.org/git/tt-rss/wiki>
+* Upstream app code repository: <https://git-gitea.tt-rss.org/fox/tt-rss>
+* YunoHost documentation for this app: <https://yunohost.org/app_ttrss>
+* Report a bug: <https://github.com/YunoHost-Apps/ttrss_ynh/issues>
 
 ## Developer info
 
 Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing).
 
 To try the testing branch, please proceed like that.
-```
+
+``` bash
 sudo yunohost app install https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing --debug
 or
 sudo yunohost app upgrade ttrss -u https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing --debug
 ```
 
-**More info regarding app packaging:** https://yunohost.org/packaging_apps
+**More info regarding app packaging:** <https://yunohost.org/packaging_apps>
