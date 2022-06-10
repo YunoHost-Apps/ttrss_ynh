@@ -11,7 +11,7 @@
 	putenv('TTRSS_DB_PASS=__DB_PWD__');
 	putenv('TTRSS_DB_PORT=3306'); // usually 5432 for PostgreSQL, 3306 for MySQL
 
-	putenv('TTRSS_MYSQL_CHARSET=UTF8');
+	putenv('TTRSS_MYSQL_CHARSET=UTF8MB4');
 	// Connection charset for MySQL. If you have a legacy database and/or experience
 	// garbage unicode characters with this option, try setting it to a blank string.
 
@@ -43,7 +43,7 @@
 	// *** Files and directories ***
 	// *****************************
 
-	putenv('TTRSS_PHP_EXECUTABLE=/usr/bin/php');
+	putenv('TTRSS_PHP_EXECUTABLE=/usr/bin/php__PHPVERSION__');
 	// Path to PHP *COMMAND LINE* executable, used for various command-line tt-rss 
 	// programs and update daemon. Do not try to use CGI binary here, it won't work. 
 	// If you see HTTP headers being displayed while running tt-rss scripts, 
