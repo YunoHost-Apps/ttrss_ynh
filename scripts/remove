@@ -88,7 +88,7 @@ ynh_remove_app_dependencies
 ynh_script_progression --message="Removing various files..." --weight=1
 
 # Remove a cron file
-ynh_secure_remove --file="/etc/cron.d/$app"
+ynh_exec_warn_less ynh_secure_remove --file="/etc/cron.d/$app"
 
 #=================================================
 # GENERIC FINALIZATION
