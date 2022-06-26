@@ -19,7 +19,7 @@
 	// *** Basic settings (important!) ***
 	// ***********************************
 
-	putenv('TTRSS_SELF_URL_PATH=__DOMAIN_PATH__');
+	putenv('TTRSS_SELF_URL_PATH=https://__DOMAIN_PATH__');
 	// Full URL of your tt-rss installation. This should be set to the
 	// location of tt-rss directory, e.g. http://example.org/tt-rss/
 	// You need to set this option correctly otherwise several features
