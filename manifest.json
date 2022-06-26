@@ -11,7 +11,7 @@
   "upstream": {
         "license": "GPL-3.0-only",
         "website": "http://tt-rss.org",
-        "demo": "https://demo.yunohost.org/ttrss/",
+        "demo": "https://srv.tt-rss.org/tt-rss/",
         "admindoc": "https://git.tt-rss.org/git/tt-rss/wiki",
         "code": "https://git-gitea.tt-rss.org/fox/tt-rss"
     },
