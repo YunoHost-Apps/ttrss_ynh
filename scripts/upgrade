@@ -81,7 +81,12 @@ fi
 
 # Create a permission if needed
 if ! ynh_permission_exists --permission="api"; then
-	ynh_permission_create --permission="api" --url="/api" --allowed="visitors" --show_tile="false" --protected="true"
+	ynh_permission_create --permission="api" --url="/public.php" --allowed="visitors" --show_tile="false" --protected="true"
+fi
+
+# Create a permission if needed
+if ! ynh_permission_exists --permission="public"; then
+	ynh_permission_create --permission="public" --url="/api" --allowed="visitors" --show_tile="false" --protected="true"
 fi
 
 # Do not remove the file before the backup, to not fail the backup.

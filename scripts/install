@@ -167,6 +167,7 @@ then
 	ynh_permission_update --permission="main" --add="visitors"
 fi
 
+ynh_permission_create --permission="public" --url="/public.php" --allowed="visitors" --show_tile="false" --protected="true"
 ynh_permission_create --permission="api" --url="/api" --allowed="visitors" --show_tile="false" --protected="true"
 
 #=================================================
