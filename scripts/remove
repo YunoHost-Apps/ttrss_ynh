@@ -53,7 +53,7 @@ ynh_mysql_remove_db --db_user=$db_user --db_name=$db_name
 #=================================================
 # REMOVE APP MAIN DIR
 #=================================================
-ynh_script_progression --message="Removing the app main directory..." --weight=4
+ynh_script_progression --message="Removing app main directory..." --weight=4
 
 # Remove the app directory securely
 ynh_secure_remove --file="$final_path"
@@ -81,14 +81,6 @@ ynh_script_progression --message="Removing dependencies..." --weight=1
 
 # Remove metapackage and its dependencies
 ynh_remove_app_dependencies
-
-#=================================================
-# REMOVE VARIOUS FILES
-#=================================================
-ynh_script_progression --message="Removing various files..." --weight=1
-
-# Remove a cron file
-ynh_exec_warn_less ynh_secure_remove --file="/etc/cron.d/$app"
 
 #=================================================
 # GENERIC FINALIZATION
