@@ -111,6 +111,7 @@ then
 
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir="$final_path"
+	echo "$(ynh_app_upstream_version)" > "$final_path/version_static.txt"
 fi
 
 chmod 750 "$final_path"
