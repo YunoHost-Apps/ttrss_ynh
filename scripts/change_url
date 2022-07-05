@@ -67,6 +67,13 @@ fi
 #=================================================
 # STANDARD MODIFICATIONS
 #=================================================
+# STOP SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Stopping a systemd service..." --weight=1
+
+ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
+
+#=================================================
 # MODIFY URL IN NGINX CONF
 #=================================================
 ynh_script_progression --message="Updating NGINX web server configuration..." --weight=2
@@ -106,6 +113,13 @@ ynh_add_config --template="../conf/config.php" --destination="$final_path/config
 
 chmod 400 "$final_path/config.php"
 chown $app "$final_path/config.php"
+
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..."
+
+ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
 
 #=================================================
 # GENERIC FINALIZATION
