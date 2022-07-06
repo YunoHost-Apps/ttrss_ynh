@@ -1,51 +1,51 @@
 {
-  "name": "Tiny Tiny RSS",
-  "id": "ttrss",
-  "packaging_format": 1,
-  "description": {
-    "en": "News feed (RSS/Atom) reader and aggregator",
-    "fr": "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
-  },
-  "version": "20220606~ynh1",
-  "url": "http://tt-rss.org",
-  "upstream": {
+    "name": "Tiny Tiny RSS",
+    "id": "ttrss",
+    "packaging_format": 1,
+    "description": {
+        "en": "News feed (RSS/Atom) reader and aggregator",
+        "fr": "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
+    },
+    "version": "20220626~ynh1",
+    "url": "http://tt-rss.org",
+    "upstream": {
         "license": "GPL-3.0-only",
-        "website": "http://tt-rss.org",
-        "demo": "https://demo.yunohost.org/ttrss/",
-        "admindoc": "https://git.tt-rss.org/git/tt-rss/wiki",
+        "website": "https://tt-rss.org",
+        "demo": "https://srv.tt-rss.org/tt-rss/",
+        "admindoc": "https://tt-rss.org/wiki.php",
         "code": "https://git-gitea.tt-rss.org/fox/tt-rss"
     },
-  "license": "GPL-3.0-only",
-  "maintainer": {
-    "name": "",
-    "email": ""
-  },
-  "requirements": {
-    "yunohost": ">= 4.3.0"
-  },
-  "multi_instance": true,
-  "services": [
-      "nginx",
-      "php8.0-fpm",
-      "mysql"
-  ],
-  "arguments": {
-    "install" : [
-      {
-        "name": "domain",
-        "type": "domain"
-      },
-      {
-        "name": "path",
-        "type": "path",
-        "example": "/ttrss",
-        "default": "/ttrss"
-        },
-      {
-        "name": "is_public",
-        "type": "boolean",
-        "default": true
-      }
-    ]
-  }
+    "license": "GPL-3.0-only",
+    "maintainer": {
+        "name": "",
+        "email": ""
+    },
+    "requirements": {
+        "yunohost": ">= 4.3.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "php8.0-fpm",
+        "mysql"
+    ],
+    "arguments": {
+        "install": [
+            {
+                "name": "domain",
+                "type": "domain"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "example": "/ttrss",
+                "default": "/ttrss"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    }
 }

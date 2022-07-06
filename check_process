@@ -11,15 +11,13 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
+		# 20200916~ynh5
 		#upgrade=1	from_commit=20435c4d005d7abffc45db4eac3d3e9492302c21
+		# 20220606~ynh1
+		upgrade=1	from_commit=009f956487d1580b71a2bd250418854d8e094185
 		backup_restore=1
 		multi_instance=1
 		change_url=1
 ;;; Options
 Email=
 Notification=none
-;;; Upgrade options
-	; commit=20435c4d005d7abffc45db4eac3d3e9492302c21
-		name=Testing (#105)
-		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
-
