@@ -12,3 +12,6 @@ pkg_dependencies="postgresql php${YNH_PHP_VERSION}-pgsql php${YNH_PHP_VERSION}-c
 # EXPERIMENTAL HELPERS
 #=================================================
 
+#=================================================
+# FUTURE OFFICIAL HELPERS
+#=================================================

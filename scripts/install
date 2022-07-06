@@ -13,6 +13,9 @@ source /usr/share/yunohost/helpers
 # MANAGE SCRIPT FAILURE
 #=================================================
 
+ynh_clean_setup () {
+	ynh_clean_check_starting
+}
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
 
@@ -23,7 +26,6 @@ ynh_abort_if_errors
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
-phpversion=$YNH_PHP_VERSION
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -47,6 +49,8 @@ ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
 
 #=================================================
+# STANDARD MODIFICATIONS
+#=================================================
 # INSTALL DEPENDENCIES
 #=================================================
 ynh_script_progression --message="Installing dependencies..." --weight=1
@@ -54,14 +58,12 @@ ynh_script_progression --message="Installing dependencies..." --weight=1
 ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
-# STANDARD MODIFICATIONS
-#=================================================
 # CREATE DEDICATED USER
 #=================================================
 ynh_script_progression --message="Configuring system user..." --weight=2
 
 # Create a system user
-ynh_system_user_create --username=$app --home_dir=$final_path
+ynh_system_user_create --username=$app --home_dir="$final_path"
 
 #=================================================
 # CREATE A MYSQL DATABASE
@@ -82,18 +84,11 @@ ynh_script_progression --message="Setting up source files..." --weight=7
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path"
+echo "$(ynh_app_upstream_version)" > "$final_path/version_static.txt"
 
 chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
-
-#=================================================
-# NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Configuring NGINX web server..." --weight=2
-
-# Create a dedicated NGINX config
-ynh_add_nginx_config
 
 #=================================================
 # PHP-FPM CONFIGURATION
@@ -103,6 +98,14 @@ ynh_script_progression --message="Configuring PHP-FPM..." --weight=2
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config
 phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
+
+#=================================================
+# NGINX CONFIGURATION
+#=================================================
+ynh_script_progression --message="Configuring NGINX web server..." --weight=2
+
+# Create a dedicated NGINX config
+ynh_add_nginx_config
 
 #=================================================
 # SPECIFIC SETUP
@@ -134,7 +137,7 @@ ynh_script_progression --message="Initializing database..." --weight=6
 ynh_psql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" \
     < "$final_path/schema/ttrss_schema_pgsql.sql"
 
-sudo -u $app php${phpversion} ${final_path}/update.php --update-schema=force-yes
+ynh_exec_as $app php${phpversion} ${final_path}/update.php --update-schema=force-yes
 
 #=================================================
 # GENERIC FINALIZATION
@@ -158,11 +161,15 @@ ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
 #=================================================
 ynh_script_progression --message="Configuring permissions..." --weight=1
 
+# Make app public if necessary
 if [ $is_public -eq 1 ]
 then
+	# Everyone can access the app.
+	# The "main" permission is automatically created before the install script.
 	ynh_permission_update --permission="main" --add="visitors"
 fi
 
+ynh_permission_create --permission="public" --url="/public.php" --allowed="visitors" --show_tile="false" --protected="true"
 ynh_permission_create --permission="api" --url="/api" --allowed="visitors" --show_tile="false" --protected="true"
 
 #=================================================
