@@ -15,7 +15,17 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-Tiny Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS/Atom) en ligne gratuit et open source.
+Tiny Tiny RSS est un lecteur et agrégateur de flux de nouvelles (RSS/Atom) basé sur le web, gratuit et à code source ouvert.
+
+## Caractéristiques
+
+- agrégation / syndication de flux,
+- importation/exportation OPML,
+- plusieurs façons de partager du contenu : exportation de flux RSS, plugins pour divers sites sociaux, partage par URL, etc,
+- partage de contenu arbitraire via tt-rss,
+- plugins et thèmes,
+- podcasts,
+- filtrage flexible des articles
 
 
 **Version incluse :** 20220626~ynh1
@@ -34,8 +44,8 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux d'actualités (RSS/Atom) en 
 - password: `password`
 ## Documentations et ressources
 
-* Site officiel de l'app : <http://tt-rss.org>
-* Documentation officielle de l'admin : <https://git.tt-rss.org/git/tt-rss/wiki>
+* Site officiel de l'app : <https://tt-rss.org>
+* Documentation officielle de l'admin : <https://tt-rss.org/wiki.php>
 * Dépôt de code officiel de l'app : <https://git-gitea.tt-rss.org/fox/tt-rss>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_ttrss>
 * Signaler un bug : <https://github.com/YunoHost-Apps/ttrss_ynh/issues>
