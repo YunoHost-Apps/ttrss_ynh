@@ -27,7 +27,6 @@ phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 #=================================================
 # CHECK VERSION
 #=================================================
-ynh_script_progression --message="Checking version..."
 
 upgrade_type=$(ynh_check_app_version_changed)
 
@@ -53,7 +52,7 @@ ynh_abort_if_errors
 #=================================================
 ynh_script_progression --message="Stopping a systemd service..."
 
-ynh_systemd_action --service_name=$app --action="stop"
+ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
@@ -154,7 +153,7 @@ then
 	domain_path=https://$domain$path_url
 	ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
 
-	ynh_script_progression --message="Upgrading ttrss database..." --weight=2
+	ynh_script_progression --message="Upgrading the database..." --weight=2
 	ynh_exec_as $app php${phpversion} ${final_path}/update.php --update-schema=force-yes
 fi
 
@@ -183,7 +182,7 @@ yunohost service add $app --description="News feed reader and aggregator" --log=
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="start"
+ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
 
 #=================================================
 # RELOAD NGINX
