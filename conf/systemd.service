@@ -1,5 +1,5 @@
 [Unit]
-Description=News feed reader and aggregator
+Description=TTRSS: News feed reader and aggregator
 After=network.target mysql.service
 
 [Service]
