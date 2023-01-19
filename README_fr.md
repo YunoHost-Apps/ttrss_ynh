@@ -5,15 +5,15 @@ It shall NOT be edited by hand.
 
 # Tiny Tiny RSS pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)  
 [![Installer Tiny Tiny RSS avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ttrss)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Tiny Tiny RSS rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Tiny Tiny RSS rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Tiny Tiny RSS est un lecteur et agrégateur de flux de nouvelles (RSS/Atom) basé sur le web, gratuit et à code source ouvert.
 
@@ -22,7 +22,6 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux de nouvelles (RSS/Atom) bas�
 - agrégation / syndication de flux,
 - importation/exportation OPML,
 - plusieurs façons de partager du contenu : exportation de flux RSS, plugins pour divers sites sociaux, partage par URL, etc,
-- partage de contenu arbitraire via tt-rss,
 - plugins et thèmes,
 - podcasts,
 - filtrage flexible des articles
@@ -32,9 +31,9 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux de nouvelles (RSS/Atom) bas�
 
 **Démo :** https://srv.tt-rss.org/tt-rss/
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Tiny Tiny RSS](./doc/screenshots/screenshot.png)
+![Capture d’écran de Tiny Tiny RSS](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
@@ -44,9 +43,9 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux de nouvelles (RSS/Atom) bas�
 - password: `password`
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://tt-rss.org>
-* Documentation officielle de l'admin : <https://tt-rss.org/wiki.php>
-* Dépôt de code officiel de l'app : <https://git-gitea.tt-rss.org/fox/tt-rss>
+* Site officiel de l’app : <https://tt-rss.org>
+* Documentation officielle de l’admin : <https://tt-rss.org/wiki.php>
+* Dépôt de code officiel de l’app : <https://git-gitea.tt-rss.org/fox/tt-rss>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_ttrss>
 * Signaler un bug : <https://github.com/YunoHost-Apps/ttrss_ynh/issues>
 
@@ -62,4 +61,4 @@ ou
 sudo yunohost app upgrade ttrss -u https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
