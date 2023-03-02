@@ -5,7 +5,6 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux de nouvelles (RSS/Atom) bas�
 - agrégation / syndication de flux,
 - importation/exportation OPML,
 - plusieurs façons de partager du contenu : exportation de flux RSS, plugins pour divers sites sociaux, partage par URL, etc,
-- partage de contenu arbitraire via tt-rss,
 - plugins et thèmes,
 - podcasts,
 - filtrage flexible des articles
