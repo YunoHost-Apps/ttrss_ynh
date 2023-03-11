@@ -1,0 +1,67 @@
+packaging_format = 2
+
+id = "ttrss"
+name = "Tiny Tiny RSS"
+description.en = "News feed (RSS/Atom) reader and aggregator"
+description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
+
+version = "20230311~ynh1"
+
+maintainers = []
+
+[upstream]
+license = "GPL-3.0-only"
+website = "https://tt-rss.org"
+demo = "https://srv.tt-rss.org/tt-rss/"
+admindoc = "https://tt-rss.org/wiki.php"
+code = "https://git-gitea.tt-rss.org/fox/tt-rss"
+
+[integration]
+yunohost = ">= 11.1.14"
+architectures = "all"
+multi_instance = true
+ldap = false
+sso = false
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/ttrss"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+        [resources.sources.main]
+        url = "https://git-gitea.tt-rss.org/fox/tt-rss/archive/cddbf5bf5a7e2c433275a3bec089f318d4f211af.tar.gz"
+        sha256 = "41df4c5902a7604acbe330f70a2fbef961338f6cf8798156de10adbc321f8e37"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    public.url = "/public.php"
+    public.allowed = "visitors"
+    public.show_tile = false
+    public.protected = true
+
+    api.url = "/api"
+    api.allowed = "visitors"
+    api.show_tile = false
+    api.protected = true
+
+    [resources.apt]
+    packages = "mariadb-server php8.0-mysql php8.0-curl php8.0-gd php8.0-opcache php8.0-fileinfo php8.0-intl php8.0-cli php8.0-mbstring php8.0-xml"
+
+    [resources.database]
+    type = "mysql"
