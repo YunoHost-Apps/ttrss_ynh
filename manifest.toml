@@ -17,7 +17,7 @@ admindoc = "https://tt-rss.org/wiki.php"
 code = "https://git-gitea.tt-rss.org/fox/tt-rss"
 
 [integration]
-yunohost = ">= 11.1.14"
+yunohost = ">= 11.1.15"
 architectures = "all"
 multi_instance = true
 ldap = false
