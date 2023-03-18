@@ -30,20 +30,20 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
-# PHP-FPM CONFIGURATION
+# SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Configuring PHP-FPM..." --weight=2
+ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
 
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
 
-#=================================================
-# NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Configuring NGINX web server..." --weight=2
-
 # Create a dedicated NGINX config
 ynh_add_nginx_config
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+yunohost service add $app --description="News feed reader and aggregator" --log="/var/log/$app/$app.log"
 
 #=================================================
 # SPECIFIC SETUP
@@ -60,31 +60,14 @@ chmod 400 "$install_dir/config.php"
 chown $app "$install_dir/config.php"
 
 #=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=2
-
-# Create a dedicated systemd config
-ynh_add_systemd_config
-
-#=================================================
 # INITIALIZE DATABASE
 #=================================================
 ynh_script_progression --message="Initializing database..." --weight=6
 
-ynh_mysql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" \
-    < "$install_dir/schema/ttrss_schema_mysql.sql"
+ynh_psql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" \
+    < "$install_dir/schema/ttrss_schema_pgsql.sql"
 
-ynh_exec_as $app php${phpversion} ${install_dir}/update.php --update-schema=force-yes
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
-
-yunohost service add $app --description="News feed reader and aggregator" --log="/var/log/$app/$app.log"
+ynh_exec_as $app php$phpversion $install_dir/update.php --update-schema=force-yes
 
 #=================================================
 # START SYSTEMD SERVICE

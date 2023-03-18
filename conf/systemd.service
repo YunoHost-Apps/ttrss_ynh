@@ -1,5 +1,5 @@
 Description=TTRSS: News feed reader and aggregator
-After=network.target mysql.service
+After=network.target postgresql.service
 
 [Service]
 Type=simple
