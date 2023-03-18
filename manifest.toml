@@ -17,7 +17,7 @@ admindoc = "https://tt-rss.org/wiki.php"
 code = "https://git-gitea.tt-rss.org/fox/tt-rss"
 
 [integration]
-yunohost = ">= 11.1.14"
+yunohost = ">= 11.1.15"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -61,7 +61,7 @@ ram.runtime = "50M"
     api.protected = true
 
     [resources.apt]
-    packages = "mariadb-server php8.0-mysql php8.0-curl php8.0-gd php8.0-opcache php8.0-fileinfo php8.0-intl php8.0-cli php8.0-mbstring php8.0-xml"
+    packages = "postgresql php8.0-pgsql php8.0-curl php8.0-gd php8.0-opcache php8.0-fileinfo php8.0-intl php8.0-cli php8.0-mbstring php8.0-xml"
 
     [resources.database]
-    type = "mysql"
+    type = "postgresql"
