@@ -43,6 +43,10 @@ ram.runtime = "50M"
         url = "https://git-gitea.tt-rss.org/fox/tt-rss/archive/cddbf5bf5a7e2c433275a3bec089f318d4f211af.tar.gz"
         sha256 = "41df4c5902a7604acbe330f70a2fbef961338f6cf8798156de10adbc321f8e37"
 
+        [resources.sources.data_migration]
+        url = "https://dev.tt-rss.org/tt-rss/ttrss-data-migration/archive/6dac32af20dc303ea2e6e03f3a9492ee3ace6a8a.tar.gz"
+        sha256 = "dba5638f44820393e795e8dbf5ffdafeb061913aef245ce630ddddfbc26c32c4"
+
     [resources.system_user]
 
     [resources.install_dir]
