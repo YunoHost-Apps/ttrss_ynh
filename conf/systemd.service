@@ -1,13 +1,12 @@
-[Unit]
-Description=News feed reader and aggregator
-After=network.target psql.service
+Description=TTRSS: News feed reader and aggregator
+After=network.target mysql.service
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__FINALPATH__/
-ExecStart=/usr/bin/php__PHPVERSION__ __FINALPATH__/update_daemon2.php
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=/usr/bin/php__PHPVERSION__ __INSTALL_DIR__/update_daemon2.php
 Restart=always
 RestartSec=10
 
