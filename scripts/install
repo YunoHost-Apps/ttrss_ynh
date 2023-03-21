@@ -32,6 +32,7 @@ ynh_script_progression --message="Setting up source files..." --weight=7
 
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
+ynh_setup_source --dest_dir="$install_dir/plugins.local/data_migration" --source_id="data_migration"
 echo "$(ynh_app_upstream_version)" > "$install_dir/version_static.txt"
 
 chmod -R o-rwx "$install_dir"

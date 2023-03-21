@@ -61,6 +61,7 @@ then
 
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir="$install_dir"
+	ynh_setup_source --dest_dir="$install_dir/plugins.local/data_migration" --source_id="data_migration"
 	echo "$(ynh_app_upstream_version)" > "$install_dir/version_static.txt"
 fi
 
@@ -97,7 +98,8 @@ then
 	ynh_add_config --template="../conf/config.php" --destination="$install_dir/config.php"
 
 	ynh_script_progression --message="Upgrading the database..." --weight=2
-	ynh_exec_as $app php${phpversion} ${install_dir}/update.php --update-schema=force-yes
+  
+	ynh_exec_as $app php$phpversion $install_dir/update.php --update-schema=force-yes
 fi
 
 chmod 400 "$install_dir/config.php"
