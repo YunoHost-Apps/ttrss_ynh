@@ -5,7 +5,7 @@ name = "Tiny Tiny RSS"
 description.en = "News feed (RSS/Atom) reader and aggregator"
 description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
 
-version = "20230321~ynh2"
+version = "20230321~ynh3"
 
 maintainers = []
 
@@ -44,7 +44,7 @@ ram.runtime = "50M"
         sha256 = "0aedbcc2b3e34b5c015ad0668287be7069dd87e341228a4c032a29b972f89165"
         autoupdate.upstream = "https://git-gitea.tt-rss.org/fox/tt-rss"
         autoupdate.strategy = "latest_github_commit"
-        
+
         [resources.sources.data_migration]
         url = "https://dev.tt-rss.org/tt-rss/ttrss-data-migration/archive/6dac32af20dc303ea2e6e03f3a9492ee3ace6a8a.tar.gz"
         sha256 = "dba5638f44820393e795e8dbf5ffdafeb061913aef245ce630ddddfbc26c32c4"
