@@ -42,10 +42,14 @@ ram.runtime = "50M"
         [resources.sources.main]
         url = "https://git-gitea.tt-rss.org/fox/tt-rss/archive/cddbf5bf5a7e2c433275a3bec089f318d4f211af.tar.gz"
         sha256 = "0aedbcc2b3e34b5c015ad0668287be7069dd87e341228a4c032a29b972f89165"
-
+        autoupdate.upstream = "https://git-gitea.tt-rss.org/fox/tt-rss"
+        autoupdate.strategy = "latest_github_commit"
+        
         [resources.sources.data_migration]
         url = "https://dev.tt-rss.org/tt-rss/ttrss-data-migration/archive/6dac32af20dc303ea2e6e03f3a9492ee3ace6a8a.tar.gz"
         sha256 = "dba5638f44820393e795e8dbf5ffdafeb061913aef245ce630ddddfbc26c32c4"
+        autoupdate.upstream = "https://dev.tt-rss.org/tt-rss/ttrss-data-migration"
+        autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
 
