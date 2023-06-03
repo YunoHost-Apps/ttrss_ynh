@@ -5,7 +5,7 @@ name = "Tiny Tiny RSS"
 description.en = "News feed (RSS/Atom) reader and aggregator"
 description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
 
-version = "20230406~ynh1"
+version = "20230603~ynh1"
 
 maintainers = []
 
@@ -17,7 +17,7 @@ admindoc = "https://tt-rss.org/wiki.php"
 code = "https://git-gitea.tt-rss.org/fox/tt-rss"
 
 [integration]
-yunohost = ">= 11.1.15"
+yunohost = ">= 11.1.19"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -40,8 +40,8 @@ ram.runtime = "50M"
 
 [resources]
         [resources.sources.main]
-        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/53bd56894dc20349fe514818e04a620c79532e87.tar.gz"
-        sha256 = "871ffcfc2620b10e062bd03f37326acf29872fd7850f9aa0844568ac93fa682e"
+        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/d43d6f7dffef14eb026799e1ccb805b758628a80.tar.gz"
+        sha256 = "9a40cd82e8de3d6bdf55316e2cf9a8b300928f5c5ef2d6082898155982929baf"
 
         #[resources.sources.data_migration]
         #url = "https://dev.tt-rss.org/tt-rss/ttrss-data-migration/archive/6dac32af20dc303ea2e6e03f3a9492ee3ace6a8a.tar.gz"
@@ -55,19 +55,17 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
-
     public.url = "/public.php"
     public.allowed = "visitors"
     public.show_tile = false
     public.protected = true
-
     api.url = "/api"
     api.allowed = "visitors"
     api.show_tile = false
     api.protected = true
 
     [resources.apt]
-    packages = "mariadb-server php8.0-mysql php8.0-curl php8.0-gd php8.0-opcache php8.0-fileinfo php8.0-intl php8.0-cli php8.0-mbstring php8.0-xml"
+    packages = "mariadb-server php8.2-mysql php8.2-curl php8.2-gd php8.2-opcache php8.2-fileinfo php8.2-intl php8.2-cli php8.2-mbstring php8.2-xml"
 
     [resources.database]
     type = "mysql"
