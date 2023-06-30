@@ -5,7 +5,7 @@ name = "Tiny Tiny RSS"
 description.en = "News feed (RSS/Atom) reader and aggregator"
 description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
 
-version = "20230603~ynh1"
+version = "20230630~ynh1"
 
 maintainers = []
 
@@ -17,7 +17,7 @@ admindoc = "https://tt-rss.org/wiki.php"
 code = "https://git-gitea.tt-rss.org/fox/tt-rss"
 
 [integration]
-yunohost = ">= 11.1.19"
+yunohost = ">= 11.1.21"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -40,14 +40,8 @@ ram.runtime = "50M"
 
 [resources]
         [resources.sources.main]
-        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/d43d6f7dffef14eb026799e1ccb805b758628a80.tar.gz"
-        sha256 = "9a40cd82e8de3d6bdf55316e2cf9a8b300928f5c5ef2d6082898155982929baf"
-
-        #[resources.sources.data_migration]
-        #url = "https://dev.tt-rss.org/tt-rss/ttrss-data-migration/archive/6dac32af20dc303ea2e6e03f3a9492ee3ace6a8a.tar.gz"
-        #sha256 = "dba5638f44820393e795e8dbf5ffdafeb061913aef245ce630ddddfbc26c32c4"
-        #autoupdate.upstream = "https://dev.tt-rss.org/tt-rss/ttrss-data-migration"
-        #autoupdate.strategy = "latest_github_commit"
+        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/dc25a9cf6816b756cb38490eab93f02589c44a10.tar.gz"
+        sha256 = "e67cc86a5c0f6de72a7aa88ad4e52b1cdf2145244aa2f351b618c340f795ee75"
 
     [resources.system_user]
 
