@@ -17,7 +17,7 @@ admindoc = "https://tt-rss.org/wiki.php"
 code = "https://git-gitea.tt-rss.org/fox/tt-rss"
 
 [integration]
-yunohost = ">= 11.1.21"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -40,8 +40,8 @@ ram.runtime = "50M"
 
 [resources]
         [resources.sources.main]
-        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/dc25a9cf6816b756cb38490eab93f02589c44a10.tar.gz"
-        sha256 = "e67cc86a5c0f6de72a7aa88ad4e52b1cdf2145244aa2f351b618c340f795ee75"
+        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/e2ab00c8892be2965cfd09a9b3f9c8cc0bc07f04.tar.gz"
+        sha256 = "efae8202cc3178f70df62e05c4825ef5b75aa80d7c89417c9e668c7a93f69502"
 
     [resources.system_user]
 
