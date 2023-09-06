@@ -1,6 +1,6 @@
 Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader and aggregator.
 
-## Features
+### Features
 
 - feed aggregation/syndication,
 - OPML import/export,
