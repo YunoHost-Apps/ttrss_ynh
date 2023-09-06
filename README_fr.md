@@ -18,7 +18,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 Tiny Tiny RSS est un lecteur et agrégateur de flux de nouvelles (RSS/Atom) basé sur le web, gratuit et à code source ouvert.
 
-## Caractéristiques
+### Caractéristiques
 
 - agrégation / syndication de flux,
 - importation/exportation OPML,
