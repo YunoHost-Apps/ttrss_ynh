@@ -5,7 +5,7 @@ name = "Tiny Tiny RSS"
 description.en = "News feed (RSS/Atom) reader and aggregator"
 description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
 
-version = "20230825~ynh1"
+version = "20231111~ynh1"
 
 maintainers = []
 
@@ -20,8 +20,11 @@ code = "https://git-gitea.tt-rss.org/fox/tt-rss"
 yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
+
 ldap = false
+
 sso = false
+
 disk = "50M"
 ram.build = "150M"
 ram.runtime = "50M"
