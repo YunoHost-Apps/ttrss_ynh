@@ -10,22 +10,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# RETRIEVE ARGUMENTS FROM THE MANIFEST
-#=================================================
-
-fpm_footprint="low"
-fpm_free_footprint=0
-fpm_usage="low"
-
-#=================================================
-# STORE SETTINGS FROM MANIFEST
-#=================================================
-
-ynh_app_setting_set --app=$app --key=fpm_footprint --value=$fpm_footprint
-ynh_app_setting_set --app=$app --key=fpm_free_footprint --value=$fpm_free_footprint
-ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=7
@@ -39,19 +23,12 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
-# ALTER DATABASE
-#=================================================
-
-ynh_mysql_connect_as --user=$db_user --password="$db_pwd" --database=$db_name \
-    <<< "ALTER DATABASE $db_name CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
-
-#=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
+ynh_add_fpm_config  --usage=low --footprint=low
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
@@ -80,10 +57,10 @@ chown $app "$install_dir/config.php"
 #=================================================
 ynh_script_progression --message="Initializing database..." --weight=6
 
-ynh_mysql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" \
-    < "$install_dir/schema/ttrss_schema_mysql.sql"
+ynh_psql_connect_as --user="$db_user" --password="$db_pwd" --database="$db_name" \
+    < "$install_dir/schema/ttrss_schema_pgsql.sql"
 
-ynh_exec_as $app php${phpversion} ${install_dir}/update.php --update-schema=force-yes
+ynh_exec_as $app php$phpversion $install_dir/update.php --update-schema=force-yes
 
 #=================================================
 # START SYSTEMD SERVICE
