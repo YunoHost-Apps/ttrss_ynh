@@ -14,9 +14,9 @@ source /usr/share/yunohost/helpers
 #=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Stopping a systemd service..."
+ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="stop"
+ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
 
 #=================================================
 # MODIFY URL IN NGINX CONF
@@ -40,14 +40,11 @@ chmod 400 "$install_dir/config.php"
 chown $app "$install_dir/config.php"
 
 #=================================================
-# GENERIC FINALISATION
-#=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Starting a systemd service..."
 
-# Start a systemd service
-ynh_systemd_action --service_name=$app --action="start"
+ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT

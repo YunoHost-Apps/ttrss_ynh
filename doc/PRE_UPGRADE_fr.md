@@ -1,0 +1,1 @@
+Nous passons de MariaDB à la base de données PostgreSQL. Il n'y a pas de migration de base de données pour l'instant. Il est conseillé d'exporter votre OPML, d'installer TTRSS et de réimporter le fichier OPML.
