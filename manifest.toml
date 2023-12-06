@@ -12,7 +12,7 @@ maintainers = []
 [upstream]
 license = "GPL-3.0-only"
 website = "https://tt-rss.org"
-demo = "https://srv.tt-rss.org/tt-rss/"
+demo = "https://demo.tt-rss.org/"
 admindoc = "https://tt-rss.org/wiki.php"
 code = "https://gitlab.tt-rss.org/tt-rss/tt-rss"
 
