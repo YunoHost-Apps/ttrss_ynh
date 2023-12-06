@@ -146,7 +146,7 @@
 	// Blank - use system MTA.
 	
 	putenv('TTRSS_SMTP_LOGIN=__APP__');
-	putenv('TTRSS_SMTP_PASSWORD=__MAIL_APP__');
+	putenv('TTRSS_SMTP_PASSWORD=__MAIL_PWD__');
 	// These two options enable SMTP authentication when sending
 	// outgoing mail. Only used with SMTP_SERVER.
 
