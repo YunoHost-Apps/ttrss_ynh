@@ -134,7 +134,7 @@
 	// *********************************
 
 	putenv('TTRSS_SMTP_FROM_NAME=Tiny Tiny RSS');
-	putenv('TTRSS_SMTP_FROM_ADDRESS=noreply@your.domain.dom');
+	putenv('TTRSS_SMTP_FROM_ADDRESS=noreply@__DOMAIN__');
 	// Name, address and subject for sending outgoing mail. This applies
 	// to password reset notifications, digest emails and any other mail.
 
