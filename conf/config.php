@@ -145,8 +145,8 @@
 	// Hostname:port combination to send outgoing mail (i.e. localhost:25). 
 	// Blank - use system MTA.
 	
-	putenv('TTRSS_SMTP_LOGIN=');
-	putenv('TTRSS_SMTP_PASSWORD=');
+	putenv('TTRSS_SMTP_LOGIN=__APP__');
+	putenv('TTRSS_SMTP_PASSWORD=__MAIL_PWD__');
 	// These two options enable SMTP authentication when sending
 	// outgoing mail. Only used with SMTP_SERVER.
 
