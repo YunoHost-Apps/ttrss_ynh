@@ -134,7 +134,7 @@
 	// *********************************
 
 	putenv('TTRSS_SMTP_FROM_NAME=Tiny Tiny RSS');
-	putenv('TTRSS_SMTP_FROM_ADDRESS=noreply@your.domain.dom');
+	putenv('TTRSS_SMTP_FROM_ADDRESS=noreply@__DOMAIN__');
 	// Name, address and subject for sending outgoing mail. This applies
 	// to password reset notifications, digest emails and any other mail.
 
@@ -145,8 +145,8 @@
 	// Hostname:port combination to send outgoing mail (i.e. localhost:25). 
 	// Blank - use system MTA.
 	
-	putenv('TTRSS_SMTP_LOGIN=');
-	putenv('TTRSS_SMTP_PASSWORD=');
+	putenv('TTRSS_SMTP_LOGIN=__APP__');
+	putenv('TTRSS_SMTP_PASSWORD=__MAIL_PWD__');
 	// These two options enable SMTP authentication when sending
 	// outgoing mail. Only used with SMTP_SERVER.
 
@@ -168,7 +168,7 @@
 	// if you experience weird errors and tt-rss failing to start, blank pages
 	// after login, or content encoding errors, disable it.
 
-	putenv('TTRSS_PLUGINS=auth_internal, note, data_migration');
+	putenv('TTRSS_PLUGINS=auth_internal, note');
 	// Comma-separated list of plugins to load automatically for all users.
 	// System plugins have to be specified here. Please enable at least one
 	// authentication plugin here (auth_*).
