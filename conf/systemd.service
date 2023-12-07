@@ -1,4 +1,6 @@
-Description=TTRSS: News feed reader and aggregator
+Description=TTRSS: Backend update
+Documentation=https://git.tt-rss.org/fox/tt-rss/wiki/UpdatingFeeds
+Requires=network.target postgresql.service
 After=network.target postgresql.service
 
 [Service]
