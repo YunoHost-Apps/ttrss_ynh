@@ -17,7 +17,7 @@ admindoc = "https://tt-rss.org/wiki.php"
 code = "https://gitlab.tt-rss.org/tt-rss/tt-rss"
 
 [integration]
-yunohost = ">= 11.2.8"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 
