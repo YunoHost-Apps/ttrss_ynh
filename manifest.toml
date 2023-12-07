@@ -5,14 +5,14 @@ name = "Tiny Tiny RSS"
 description.en = "News feed (RSS/Atom) reader and aggregator"
 description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
 
-version = "20231202~ynh2"
+version = "20231202~ynh3"
 
 maintainers = []
 
 [upstream]
 license = "GPL-3.0-only"
 website = "https://tt-rss.org"
-demo = "https://srv.tt-rss.org/tt-rss/"
+demo = "https://demo.tt-rss.org/"
 admindoc = "https://tt-rss.org/wiki.php"
 code = "https://gitlab.tt-rss.org/tt-rss/tt-rss"
 
@@ -53,17 +53,20 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+
     public.url = "/public.php"
     public.allowed = "visitors"
     public.show_tile = false
     public.protected = true
+
     api.url = "/api"
-    api.allowed = "visitors"
+    api.auth_header =false
     api.show_tile = false
     api.protected = true
+    api.allowed = "visitors"
 
     [resources.apt]
-    packages = "postgresql, php8.2-pgsql, php8.2-curl, php8.2-gd, php8.2-opcache,php8.2-fileinfo, php8.2-intl, php8.2-cli, php8.2-mbstring, php8.2-xml"
+    packages = "postgresql, php8.2-pgsql, php8.2-curl, php8.2-gd, php8.2-opcache, php8.2-fileinfo, php8.2-intl, php8.2-cli, php8.2-mbstring, php8.2-xml"
 
     [resources.database]
     type = "postgresql"

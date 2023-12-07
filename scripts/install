@@ -44,8 +44,6 @@ yunohost service add $app --description="News feed reader and aggregator" --log=
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-domain_path=https://$domain$path
-
 ynh_add_config --template="config.php" --destination="$install_dir/config.php"
 
 chmod 400 "$install_dir/config.php"

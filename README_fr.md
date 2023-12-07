@@ -28,9 +28,9 @@ Tiny Tiny RSS est un lecteur et agrégateur de flux de nouvelles (RSS/Atom) bas�
 - filtrage flexible des articles
 
 
-**Version incluse :** 20231202~ynh2
+**Version incluse :** 20231202~ynh3
 
-**Démo :** https://srv.tt-rss.org/tt-rss/
+**Démo :** https://demo.tt-rss.org/
 
 ## Captures d’écran
 

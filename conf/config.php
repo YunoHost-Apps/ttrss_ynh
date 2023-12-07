@@ -15,7 +15,7 @@
 	// *** Basic settings (important!) ***
 	// ***********************************
 
-	putenv('TTRSS_SELF_URL_PATH=__DOMAIN_PATH__');
+	putenv('TTRSS_SELF_URL_PATH=https://__DOMAIN____PATH__');
 	// Full URL of your tt-rss installation. This should be set to the
 	// location of tt-rss directory, e.g. http://example.org/tt-rss/
 	// You need to set this option correctly otherwise several features
@@ -177,7 +177,7 @@
 	// Disabling auth_internal in this list would automatically disable
 	// reset password link on the login form.
 	
-	putenv('TTRSS_LOG_DESTINATION=sql');
+	putenv('TTRSS_LOG_DESTINATION=syslog');
 	// Log destination to use. Possible values: sql (uses internal logging
 	// you can read in Preferences -> System), syslog - logs to system log.
 	// Setting this to blank uses PHP logging (usually to http server 

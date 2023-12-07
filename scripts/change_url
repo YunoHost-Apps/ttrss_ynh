@@ -32,8 +32,8 @@ ynh_change_url_nginx_config
 #=================================================
 ynh_script_progression --message="Updating a configuration file..." --weight=1
 
-domain_path="https://${new_domain}${new_path}"
 domain="$new_domain"
+path="$new_path"
 ynh_add_config --template="config.php" --destination="$install_dir/config.php"
 
 chmod 400 "$install_dir/config.php"
