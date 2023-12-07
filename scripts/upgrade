@@ -75,7 +75,6 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Updating a configuration file..." --weight=2
 
-	domain_path=https://$domain$path
 	ynh_add_config --template="config.php" --destination="$install_dir/config.php"
 
 	ynh_script_progression --message="Upgrading the database..." --weight=2
