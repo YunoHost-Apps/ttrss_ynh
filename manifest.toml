@@ -60,6 +60,7 @@ ram.runtime = "50M"
     api.url = "/api"
     api.allowed = "visitors"
     api.show_tile = false
+    api.auth_header =false
     api.protected = true
 
     [resources.apt]
