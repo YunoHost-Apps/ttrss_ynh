@@ -177,7 +177,7 @@
 	// Disabling auth_internal in this list would automatically disable
 	// reset password link on the login form.
 	
-	putenv('TTRSS_LOG_DESTINATION=syslog');
+	putenv('TTRSS_LOG_DESTINATION=sql');
 	// Log destination to use. Possible values: sql (uses internal logging
 	// you can read in Preferences -> System), syslog - logs to system log.
 	// Setting this to blank uses PHP logging (usually to http server 
