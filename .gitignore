@@ -1,3 +1,6 @@
 source/.buildpath
 source/.gitignore
 source/.project
+*~
+*.sw[op]
+.DS_Store
