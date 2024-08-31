@@ -17,38 +17,25 @@ ynh_systemctl --service=$app --action="stop" --log_path="systemd"
 #=================================================
 ynh_script_progression "Ensuring downward compatibility..."
 
-# Do not remove the file before the backup, to not fail the backup.
-# Remove old cron job
 ynh_safe_rm "/etc/cron.d/$app"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression "Upgrading source files..."
 
-# FIXME: this is still supported but the recommendation is now to *always* re-setup the app sources wether or not the upstream sources changed
-if ynh_app_upstream_version_changed
-then
-	ynh_script_progression "Upgrading source files..."
+ynh_setup_source --dest_dir="$install_dir"
+echo "$(ynh_app_upstream_version)" > "$install_dir/version_static.txt"
 
-	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir"
-	echo "$(ynh_app_upstream_version)" > "$install_dir/version_static.txt"
-fi
-
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
 
-# Create a dedicated PHP-FPM config
 ynh_config_add_phpfpm
 
-# Create a dedicated NGINX config
 ynh_config_add_nginx
 
-# Create a dedicated systemd config
 ynh_config_add_systemd
 
 yunohost service add $app --description="News feed reader and aggregator" --log="/var/log/$app/$app.log"
@@ -56,21 +43,11 @@ yunohost service add $app --description="News feed reader and aggregator" --log=
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
+ynh_script_progression "Updating configuration..."
 
-# FIXME: this is still supported but the recommendation is now to *always* re-setup the app sources wether or not the upstream sources changed
-if ynh_app_upstream_version_changed
-then
-	ynh_script_progression "Updating configuration..."
+ynh_config_add --template="config.php" --destination="$install_dir/config.php"
 
-	ynh_config_add --template="config.php" --destination="$install_dir/config.php"
-
-	ynh_script_progression "Upgrading the database..."
-
-	ynh_exec_as_app php$php_version $install_dir/update.php --update-schema=force-yes
-fi
-
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/config.php"
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:$app "$install_dir/config.php"
+ynh_exec_as_app php$php_version $install_dir/update.php --update-schema=force-yes
 
 #=================================================
 # START SYSTEMD SERVICE
