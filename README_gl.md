@@ -5,7 +5,7 @@ NON debe editarse manualmente.
 
 # Tiny Tiny RSS para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/ttrss.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)
 
 [![Instalar Tiny Tiny RSS con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ttrss)
 
@@ -28,7 +28,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 - flexible article filtering
 
 
-**Versión proporcionada:** 20231202~ynh3
+**Versión proporcionada:** 20240831~ynh1
 
 **Demo:** <https://demo.tt-rss.org/>
 
