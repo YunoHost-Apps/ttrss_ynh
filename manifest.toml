@@ -5,7 +5,7 @@ name = "Tiny Tiny RSS"
 description.en = "News feed (RSS/Atom) reader and aggregator"
 description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
 
-version = "20231202~ynh3"
+version = "20240831~ynh1"
 
 maintainers = []
 
@@ -17,7 +17,8 @@ admindoc = "https://tt-rss.org/wiki.php"
 code = "https://gitlab.tt-rss.org/tt-rss/tt-rss"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.29"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
@@ -43,14 +44,15 @@ ram.runtime = "50M"
 
 [resources]
         [resources.sources.main]
-        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/2b8e34453234b8b31ebc9e7020f8677bf3889898.tar.gz"
-        sha256 = "72ec560bd5ad7bac4789d7af0e5c2d7c1c394e9c540d46d5421ecae219d8f875"
+        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/d5d47b8e500542fc4b6f89ef11bef3ceae833063.tar.gz"
+        sha256 = "72e13a9e1b568055c9c6d072d8ec5b87d670af59e63f6202cfad1fe333b15866"
         autoupdate.strategy = "latest_gitlab_commit"
 
     [resources.system_user]
     allow_email = true
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.permissions]
     main.url = "/"
@@ -67,7 +69,7 @@ ram.runtime = "50M"
     api.allowed = "visitors"
 
     [resources.apt]
-    packages = "postgresql, php8.2-pgsql, php8.2-curl, php8.2-gd, php8.2-opcache, php8.2-fileinfo, php8.2-intl, php8.2-cli, php8.2-mbstring, php8.2-xml"
+    packages = "postgresql, php8.3-pgsql, php8.3-curl, php8.3-gd, php8.3-opcache, php8.3-fileinfo, php8.3-intl, php8.3-cli, php8.3-mbstring, php8.3-xml"
 
     [resources.database]
     type = "postgresql"

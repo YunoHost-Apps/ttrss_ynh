@@ -8,7 +8,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=/usr/bin/php__PHPVERSION__ __INSTALL_DIR__/update_daemon2.php
+ExecStart=/usr/bin/php__PHP_VERSION__ __INSTALL_DIR__/update_daemon2.php
 Restart=always
 RestartSec=10
 
