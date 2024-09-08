@@ -37,8 +37,8 @@ yunohost service add $app --description="News feed reader and aggregator" --log=
 ynh_script_progression "Starting $app's systemd service..."
 
 ynh_systemctl --service=$app --action="start" --log_path="systemd"
-
 ynh_systemctl --service=php$php_version-fpm --action=reload
+
 ynh_systemctl --service=nginx --action=reload
 
 #=================================================

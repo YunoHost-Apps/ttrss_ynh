@@ -25,6 +25,7 @@ ynh_safe_rm "/etc/cron.d/$app"
 ynh_script_progression "Upgrading source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
+
 echo "$(ynh_app_upstream_version)" > "$install_dir/version_static.txt"
 
 #=================================================

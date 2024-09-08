@@ -11,6 +11,7 @@ ynh_app_setting_set --key=php_upload_max_filesize --value=10M
 ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
+
 echo "$(ynh_app_upstream_version)" > "$install_dir/version_static.txt"
 
 #=================================================
@@ -18,19 +19,14 @@ echo "$(ynh_app_upstream_version)" > "$install_dir/version_static.txt"
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated PHP-FPM config
 ynh_config_add_phpfpm
 
-# Create a dedicated NGINX config
 ynh_config_add_nginx
 
-# Create a dedicated systemd config
 ynh_config_add_systemd
 
 yunohost service add $app --description="News feed reader and aggregator" --log="/var/log/$app/$app.log"
 
-#=================================================
-# SPECIFIC SETUP
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
@@ -43,8 +39,7 @@ ynh_config_add --template="config.php" --destination="$install_dir/config.php"
 #=================================================
 ynh_script_progression "Initializing database..."
 
-ynh_psql_db_shell \
-    < "$install_dir/schema/ttrss_schema_pgsql.sql"
+ynh_psql_db_shell < "$install_dir/schema/ttrss_schema_pgsql.sql"
 
 ynh_exec_as_app php$php_version $install_dir/update.php --update-schema=force-yes
 
@@ -53,7 +48,6 @@ ynh_exec_as_app php$php_version $install_dir/update.php --update-schema=force-ye
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
 ynh_systemctl --service=$app --action="start" --log_path="systemd"
 
 #=================================================
