@@ -5,7 +5,7 @@
 
 # YunoHost 上的 Tiny Tiny RSS
 
-[![集成程度](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![工作状态](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/ttrss.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)
 
 [![使用 YunoHost 安装 Tiny Tiny RSS](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ttrss)
 
@@ -28,7 +28,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 - flexible article filtering
 
 
-**分发版本：** 20231202~ynh3
+**分发版本：** 20240831~ynh2
 
 **演示：** <https://demo.tt-rss.org/>
 

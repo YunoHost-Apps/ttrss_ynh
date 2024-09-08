@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Tiny Tiny RSS YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/ttrss.svg)](https://dash.yunohost.org/appci/app/ttrss) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/ttrss.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)
 
 [![Instalatu Tiny Tiny RSS YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ttrss)
 
@@ -28,7 +28,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 - flexible article filtering
 
 
-**Paketatutako bertsioa:** 20231202~ynh3
+**Paketatutako bertsioa:** 20240831~ynh2
 
 **Demoa:** <https://demo.tt-rss.org/>
 
