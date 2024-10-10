@@ -28,7 +28,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 - flexible article filtering
 
 
-**Versi terkirim:** 20240924~ynh1
+**Versi terkirim:** 20241010~ynh1
 
 **Demo:** <https://demo.tt-rss.org/>
 
