@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # Tiny Tiny RSS para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/ttrss.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/ttrss)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/ttrss)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/ttrss)
 
 [![Instalar Tiny Tiny RSS con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ttrss)
 
