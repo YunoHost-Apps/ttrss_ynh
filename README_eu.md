@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Tiny Tiny RSS YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/ttrss.svg)](https://ci-apps.yunohost.org/ci/apps/ttrss/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/ttrss.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/ttrss.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/ttrss)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/ttrss)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/ttrss)
 
 [![Instalatu Tiny Tiny RSS YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ttrss)
 
