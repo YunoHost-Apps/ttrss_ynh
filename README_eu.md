@@ -30,7 +30,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 - flexible article filtering
 
 
-**Paketatutako bertsioa:** 2025.03.22~ynh1
+**Paketatutako bertsioa:** 2025.03.26~ynh1
 
 **Demoa:** <https://demo.tt-rss.org/>
 
@@ -50,7 +50,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 
 Bidali `pull request`a [`testing` abarrera](https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing).
 
-`testing` abarra probatzeko, ondorengoa egin:
+`testing` abarra probatzeko, honakoa egin:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing --debug

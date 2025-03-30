@@ -3,7 +3,7 @@ Este archivo README esta generado automaticamente<https://github.com/YunoHost/ap
 No se debe editar a mano.
 -->
 
-# Tiny Tiny RSS para Yunohost
+# Tiny Tiny RSS para YunoHost
 
 [![Nivel de integración](https://apps.yunohost.org/badge/integration/ttrss)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
 ![Estado funcional](https://apps.yunohost.org/badge/state/ttrss)
@@ -30,7 +30,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 - flexible article filtering
 
 
-**Versión actual:** 2025.03.22~ynh1
+**Versión actual:** 2025.03.26~ynh1
 
 **Demo:** <https://demo.tt-rss.org/>
 
