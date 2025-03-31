@@ -1,3 +1,4 @@
+[Unit]
 Description=TTRSS: Backend update
 Documentation=https://git.tt-rss.org/fox/tt-rss/wiki/UpdatingFeeds
 Requires=network.target postgresql.service
@@ -12,10 +13,7 @@ ExecStart=/usr/bin/php__PHP_VERSION__ __INSTALL_DIR__/update_daemon2.php
 Restart=always
 RestartSec=10
 
-
 # Sandboxing options to harden security
-# Depending on specificities of your service/app, you may need to tweak these
-# .. but this should be a good baseline
 # Details for these options: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
 NoNewPrivileges=yes
 PrivateTmp=yes

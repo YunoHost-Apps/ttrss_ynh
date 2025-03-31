@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "ttrss"
@@ -23,6 +25,7 @@ architectures = "all"
 multi_instance = true
 
 ldap = false
+
 sso = false
 
 disk = "50M"
@@ -42,10 +45,10 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
-        [resources.sources.main]
-        url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/c1e6a5ff634c46a0df3fb8d7a21bd3db96be5a69/tt-rss-c1e6a5ff634c46a0df3fb8d7a21bd3db96be5a69.tar.bz2"
-        sha256 = "61ad6bb104b9a64e9fb91ca7e0efbb04d40db08518b1caa05f8bbfbf5e5f543f"
-        autoupdate.strategy = "latest_gitlab_commit"
+    [resources.sources.main]
+    url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/c1e6a5ff634c46a0df3fb8d7a21bd3db96be5a69/tt-rss-c1e6a5ff634c46a0df3fb8d7a21bd3db96be5a69.tar.bz2"
+    sha256 = "61ad6bb104b9a64e9fb91ca7e0efbb04d40db08518b1caa05f8bbfbf5e5f543f"
+    autoupdate.strategy = "latest_gitlab_commit"
 
     [resources.system_user]
     allow_email = true
