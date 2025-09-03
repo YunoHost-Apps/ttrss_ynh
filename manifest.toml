@@ -7,7 +7,7 @@ name = "Tiny Tiny RSS"
 description.en = "News feed (RSS/Atom) reader and aggregator"
 description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
 
-version = "2025.08.15~ynh1"
+version = "2025.08.29~ynh1"
 
 maintainers = []
 
@@ -19,13 +19,12 @@ admindoc = "https://tt-rss.org/wiki.php"
 code = "https://gitlab.tt-rss.org/tt-rss/tt-rss"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
 disk = "50M"
@@ -47,8 +46,8 @@ ram.runtime = "50M"
 [resources]
     [resources.sources.main]
 
-    url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/f7fc00326e2f51f269f26b24a54d34e07a36846e/tt-rss-f7fc00326e2f51f269f26b24a54d34e07a36846e.tar.bz2"
-    sha256 = "ce1d72296bac705695d90c49bc424389e035f9bca5aef880036233a35557da2f"
+    url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/98dbf4973380a525cbdeb542786838de10ad6d08/tt-rss-98dbf4973380a525cbdeb542786838de10ad6d08.tar.bz2"
+    sha256 = "3f1ddc6092605920fc21dffd70797d1cb60b0a49220fa9024fe9501cdd553f55"
     
     autoupdate.strategy = "latest_gitlab_commit"
 
