@@ -13,10 +13,9 @@ maintainers = []
 
 [upstream]
 license = "GPL-3.0-only"
-website = "https://tt-rss.org"
-demo = "https://demo.tt-rss.org/"
-admindoc = "https://tt-rss.org/wiki.php"
-code = "https://gitlab.tt-rss.org/tt-rss/tt-rss"
+website = "https://github.com/tt-rss/tt-rss/wiki"
+admindoc = "https://github.com/tt-rss/tt-rss/wiki"
+code = "https://github.com/tt-rss/tt-rss/"
 
 [integration]
 yunohost = ">= 12.1.17"
@@ -46,10 +45,10 @@ ram.runtime = "50M"
 [resources]
     [resources.sources.main]
 
-    url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/c67b943aa894b90103c4752ac430958886b996b2/tt-rss-c67b943aa894b90103c4752ac430958886b996b2.tar.bz2"
-    sha256 = "64ea9b69c0e1ef940680953bd6db32a7cf5cd64aba10910c216e3e30b455b19c"
-    
-    autoupdate.strategy = "latest_gitlab_commit"
+    url = "https://codeload.github.com/tt-rss/tt-rss/zip/ab0aabf8548c206f3f624de5451a9b6abbde90be"
+    sha256 = "7bcd397aaa28373cab7bd5c10ce10d13d9ca060d0e723f26dcdb41febcd2eec1"
+
+    autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
     allow_email = true
