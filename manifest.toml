@@ -46,10 +46,11 @@ ram.runtime = "50M"
 [resources]
     [resources.sources.main]
 
-    url = "https://gitlab.tt-rss.org/tt-rss/tt-rss/-/archive/c67b943aa894b90103c4752ac430958886b996b2/tt-rss-c67b943aa894b90103c4752ac430958886b996b2.tar.bz2"
-    sha256 = "64ea9b69c0e1ef940680953bd6db32a7cf5cd64aba10910c216e3e30b455b19c"
+    url = "https://github.com/tt-rss/tt-rss/archive/ab0aabf8548c206f3f624de5451a9b6abbde90be.tar.gz"
+    sha256 = "758995155457c4fa7177738a63870a328e15a49feeee0fa398331ddcd0560fe0"
     
-    autoupdate.strategy = "latest_gitlab_commit"
+    autoupdate.upstream = "https://github.com/tt-rss/tt-rss"
+    autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
     allow_email = true
@@ -72,7 +73,7 @@ ram.runtime = "50M"
     api.allowed = "visitors"
 
     [resources.apt]
-    packages = "postgresql, php8.3-pgsql, php8.3-curl, php8.3-gd, php8.3-opcache, php8.3-fileinfo, php8.3-intl, php8.3-cli, php8.3-mbstring, php8.3-xml"
+    packages = "postgresql, php8.4-pgsql, php8.4-curl, php8.4-gd, php8.4-opcache, php8.4-fileinfo, php8.4-intl, php8.4-cli, php8.4-mbstring, php8.4-xml"
 
     [resources.database]
     type = "postgresql"
