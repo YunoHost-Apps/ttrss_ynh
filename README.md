@@ -10,8 +10,6 @@ It shall NOT be edited by hand.
 
 News feed (RSS/Atom) reader and aggregator
 
-[![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://tt-rss.org)
-[![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://demo.tt-rss.org/)
 [![Version: 2025.10.02~ynh1](https://img.shields.io/badge/Version-2025.10.02~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
 
 <div align="center">
@@ -27,7 +25,7 @@ News feed (RSS/Atom) reader and aggregator
 
 [![Automatic tests level](https://apps.yunohost.org/badge/cilevel/ttrss)](https://ci-apps.yunohost.org/ci/apps/ttrss/)
 
-🛠️ Upstream Tiny Tiny RSS repository: <https://gitlab.tt-rss.org/tt-rss/tt-rss>
+🛠️ Upstream Tiny Tiny RSS repository: <https://github.com/tt-rss/tt-rss>
 
 Pull request are welcome and should target the [`testing` branch](https://github.com/YunoHost-Apps/ttrss_ynh/tree/testing).
 
