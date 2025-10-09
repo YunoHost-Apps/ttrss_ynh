@@ -1,6 +1,6 @@
 [Unit]
 Description=TTRSS: Backend update
-Documentation=https://git.tt-rss.org/fox/tt-rss/wiki/UpdatingFeeds
+Documentation=https://github.com/tt-rss/tt-rss/wiki
 Requires=network.target postgresql.service
 After=network.target postgresql.service
 
