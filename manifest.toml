@@ -17,7 +17,7 @@ admindoc = "https://github.com/tt-rss/tt-rss/wiki"
 code = "https://github.com/tt-rss/tt-rss"
 
 [integration]
-yunohost = ">= 12.1.17"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
