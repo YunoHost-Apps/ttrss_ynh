@@ -71,7 +71,7 @@ ram.runtime = "50M"
     api.allowed = "visitors"
 
     [resources.apt]
-    packages = "postgresql, php8.5-pgsql, php8.5-curl, php8.5-gd, php8.5-opcache, php8.5-fileinfo, php8.5-intl, php8.5-cli, php8.5-mbstring, php8.5-xml"
+    packages = "postgresql, php8.5-pgsql, php8.5-curl, php8.5-gd, php8.5-fileinfo, php8.5-intl, php8.5-cli, php8.5-mbstring, php8.5-xml"
 
     [resources.database]
     type = "postgresql"
