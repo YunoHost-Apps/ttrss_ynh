@@ -7,7 +7,7 @@ name = "Tiny Tiny RSS"
 description.en = "News feed (RSS/Atom) reader and aggregator"
 description.fr = "Lecteur de flux d’actualité utilisant les protocoles RSS et Atom"
 
-version = "2026.10.25~ynh1"
+version = "2026.11.06~ynh1"
 
 maintainers = []
 
@@ -44,8 +44,8 @@ ram.runtime = "50M"
 [resources]
     [resources.sources.main]
 
-    url = "https://github.com/tt-rss/tt-rss/archive/c02520ff1c26a0aab0c81ada1f42d377f02ac29c.tar.gz"
-    sha256 = "34ff1c0da8f817a64920e514beecdaad56aeb4373aa53895cd46ec7efc1ccc64"
+    url = "https://github.com/tt-rss/tt-rss/archive/29ad90afd3a0c29589eee30f88e1fb349a8f91fd.tar.gz"
+    sha256 = "672216ccd131b6c55a58c4ece1445d56d48459de3ebcfd0d2aba961fd1a761cc"
     
     autoupdate.upstream = "https://github.com/tt-rss/tt-rss"
     autoupdate.strategy = "latest_github_commit"
